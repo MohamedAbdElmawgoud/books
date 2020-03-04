@@ -13,7 +13,7 @@ export class ServiceService {
     let dataObserval= new Observable  (data=>
     
     {
-      yourObserver = data;
+      yourObserver.push(data);
     })
 return yourObserver.toPromise()
   } 

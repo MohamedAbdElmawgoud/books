@@ -10,7 +10,12 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ServicesComponent } from './services/services.component';
 import { LogInComponent } from './log-in/log-in.component';
-
+import { TranslateModule, TranslateLoader, TranslateService } from  '@ngx-translate/core';
+import { TranslateHttpLoader } from  '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from  '@angular/common/http';
+export  function  HttpLoaderFactory(http:  HttpClient) {
+  return  new  TranslateHttpLoader(http, './assets/translate/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +27,23 @@ import { LogInComponent } from './log-in/log-in.component';
     ServicesComponent,
     LogInComponent,
     
+    
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide:  TranslateLoader,
+        useFactory:  HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
-  providers: [],
+  exports: [TranslateModule],  
+  providers: [TranslateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
