@@ -11,12 +11,13 @@ export class HomeComponent implements OnInit {
   constructor(public Service: ServiceService) { 
   }
 
-  ngOnInit(): void {
-    this.getData();
+  async ngOnInit() {
+    this.Service.get().subscribe(data=>{
+      console.log(data);
+      
+    })
   }
 
-   async getData(){
-    let temp = await this.Service.get();
-  }
+
 
 }
