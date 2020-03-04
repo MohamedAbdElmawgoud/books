@@ -8,14 +8,15 @@ import { ServiceService } from "src/app/admin/service.service";
 export class HomeComponent implements OnInit {
    data;
   
-  constructor(public Service: ServiceService) { }
-
-  ngOnInit(): void {
+  constructor(public Service: ServiceService) { 
   }
 
-  async getData(){
-    let temp =await this.Service.get();
-  
+  ngOnInit(): void {
+    this.getData();
+  }
+
+   async getData(){
+    let temp = await this.Service.get();
   }
 
 }

@@ -8,7 +8,10 @@ export class ServiceService {
 
   constructor() { }
 
-  async get(){
-    return new  BehaviorSubject([]).toPromise()
+   get(){
+     let slider: [{descrption:'We Are Back Links Company',pathImage:'/assets/images/industrial_hero_1.jpg'}];
+     let temp =new  BehaviorSubject(slider).toPromise();
+     console.log(temp);
+    return temp;
   } 
 }
