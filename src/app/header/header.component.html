@@ -1,39 +1,53 @@
-<header role="banner">
+<header role="banner" >
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand " href="index.html">Back Links</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+        
+        
         <div class="collapse navbar-collapse" id="navbarsExample05">
           <ul class="navbar-nav pl-md-5 ml-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
+              <a class="nav-link active" href="index.html">{{ 'HOME' | translate }}</a>
             </li>
 
 
             <li class="nav-item">
-                <a class="nav-link" routerLink="services">services</a>
+                <a class="nav-link" routerLink="services">{{ 'SERVICES' | translate }}</a>
               </li>
 
 
             <li class="nav-item">
-              <a class="nav-link" routerLink="about">About</a>
+              <a class="nav-link" routerLink="about">{{ 'ABOUT' | translate }}</a>
             </li>
            
             
            
 
             <li class="nav-item">
-              <a class="nav-link" routerLink="contact">Contact</a>
+              <a class="nav-link" routerLink="contact"> {{ 'CONTACT' | translate }}</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" routerLink="app-log-in">Log In</a>
+                <a class="nav-link" routerLink="app-log-in">{{ 'LOG IN' | translate }}</a>
               </li>
 
+             
+              <li class="nav-item" (click)="Translate('en')">
+                <span class="nav-link" >English</span>
+              </li>
+
+              <li class="nav-item" (click)="Translate('ar')">
+                <span class="nav-link" >عربي</span>
+              </li>
+
+
           </ul>
+
+           
+
 
          
 

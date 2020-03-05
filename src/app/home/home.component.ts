@@ -13,9 +13,10 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
     this.Service.get().subscribe(data=>{
-      console.log(data);
+      this.data= data;
       
     })
+    console.log(this.data.descrption);
   }
 
 

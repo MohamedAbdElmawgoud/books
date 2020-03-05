@@ -1,3 +1,15 @@
 {
-    "WelcomeMessage": "Welcome to our website"
-  }
+    "WelcomeMessage": "Welcome to our website",
+    
+      "HOME": "HOME",
+      "SERVICES": "SERVICES",
+      "ABOUT": "About",
+      "CONTACT": "Contact",
+      "LOG IN": "LOG IN",
+      "Terms": "Terms of Use",
+      "Disclaimers": "Disclaimers"
+     
+     
+
+     
+}
