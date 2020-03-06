@@ -1,0 +1,33 @@
+<body>
+    <form action="action_page.php" method="post">
+            
+            <div class="container">
+              <label for="uname"><b>{{ 'Username' | translate }}</b></label>
+             
+              <input type="text" name="uname" required>
+
+              <label for="Email"><b>{{ 'Email' | translate }}</b></label>
+              
+               <input type="Email" name="Email" required>
+
+               <label for="Telephone"><b>{{ 'Telephone' | translate }}</b></label>
+               
+                <input type="number" name="Telephone" required>
+
+                <label for="address"><b>{{ 'address' | translate }}</b></label>
+                
+                 <input type="text" name="address" required>
+          
+              <label for="psw"><b>{{ 'Password' | translate }}</b></label>
+              <input type="password"  name="psw" required>
+
+              <label for="psw"><b>{{ 'confirm Password' | translate }}</b></label>
+              <input type="password"  name="psw" required>
+          
+              <button type="submit">{{ 'sign up' | translate }}</button>
+              
+            </div>
+          
+           
+          </form>
+    </body>

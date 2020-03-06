@@ -2,28 +2,28 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-md-4 mb-5">
-          <h3>About The Back Links</h3>
-          <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. .</p>
+          <h3>{{ 'title' | translate }}</h3>
+          <p class="mb-5">{{ 'description' | translate }}</p>
           <ul class="list-unstyled footer-link d-flex footer-social">
             <li><a routerLink="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
             <li><a routerLink="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
             <li><a routerLink="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
             <li><a routerLink="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
           </ul>
-
+         
         </div>
         <div class="col-md-5 mb-5 pl-md-5">
-          <h3>Contact Info</h3>
+          <h3>{{ 'Contact Info' | translate }}</h3>
           <ul class="list-unstyled footer-link">
             <li class="d-block">
-              <span class="d-block">Address:</span>
-              <span >34 Street Name, City Name Here, United States</span></li>
-            <li class="d-block"><span class="d-block">Telephone:</span><span >+1 242 4942 290</span></li>
-            <li class="d-block"><span class="d-block">Email:</span><span >info@yourdomain.com</span></li>
+              <span class="d-block">{{ 'address' | translate }}</span>
+              <span >{{ 'Address' | translate }}</span></li>
+            <li class="d-block"><span class="d-block">{{ 'Telephone' | translate }}</span><span >+1 242 4942 290</span></li>
+            <li class="d-block"><span class="d-block">{{ 'Email' | translate }}</span><span >info@yourdomain.com</span></li>
           </ul>
         </div>
         <div class="col-md-3 mb-5">
-          <h3>Quick Links</h3>
+          <h3>{{ 'Quick Links' | translate }}</h3>
           <ul class="list-unstyled footer-link">
             <li><a routerLink="about">{{ 'ABOUT' | translate }}</a></li>
             <li><a routerLink="#">{{ 'Terms' | translate }}</a></li>

@@ -3,22 +3,22 @@
 <form action="action_page.php" method="post">
 		
 		<div class="container">
-		  <label for="uname"><b>Username</b></label>
+		  <label for="uname"><b>{{ 'Username' | translate }}</b></label>
 		 
-		  <input type="text" placeholder="Enter Username" name="uname" required>
+		  <input type="text" name="uname" required>
 	  
-		  <label for="psw"><b>Password</b></label>
-		  <input type="password" placeholder="Enter Password" name="psw" required>
+		  <label for="psw"><b>{{ 'Password' | translate }}</b></label>
+		  <input type="password"  name="psw" required>
 	  
-		  <button type="submit">Login</button>
+		  <button type="submit">{{ 'Login' | translate }}</button>
 		  <label>
-			<input type="checkbox" checked="checked" name="remember"> Remember me
+			<input type="checkbox" checked="checked" name="remember"> {{ 'Remember me' | translate }}
 		  </label>
 		</div>
 	  
 		<div class="container" style="background-color:#f1f1f1">
-		  <button type="button" class="cancelbtn">Cancel</button>
-		  <span class="psw">Forgot <a href="#">password?</a></span>
+		  <button type="button" class="cancelbtn">{{ 'Cancel' | translate }}</button>
+		  <span class="psw">{{ 'Forgot' | translate }} <a href="#">{{ 'Password' | translate }}?</a></span>
 		</div>
 	  </form>
 </body>

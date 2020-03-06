@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'contact',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(public translate:  TranslateService) { 
+    const  currentLanguage  =  translate.getBrowserLang();
+    translate.setDefaultLang(currentLanguage);
+    translate.use('currentLanguage'); }
 
   ngOnInit(): void {
   }
+  Translate(type: string){
+    
+    
+      this.translate.use(type);// ar or en
+      
+    
+    }
 
 }

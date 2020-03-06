@@ -1,5 +1,5 @@
 {
-    "WelcomeMessage": "Welcome to our website",
+   
     
       "HOME": "HOME",
       "SERVICES": "SERVICES",
@@ -7,9 +7,27 @@
       "CONTACT": "Contact",
       "LOG IN": "LOG IN",
       "Terms": "Terms of Use",
-      "Disclaimers": "Disclaimers"
+      "Disclaimers": "Disclaimers",
+      "Address": "34 Street Name, City Name Here, United States",
+      "address":"Address",
+      "Telephone":"Telephone",
+      "Email":"Email",
+      "title":"About The Back Links",
+      "description":"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. .",
+      "Name":"Name",
+      "Write Message":"Write Message",
+      "Send Message":"Send Message",
+      "Username":"Username",
+      "Password":"Password",
+      "confirm Password":"confirm Password",
+      "Remember me":"Remember me",
+      "Login":"Login" ,
+      "Cancel":"Cancel",
+      "Forgot":"Forgot",
+      "Contact Info":"Contact Info",
+       " Quick Links":" Quick Links",
+       "sign up": "sign up"
      
      
-
      
 }
