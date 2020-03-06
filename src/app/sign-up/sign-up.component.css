@@ -1,10 +1,10 @@
-/* Bordered form */
+
 form {
 	border: 3px solid #f1f1f1;
 	margin-top: 15%;
-	margin-left:35%;
-	margin-right:35%;
-	width: 30%;
+	/* margin-left:35%;
+	margin-right:35%; */
+	/* max-width: 30%; */
    
     padding: 55px 50px;
 
@@ -40,7 +40,7 @@ form {
     text-transform: uppercase;
 	font-family: 'Mukta', sans-serif;
     font-size: 16px;
-	width:100%;
+	
 	margin-top:10px;
     letter-spacing: 2px;
     cursor: pointer;
@@ -54,6 +54,7 @@ form {
 	-moz-border-radius: 35px;
 	-ms-border-radius: 35px;
 	-o-border-radius: 35px;
+	
   }
   
   /* Add a hover effect for buttons */
@@ -74,11 +75,7 @@ form {
 	margin: 24px 0 12px 0;
   }
   
-  /* Avatar image */
-  img.avatar {
-	width: 40%;
-	border-radius: 50%;
-  }
+  
   
   /* Add padding to containers */
   .container {
@@ -92,7 +89,7 @@ form {
   }
   
   /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
+  @media screen {
 	span.psw {
 	  display: block;
 	  float: none;
@@ -100,4 +97,5 @@ form {
 	.cancelbtn {
 	  width: 100%;
 	}
-  }
+	}
+	
