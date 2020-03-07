@@ -14,6 +14,7 @@ import { TranslateModule, TranslateLoader, TranslateService } from  '@ngx-transl
 import { TranslateHttpLoader } from  '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from  '@angular/common/http';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { StoreComponent } from './store/store.component';
 export  function  HttpLoaderFactory(http:  HttpClient) {
   return  new  TranslateHttpLoader(http, './assets/translate/', '.json');
 }
@@ -28,6 +29,7 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     ServicesComponent,
     LogInComponent,
     SignUpComponent,
+    StoreComponent,
     
     
     

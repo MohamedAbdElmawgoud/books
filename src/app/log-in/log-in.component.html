@@ -1,27 +1,45 @@
-<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-</head>		
-<body>
-<form action="action_page.php" method="post">
+<html>
+<head>
+		<meta charset="utf-8">
 		
-		<div class="container">
-		  <label for="uname"><b>{{ 'Username' | translate }}</b></label>
-		 
-		  <input type="text" name="uname" required>
-	  
-		  <label for="psw"><b>{{ 'Password' | translate }}</b></label>
-		  <input type="password"  name="psw" required>
-	  
-		  <button type="submit">{{ 'Login' | translate }}</button>
-		  <label>
-			<input type="checkbox" checked="checked" name="remember"> {{ 'Remember me' | translate }}
-		  </label>
-		</div>
-	  
-		<div class="container" style="background-color:#f1f1f1">
-		  <button type="button" class="cancelbtn">{{ 'Cancel' | translate }}</button>
-		  <span class="psw">{{ 'Forgot' | translate }} <a href="#">{{ 'Password' | translate }}?</a></span>
-		</div>
-	  </form>
+<link type="text/css" rel="stylesheet" href="<spring:url value='/resources/css/screen.css'/>"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href="<spring:url value='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>"/>
+		<!--//webfonts-->
+</head>
+ 
+<body>
+	<div class="main">
+		<form action="login" method="post">
+    		<h1><label> {{ 'Login' | translate }} </label> </h1>
+  			<div class="inset">
+	  			<p>
+	    		 <label for="userName">{{ 'Username' | translate }}</label>
+   	 			<input type="text" placeholder="User Name" required/>
+				</p>
+  				<p>
+				    <label for="password">{{ 'Password' | translate }}</label>
+				    <input type="password" placeholder="password" required/>
+  				</p>
+				  <p>
+				    <input type="checkbox" name="remember" id="remember">
+				    <label for="remember">Agree to Continue</label>
+				  </p>
+ 			 </div>
+ 	 
+			  <p class="p-container">
+			    <span><a href="#">{{ 'Forgot' | translate }}?</a></span>
+			    <button type="submit" value="Login">{{ 'Login' | translate }}</button>
+			  </p>
+		</form>
+	</div>  
+
 </body>
+</html>
