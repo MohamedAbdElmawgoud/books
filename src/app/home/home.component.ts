@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
     translate.use('currentLanguage');
   }
 
-  async ngOnInit() {
-    this.Service.get().subscribe(data=>{
+   ngOnInit() {
+    this.Service.get('slider').subscribe(data=>{
       this.data= data;
       
     })

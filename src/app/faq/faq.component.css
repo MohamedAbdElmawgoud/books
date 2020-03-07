@@ -1,0 +1,10 @@
+.toggle-content {
+    flex-basis: 100%;
+    -webkit-flex-basis: 100%;
+    text-align: center;
+    margin-top:20%;
+  }
+
+.container {
+    margin-top:10%;
+}
