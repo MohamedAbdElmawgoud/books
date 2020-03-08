@@ -16,6 +16,8 @@ import { HttpClientModule, HttpClient } from  '@angular/common/http';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StoreComponent } from './store/store.component';
 import { FaqComponent } from './faq/faq.component';
+import { OrderComponent } from './order/order.component';
+
 export  function  HttpLoaderFactory(http:  HttpClient) {
   return  new  TranslateHttpLoader(http, './assets/translate/', '.json');
 }
@@ -32,6 +34,7 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     SignUpComponent,
     StoreComponent,
     FaqComponent,
+    OrderComponent,
     
     
     
@@ -40,6 +43,7 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+   
     TranslateModule.forRoot({
       loader: {
         provide:  TranslateLoader,
