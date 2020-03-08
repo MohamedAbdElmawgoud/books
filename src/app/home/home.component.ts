@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from "src/app/admin/service.service";
 import {TranslateService} from '@ngx-translate/core';
+import { ApiService } from '../apiServices/api.service';
 
 @Component({
   selector: 'home',
@@ -10,7 +11,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class HomeComponent implements OnInit {
    data;
   
-  constructor(public Service: ServiceService,public translate:  TranslateService) { 
+  constructor(public Service: ServiceService,public translate:  TranslateService ,private apiService : ApiService ) { 
     const  currentLanguage  =  translate.getBrowserLang();
     translate.setDefaultLang(currentLanguage);
     translate.use('currentLanguage');
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
       this.data= data;
       
     })
-    console.log(this.data.descrption);
+    console.log( await this.apiService.getExtras());
+    
   }
 
   Translate(type: string){
