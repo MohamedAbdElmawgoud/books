@@ -8,7 +8,8 @@ export class ServiceService {
 
   constructor() { }
 
-    get(){
+    get(Type:string){
+      if(Type== 'slider'){
      let slider = [{descrption:'We Are Back Links Company',
      pathImage:'/assets/images/industrial_hero_1.jpg',
      paragraph: 'nader medhat and mohamed Abd Elmawgoud'}
@@ -28,5 +29,34 @@ export class ServiceService {
   ];
 
     return new  BehaviorSubject(slider)
+}
+
+if(Type=='about'){
+  let about = [{descrption:'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.'
+  ,pathImage:''},
+
+
+  {descrption:'Mellisa Howard',
+  pathImage:'assets/images/person_1.jpg'},
+  
+
+
+  {descrption:'Mike Richardson',
+  pathImage:'assets/images/person_2.jpg'},
+
+
+  {descrption:'Laura Smith',
+  pathImage:'assets/images/person_4.jpg'},
+
+
+
+  {descrption:'Kevin Gold',
+  pathImage:'assets/images/person_3.jpg'},
+
+
+ 
+]
+return new  BehaviorSubject(about)
+}
   } 
 }

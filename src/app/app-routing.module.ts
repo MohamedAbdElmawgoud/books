@@ -7,6 +7,8 @@ import { ServicesComponent } from "src/app/services/services.component";
 import { LogInComponent } from "src/app/log-in/log-in.component";
 import { SignUpComponent } from "src/app/sign-up/sign-up.component";
 import { StoreComponent } from "src/app/store/store.component";
+import { FaqComponent } from "src/app/faq/faq.component";
+import { OrderComponent } from "src/app/order/order.component";
 
 
 const routes: Routes = [
@@ -18,6 +20,9 @@ const routes: Routes = [
  { path : 'log-in' , component: LogInComponent},
  { path : 'sign-up' , component: SignUpComponent}, 
  { path : 'store' , component: StoreComponent},
+ { path : 'faq' , component: FaqComponent},
+ { path : 'order' , component: OrderComponent},
+ 
  
  
   

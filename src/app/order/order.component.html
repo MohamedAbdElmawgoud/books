@@ -1,0 +1,234 @@
+<section class="pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 pb-4">
+                    
+                    <form method="post" onsubmit="submitForm(this,'sorder.php' )" prevent-default="">
+        
+        <div id="extras" class="form-group">
+            <div>Available Extras:
+
+            </div>
+                        <label >
+                    <div class="icheckbox_minimal-blue" style="position: relative;">
+                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
+                        price="0.01" multiply="1" value="1" 
+                        style="position: absolute; ">
+                        <ins class="iCheck-helper" 
+                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; ">
+                    </ins>
+                    </div> Indexer #1 (95%+ Crawled rate)                <div class="badge bg-gray-10">
+                        Price: $0.0001                
+                    </div>
+                </label>
+                <br>
+                        <label >
+                    <div class="icheckbox_minimal-blue" style="position: relative;">
+                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
+                        price="0.10" multiply="1" value="2" 
+                        style="position: absolute; ">
+                        <ins class="iCheck-helper" 
+                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
+                    </div> Indexer #2 (Very High indexer rate)                <div class="badge bg-gray-10">
+                        Price: $0.001                
+                    </div>
+                </label>
+                <br>
+                        <label >
+                    <div class="icheckbox_minimal-blue" style="position: relative;">
+                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
+                        price="0.25" multiply="1" value="3" 
+                        style="position: absolute; ">
+                        <ins class="iCheck-helper" 
+                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
+                    </div> Indexer #3 (Maximum indexer rate)                <div class="badge bg-gray-10">
+                        Price: $0.0025                
+                    </div>
+                </label>
+                <br>
+                        <label >
+                    <div class="icheckbox_minimal-blue" style="position: relative;">
+                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
+                        price="10.00" multiply="0" value="11" 
+                        style="position: absolute; ">
+                        <ins class="iCheck-helper" 
+                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
+                    </div> 100 Unique Articles for submission                <div class="badge bg-gray-10">
+                        Price: $0.1                
+                    </div>
+                </label>
+                <br>
+                        <label >
+                    <div class="icheckbox_minimal-blue" style="position: relative;">
+                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
+                        price="50.00" multiply="0" value="12" 
+                        style="position: absolute; ">
+                        <ins class="iCheck-helper" 
+                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
+                    </div> 500 Unique Articles for submission                <div class="badge bg-gray-10">
+                        Price: $0.5                
+                    </div>
+                </label>
+                <br>
+                        <label >
+                    <div class="icheckbox_minimal-blue" style="position: relative;">
+                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
+                        price="100.00" multiply="0" value="13" 
+                        style="position: absolute; ">
+                        <ins class="iCheck-helper" 
+                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
+                    </div> 1000 Unique Articles for submission                <div class="badge bg-gray-10">
+                        Price: $1                
+                    </div>
+                </label>
+                <br>
+                        <label >
+                    <div class="icheckbox_minimal-blue" style="position: relative;">
+                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
+                        price="500.00" multiply="0" value="14" 
+                        style="position: absolute; ">
+                        <ins class="iCheck-helper" 
+                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
+                    </div> 5,000 Unique Articles for submission                <div class="badge bg-gray-10">
+                        Price: $5                
+                    </div>
+                </label>
+                <br>
+                
+            </div>
+    
+        <div class="form-group">
+            <label for="quantity">Quantity:</label> <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Order quantity (minimum 10)"><span class="fi-question-circle text-yellow"></span></a>
+            <input type="number" class="form-control" name="qty" id="quantity" placeholder="Quantity (Min: 10)" required="">
+        
+        </div>
+    
+    
+    
+        <div class="form-group">
+    
+                        <label for="links">Links:</label> <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="One link/URL per line."><span class="fi-question-circle text-yellow"></span></a>
+            
+            <textarea name="links" class="form-control" id="links" cols="30" rows="4" placeholder="http://example.com/page-one.html
+    http://example.com/page-two.html
+    http://example.com/page-three.html" required=""></textarea>
+        
+</div>
+    
+        <div id="keywords-block" class="form-group">
+            <label for="keywords">Keywords:</label> <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="One keyword per line or comma separated."><span class="fi-question-circle text-yellow"></span></a>
+            <textarea class="form-control" name="kws" id="keywords" cols="30" rows="4" placeholder="Keyword Example One
+    Keyword Example Two
+    Keyword Example Three" required=""></textarea>
+        
+</div>
+    
+       
+        <div class="mt-4 mb-3">
+            <a href="#" class="more-options"><i class="fi-gears"></i> Advanced options</a>
+        
+        </div>
+    
+        <!-- Start Options area -->
+        <div id="options-area" class="bg-gray-05 p-3" 
+        style="display: none;">
+    
+            <div class="form-group">
+                <label for="refid">Project name:</label> <i class="text-gray-70">optional</i> <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Project name or reference ID to easily track your order."><span class="fi-question-circle text-yellow"></span></a>
+                <input type="text" class="form-control" maxlength="15" name="refid" id="refid" placeholder="Project name">
+            
+            </div>
+    
+                <div class="form-group">
+                <label for="lpr">Links per article:</label> <i class="text-gray-70">optional</i> <a data-toggle="tooltip" data-placement="top" title="" data-original-title="How many links to be submitted on each article! (minimum 1 maximum 10)"><span class="fi-question-circle text-yellow"></span></a>
+                <input type="number" class="form-control" name="lpr" id="lpr" value="3" min="1" max="10">
+            
+            </div>
+        
+        
+                <div class="form-group">
+                <label for="notes">Notes:</label> <i class="text-gray-70">optional</i> <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Notes for the production team."><span class="fi-question-circle text-yellow"></span></a>
+                <textarea class="form-control" type="text" id="notes" placeholder="Notes..." name="notes" maxlength="250"></textarea>
+            
+            </div>
+        
+        
+        </div>
+        <!-- END Options area -->
+    
+    
+        <div class="form-group mt-4">
+            <button class="btn bg-blue" type="submit" name="submit"><span class="fi-checkmark"></span> Make Order</button>
+            <div class="btn bg-gray-10 shadow-none">Total price: <b>$<span id="usd-price">0</span></b>
+            </div>
+        
+        </div>
+    
+    </form>
+    <script>
+        $(function(){
+            $('.more-options').click(function (e){
+                e.preventDefault();
+                if ($('#options-area').is(":visible")) {
+                    $('#options-area').hide(200);
+                }else {
+                    $('#options-area').show(200);
+                }
+    
+            })
+        })
+    </script>
+    
+    <script>
+        // minimum qty alert
+        $("#quantity").on("change", function () {
+            var minQty = 10;
+            quantity = $(this).val();
+            if (quantity < minQty) {
+                alert("Minimum quantity is: " + minQty);
+            }
+        });
+    
+        // update price
+        initPrice = 7.000;
+    
+        $("#quantity").on("input", function(){
+            updatePrice();
+        });
+        $('input.extras').on('ifChecked', function () {
+            updatePrice();
+        });
+        $('input.extras').on('ifUnchecked', function () {
+            updatePrice();
+        });
+    
+        function updatePrice(){
+            totalPrice = 0;
+            qty = $("#quantity").val();
+            
+            extrasPrice = 0;
+            $('#extras input').each(function(){
+                if($(this).is(':checked')) {
+                    extraPrice = $(this).attr('price');
+                    extraMultiply = $(this).attr('multiply');
+                    if (extraMultiply == 1){
+                        extraPrice = extraPrice * qty
+                        extrasPrice += extraPrice;
+                    }else{
+                        extrasPrice = extrasPrice + extraPrice * 1;
+                    }
+                }
+            })
+    
+            totalPrice = (initPrice/100*qty) + (extrasPrice/100);
+            $('#usd-price').html(totalPrice.toFixed(2));
+        }
+    </script>
+                
+            </div>
+            
+            </div>
+        
+        </div>
+                     
+   </section>
