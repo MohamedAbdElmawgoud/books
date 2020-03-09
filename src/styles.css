@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+div[dir='rtl'] {
+    font-family: 'Amiri', serif;
+
+
+
+}
+
+header .navbar .nav-link {
+    letter-spacing: 0em !important;
+}

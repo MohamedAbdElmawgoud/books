@@ -1,19 +1,34 @@
 <div class="carda__body">
 
 <div class="carda__body pdn--as">
+	<div class="purusha" >
+		<h2>
+			Add  credit
+		</h2>
+		<button style="height:  40px;" class="btn btn-success" >
+Purusha
+		</button>
+	</div>
 		<div class="row no-gutter">
-				<div class="col-sm-6 clr-greenflat ">
+				<div class="col-sm-4 clr-greenflat ">
 					<h4 class="mrg--vt">
 						الرصيد الكلي
 					</h4>
 					<span class="text-mega"><span dir="rtl">$0.00</span></span>
 				</div>
-				<div class="col-sm-6">
-											<h4 class="mrg--vt">
-							الرصيد القابل للسحب
-						</h4>
-						<span class="clr-bluewood text-mega"><span dir="rtl">$0.00</span></span>
-									</div>
+				<div class="col-sm-4 clr-greenflat ">
+					<h4 class="mrg--vt">
+						 المكتملة الطلبات
+					</h4>
+					<span class="text-mega"><span dir="rtl">$0.00</span></span>
+				</div>
+				<div class="col-sm-4 clr-greenflat ">
+					<h4 class="mrg--vt">
+						الطلبات في الانتظار
+					</h4>
+					<span class="text-mega"><span dir="rtl">$0.00</span></span>
+				</div>
+	
 		</div>
 	</div>
 	
@@ -24,7 +39,7 @@
 			<thead>
 			  <tr>
 				<th scope="col">id</th>
-				<th scope="col">order name</th>
+				<th scope="col">item name</th>
 				<th scope="col">price</th>
 				<th scope="col">date</th>
 				<th scope="col">status</th>
@@ -32,30 +47,17 @@
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>22$</td>
-                <td>19/19/1919</td>
-				<td>Otto</td>
-				<td>5</td>
+			  <tr *ngFor="let item of orders" >
+				<th scope="row">{{item.id}}</th>
+				<td>{{item.item.name}}</td>
+				<td>{{item.totalAmount}}$</td>
+                <td>{{item.created_at | date}}</td>
+				<td>{{item.status }}</td>
+				<td>
+					<i class="fa fa-cloud-download" aria-hidden="true"></i>
+				</td>
 			  </tr>
-			  <tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>22$</td>
-                <td>19/19/1919</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-			  </tr>
-			  <tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>22$</td>
-                <td>19/19/1919</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-			  </tr>
+			 
 			</tbody>
 		  </table>
 	

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../apiServices/api.service';
 
 @Component({
   selector: 'report',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
+  orders;
+  constructor(private apiService : ApiService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.orders = await this.apiService.getOrders();
+    console.log(this.orders);
+    
   }
 
 }
