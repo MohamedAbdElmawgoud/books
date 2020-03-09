@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
       this.data= data;
       
     })
-    console.log( await this.apiService.getExtras());
     
   }
 
