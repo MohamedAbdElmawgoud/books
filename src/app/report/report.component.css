@@ -1,0 +1,75 @@
+.carda__body{
+    margin: 12%;
+}
+@media (max-width: 767px) {
+    h4.heada__title {
+      font-size: 16px; }
+  
+    .carda__body_profile {
+      padding: 17px !important; } }
+
+    
+.pdn--as {
+  padding: 14px ; }
+
+.pdn--as-imp {
+  padding: 14px !important; }
+
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0; }
+.row.no-gutter > [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0; }
+
+
+.clr-greenflat {
+        color: #1abc9c; }
+
+
+.mrg--vt, .collection-browse--table .info-td {
+  margin-top: 7px ;
+  margin-bottom: 7px ; }
+
+.text-mega {
+  font-size: 48px; }
+
+
+  .clr-bluewood, .clr-prj-completed {
+    color: #314459; } 
+
+
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-left-radius: -1px;
+  border-bottom-right-radius: -1px; 
+  border-top-width: 1;
+  border-bottom: 1px solid #ddd;
+  
+}
+.bg-white, .collection-browse--table {
+    background-color: white; 
+}
+.text-meta,
+.dropzone--box-message,
+.voicemessage--box-message,
+button,
+label,
+select {
+  font-family: 'Noto Kufi Arabic','Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px; 
+}
+
+.text-zeta14 {
+    font-size: 14px;  font-weight: normal;
+    color: #A94442; 
+}
+.text-right-xs {
+    text-align: right; 
+}
+.pdn--vt, {
+    padding-top: 7px ;
+    padding-bottom: 7px ; }
+

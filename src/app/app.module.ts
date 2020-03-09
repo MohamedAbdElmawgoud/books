@@ -17,6 +17,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { StoreComponent } from './store/store.component';
 import { FaqComponent } from './faq/faq.component';
 import { OrderComponent } from './order/order.component';
+import { ReportComponent } from './report/report.component';
 
 export  function  HttpLoaderFactory(http:  HttpClient) {
   return  new  TranslateHttpLoader(http, './assets/translate/', '.json');
@@ -35,6 +36,7 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     StoreComponent,
     FaqComponent,
     OrderComponent,
+    ReportComponent,
     
     
     
