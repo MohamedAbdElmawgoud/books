@@ -101,7 +101,7 @@ export class ApiService {
     });
   }
   async getOrders() {
-    let data = (<any>await this.httpClient.get(`${this.url}order/getAll?all=yes`, {
+    let data = (<any>await this.httpClient.get(`${this.url}users/orders?all=yes`, {
       headers: {
         Authorization: localStorage.getItem('token')
       }

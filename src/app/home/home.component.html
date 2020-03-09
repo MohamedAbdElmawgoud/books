@@ -5,13 +5,13 @@
           
 </div>
 
-<section class="home-slider owl-carousel"  *ngFor="let item of slider">
-  <div class="slider-item" style="background-image: url({{item.image}});">
+<section class="home-slider owl-carousel"  >
+  <div class="slider-item" *ngFor="let item of slider" style="background-image: url({{item.image}});">
     <div class="container">
       <div class="row slider-text align-items-center justify-content-center">
-        <div class="col-lg-7 text-center col-sm-12 element-animate">
-          <h1 class="mb-4"><span>{{item.id}}</span></h1>
-          <p class="mb-5 w-75">{{item.content}}</p>
+        <div class="col-lg-7 text-center col-sm-12  ">
+          <!-- <h1 class="mb-4"><span>{{item.id}}</span></h1> -->
+          <p class="mb-5 w-75">{{item.caption}}</p>
         </div>
       </div>
     </div>
@@ -22,6 +22,25 @@
 <!-- END slider -->
 
 
+<section class="section bg-light">
+  <div class="container" *ngFor="let item of services" >
+    <div class="row">
+      <div class="col-md-6 col-lg-4   mb-4">
+        <div class="media block-6 d-block text-center">
+          <img width="120px" src="{{item.image}}" alt="">
+          <div class="media-body">
+            <h3 class="heading">{{item.name}}</h3>
+            <p>{{item.caption}}</p>
+          </div>
+        </div>  
+
+      </div>
+      
+
+      </div>
+    </div>
+  
+</section>
 
 
 
@@ -31,15 +50,15 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 mb-5 order-2">
-        <form action="#" method="post">
+        <form [formGroup]="contactForm">
           <div class="row">
-            <div class="col-md-6 form-group" *ngFor="let item of contact">
+            <div class="col-md-6 form-group" >
               <label for="name">{{ 'Name' | translate }}</label>
-              <input type="text" id="name" class="form-control ">
+              <input formControlName="name" type="text" id="name" class="form-control ">
             </div>
             <div class="col-md-6 form-group">
               <label for="phone">{{ 'Telephone' | translate }}</label>
-              <input type="text" id="phone" class="form-control ">
+              <input formControlName="phone" type="text" id="phone" class="form-control ">
             </div>
           </div>
           <div class="row">
@@ -50,18 +69,20 @@
           <div class="row">
             <div class="col-md-12 form-group">
               <label for="email">{{ 'Email' | translate }}</label>
-              <input type="email" id="email" class="form-control ">
+              <input formControlName="mail" type="email" id="email" class="form-control ">
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 form-group">
               <label for="message">{{ 'Write Message' | translate }}</label>
-              <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+              <textarea formControlName="message" name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6 form-group">
-              <input type="submit" value= "{{ 'Send Message' | translate }}" class="btn btn-primary px-3 py-3">
+              <button (click)="submit()"  class="btn btn-primary px-3 py-3">
+                {{ 'Send Message' | translate }}
+              </button>
             </div>
           </div>
         </form>
@@ -95,7 +116,7 @@
 <!-- <section class="section blog">
   <div class="container">
 
-    <div class="row justify-content-center mb-5 element-animate">
+    <div class="row justify-content-center mb-5  ">
       <div class="col-md-8 text-center">
         <h2 class=" heading mb-4">Blog Posts</h2>
         <p class="mb-5 lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
@@ -105,7 +126,7 @@
     <div class="row">
       <div class="col-md-6">
 
-        <div class="media mb-4 d-md-flex d-block element-animate">
+        <div class="media mb-4 d-md-flex d-block  ">
           <a href="#" class="mr-5"><img src="/assets/images/industrial_blog_1.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
           <div class="media-body">
             <span class="post-meta">Feb 26th, 2018</span>
@@ -119,7 +140,7 @@
 
       </div>
       <div class="col-md-6">
-        <div class="media mb-4 d-md-flex d-block element-animate">
+        <div class="media mb-4 d-md-flex d-block  ">
           <a href="#" class="mr-5"><img src="/assets/images/industrial_blog_2.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
           <div class="media-body">
             <span class="post-meta">Feb 26th, 2018</span>
@@ -128,7 +149,7 @@
           </div>
         </div>
 
-        <div class="media mb-4 d-md-flex d-block element-animate">
+        <div class="media mb-4 d-md-flex d-block  ">
           <a href="#" class="mr-5"><img src="/assets/images/industrial_blog_3.jpg" alt="Free website template by Free-Template.co" class="img-fluid"></a>
           <div class="media-body">
             <span class="post-meta">Feb 26th, 2018</span>

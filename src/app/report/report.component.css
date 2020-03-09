@@ -1,6 +1,6 @@
 .carda__body{
-    margin-top: 12%;
-    text-align: center
+  margin-top: 120px;
+  text-align: center
 }
 @media (max-width: 767px) {
     h4.heada__title {
@@ -19,8 +19,8 @@
 .row.no-gutter {
   /* max-width: 20%;   */
   
-  margin-left: 35%;
-    margin-right: 35%; }
+  margin-left: 15%;
+    margin-right: 15%; }
 .row.no-gutter > [class*='col-'] {
       padding-right: 0;
       padding-left: 0; }
@@ -78,3 +78,23 @@ select {
     padding-top: 7px ;
     padding-bottom: 7px ; }
 
+
+
+   .purusha {
+      display: flex;
+    justify-content: space-between;
+    width: 55%;
+    margin: 15px auto;
+    }
+
+    .table {
+      width: 75%;
+      max-width: 100%;
+      background-color: transparent;
+      margin: auto;
+      margin-bottom: 3rem;
+      margin-top: 10px;
+      
+  }
+
+ 

@@ -2,7 +2,9 @@
 
     <div class="main">
         <form action="login" [formGroup]="signForm">
-          
+            <h3 style="text-align: center;padding: 10px;" >
+				{{ 'sign up' | translate }}
+			</h3>
             <div class="inset">
               <p>
                <label for="userName">{{ 'Username' | translate }}</label>
@@ -24,7 +26,7 @@
 
             </div>
         
-            <p class="p-container">
+            <p class="p-container" style="text-align: center;" >
               <button type="submit" (click)="signUp()" value="sign up">{{ 'sign up' | translate }}</button>
             </p>
         </form>

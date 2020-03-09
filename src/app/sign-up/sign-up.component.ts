@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../apiServices/api.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'sign-up',
@@ -15,7 +17,7 @@ export class SignUpComponent implements OnInit {
     name: new FormControl('', [Validators.required]),
 
   });
-  constructor(public translate: TranslateService, private apiService: ApiService) {
+  constructor(public translate: TranslateService, private apiService: ApiService, private router: Router) {
     const currentLanguage = translate.getBrowserLang();
     translate.setDefaultLang(currentLanguage);
     translate.use('currentLanguage');
@@ -32,7 +34,23 @@ export class SignUpComponent implements OnInit {
   }
   async signUp() {
     if (this.signForm.valid) {
-      await this.apiService.register(this.signForm.value)
+      try {
+        await this.apiService.register(this.signForm.value);
+        Swal.fire({
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.router.navigate(['profile'])
+      } catch (e) {
+        Swal.fire({
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 1500,
+          title: "please enter valid data"
+        })
+      }
+
     }
   }
 }
