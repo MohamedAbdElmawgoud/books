@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule ,  } from '@angular/core';
-import { ReactiveFormsModule ,  } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule ,  } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -47,6 +47,7 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
    
     TranslateModule.forRoot({
