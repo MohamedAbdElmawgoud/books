@@ -7,26 +7,23 @@
  
 <body>
 	<div class="main">
-		<form action="login" method="post">
+		<form action="login" [formGroup]="loginForm" >
     		
   			<div class="inset">
 	  			<p>
 	    		 <label for="userName">{{ 'Username' | translate }}</label>
-   	 			<input type="text" placeholder="User Name" required/>
+   	 			<input formControlName="email" type="text" placeholder="User Name" required/>
 				</p>
   				<p>
 				    <label for="password">{{ 'Password' | translate }}</label>
-				    <input type="password" placeholder="password" required/>
+				    <input formControlName="password" type="password" placeholder="password" required/>
   				</p>
-				  <p>
-				    <input type="checkbox" name="remember" id="remember">
-				    <label for="remember">{{ 'Agree' | translate }}</label>
-				  </p>
+		
  			 </div>
  	 
 			  <p class="p-container">
 			    <span><a href="#">{{ 'Forgot' | translate }}?</a></span>
-			    <button type="submit" value="Login">{{ 'Login' | translate }}</button>
+			    <button type="submit" (click)="login()">{{ 'Login' | translate }}</button>
 			  </p>
 		</form>
 	</div>  

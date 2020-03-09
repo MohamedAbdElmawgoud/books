@@ -1,42 +1,31 @@
 <body>
 
     <div class="main">
-        <form action="login" method="post">
+        <form action="login" [formGroup]="signForm">
           
             <div class="inset">
               <p>
                <label for="userName">{{ 'Username' | translate }}</label>
-                <input type="text" placeholder="User Name" required/>
+                <input formControlName="name" type="text" placeholder="User Name" required/>
             </p>
             <p>
                 <label for="Email">{{ 'Email' | translate }}</label>
-                 <input type="mail" placeholder="Email" required/>
+                 <input formControlName="email" type="mail" placeholder="Email" required/>
              </p>
-             <p>
-                <label for="Telephone">{{ 'Telephone' | translate }}</label>
-                 <input type="number" placeholder="Telephone" required/>
-             </p>
-             <p>
-                <label for="address"><b>{{ 'address' | translate }}</b></label>
-                
-                 <input type="text" name="address"placeholder="Address" required>
-             </p>
+
              <p>
                 <label for="psw"><b>{{ 'Password' | translate }}</b></label>
-                <input type="password"  name="psw" required>
+                <input  formControlName="password" type="password"  name="psw" required>
              </p>
               <p>
                   <label for="psw"><b>{{ 'confirm Password' | translate }}</b></label>
                   <input type="password"  name="psw" required>
               </p>
-              <p>
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">{{ 'Agree' | translate }}</label>
-              </p>
+
             </div>
         
             <p class="p-container">
-              <button type="submit" value="sign up">{{ 'sign up' | translate }}</button>
+              <button type="submit" (click)="signUp()" value="sign up">{{ 'sign up' | translate }}</button>
             </p>
         </form>
     </div>
