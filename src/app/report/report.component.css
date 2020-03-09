@@ -1,5 +1,6 @@
 .carda__body{
-    margin: 12%;
+    margin-top: 12%;
+    text-align: center
 }
 @media (max-width: 767px) {
     h4.heada__title {
@@ -16,8 +17,10 @@
   padding: 14px !important; }
 
 .row.no-gutter {
-    margin-left: 0;
-    margin-right: 0; }
+  /* max-width: 20%;   */
+  
+  margin-left: 35%;
+    margin-right: 35%; }
 .row.no-gutter > [class*='col-'] {
       padding-right: 0;
       padding-left: 0; }
@@ -32,7 +35,9 @@
   margin-bottom: 7px ; }
 
 .text-mega {
-  font-size: 48px; }
+  font-size: 48px; 
+}
+
 
 
   .clr-bluewood, .clr-prj-completed {
