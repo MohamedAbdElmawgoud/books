@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ApiService } from '../apiServices/api.service';
 
 @Component({
   selector: 'faq',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./faq.component.css']
 })
 export class FaqComponent implements OnInit {
+  Faqs ;
+  constructor(private apiService : ApiService  ) { }
 
-  constructor() { }
+  async ngOnInit() {
+    this.Faqs = await this.apiService.getFaqs();
 
-  ngOnInit(): void {
-  }
+  };
+  
 
 }
