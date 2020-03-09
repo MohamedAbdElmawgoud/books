@@ -1,25 +1,17 @@
+<section class="section" *ngFor="let item of about">
+  <div class="container">
 
-    
-
-   
-
-  
-
-    
-    
-    <section class="section" *ngFor="let item of about">
-      <div class="container">
-       
-        <div class="row">
-          <div class="col-lg-12">
-              <div class="media-body">
-                <h3 class="mt-0 text-black"> {{item.header}}</h3>
-                <h3 class="mt-0 text-black"> {{item.content}}</h3>
-
-              </div>
-            </div>
-          </div>
-
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="media-body">
+          <h3 class="mt-0 text-black" style="text-align: center;"> {{item.header}}</h3>
+          <p>
+            {{item.content}}
+          </p>
         </div>
-        
-    </section>
+      </div>
+    </div>
+
+  </div>
+
+</section>
