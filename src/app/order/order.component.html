@@ -4,12 +4,12 @@
                 <div class="col-lg-8 pb-4">
                     
                     <form method="post" onsubmit="submitForm(this,'sorder.php' )" prevent-default="">
-        
+                           
         <div id="extras" class="form-group">
             <div>Available Extras:
 
             </div>
-                        <label >
+                        <label *ngFor="let item of extras" style="display: block;">
                     <div class="icheckbox_minimal-blue" style="position: relative;">
                         <input class="extras check-record minimal" type="checkbox" name="extras[]" 
                         price="0.01" multiply="1" value="1" 
@@ -17,86 +17,12 @@
                         <ins class="iCheck-helper" 
                         style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; ">
                     </ins>
-                    </div> Indexer #1 (95%+ Crawled rate)                <div class="badge bg-gray-10">
-                        Price: $0.0001                
+                    </div> {{item.name}}   <div class="badge bg-gray-10">
+                            {{item.price}}                
                     </div>
+                    
                 </label>
-                <br>
-                        <label >
-                    <div class="icheckbox_minimal-blue" style="position: relative;">
-                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
-                        price="0.10" multiply="1" value="2" 
-                        style="position: absolute; ">
-                        <ins class="iCheck-helper" 
-                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
-                    </div> Indexer #2 (Very High indexer rate)                <div class="badge bg-gray-10">
-                        Price: $0.001                
-                    </div>
-                </label>
-                <br>
-                        <label >
-                    <div class="icheckbox_minimal-blue" style="position: relative;">
-                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
-                        price="0.25" multiply="1" value="3" 
-                        style="position: absolute; ">
-                        <ins class="iCheck-helper" 
-                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
-                    </div> Indexer #3 (Maximum indexer rate)                <div class="badge bg-gray-10">
-                        Price: $0.0025                
-                    </div>
-                </label>
-                <br>
-                        <label >
-                    <div class="icheckbox_minimal-blue" style="position: relative;">
-                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
-                        price="10.00" multiply="0" value="11" 
-                        style="position: absolute; ">
-                        <ins class="iCheck-helper" 
-                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
-                    </div> 100 Unique Articles for submission                <div class="badge bg-gray-10">
-                        Price: $0.1                
-                    </div>
-                </label>
-                <br>
-                        <label >
-                    <div class="icheckbox_minimal-blue" style="position: relative;">
-                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
-                        price="50.00" multiply="0" value="12" 
-                        style="position: absolute; ">
-                        <ins class="iCheck-helper" 
-                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
-                    </div> 500 Unique Articles for submission                <div class="badge bg-gray-10">
-                        Price: $0.5                
-                    </div>
-                </label>
-                <br>
-                        <label >
-                    <div class="icheckbox_minimal-blue" style="position: relative;">
-                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
-                        price="100.00" multiply="0" value="13" 
-                        style="position: absolute; ">
-                        <ins class="iCheck-helper" 
-                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
-                    </div> 1000 Unique Articles for submission                <div class="badge bg-gray-10">
-                        Price: $1                
-                    </div>
-                </label>
-                <br>
-                        <label >
-                    <div class="icheckbox_minimal-blue" style="position: relative;">
-                        <input class="extras check-record minimal" type="checkbox" name="extras[]" 
-                        price="500.00" multiply="0" value="14" 
-                        style="position: absolute; ">
-                        <ins class="iCheck-helper" 
-                        style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; "></ins>
-                    </div> 5,000 Unique Articles for submission                <div class="badge bg-gray-10">
-                        Price: $5                
-                    </div>
-                </label>
-                <br>
-                
-            </div>
-    
+        </div>
         <div class="form-group">
             <label for="quantity">Quantity:</label> <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Order quantity (minimum 10)"><span class="fi-question-circle text-yellow"></span></a>
             <input type="number" class="form-control" name="qty" id="quantity" placeholder="Quantity (Min: 10)" required="">
@@ -124,10 +50,7 @@
 </div>
     
        
-        <div class="mt-4 mb-3">
-            <a href="#" class="more-options"><i class="fi-gears"></i> Advanced options</a>
-        
-        </div>
+      
     
         <!-- Start Options area -->
         <div id="options-area" class="bg-gray-05 p-3" 
