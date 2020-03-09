@@ -9,9 +9,8 @@ import {TranslateService} from '@ngx-translate/core';
 export class ContactComponent implements OnInit {
 
   constructor(public translate:  TranslateService) { 
-    const  currentLanguage  =  translate.getBrowserLang();
-    translate.setDefaultLang(currentLanguage);
-    translate.use('currentLanguage'); }
+    const  currentLanguage  =  localStorage.getItem('lng') || 'en'
+    this.Translate(currentLanguage) }
 
   ngOnInit(): void {
   }

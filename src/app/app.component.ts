@@ -10,9 +10,8 @@ export class AppComponent {
   textDir: string;
   title = 'books';
   constructor(public translate:  TranslateService) { 
-    const  currentLanguage  =  translate.getBrowserLang();
-    translate.setDefaultLang(currentLanguage);
-    translate.use('currentLanguage');
+    const  currentLanguage  =  localStorage.getItem('lng') || 'en'
+    this.Translate(currentLanguage)
     this.translate.onLangChange.subscribe((event: LangChangeEvent) =>
     {
       if(event.lang == 'ar')

@@ -48,11 +48,11 @@
              
 
              
-              <li class="nav-item" (click)="Translate('en')">
+              <li class="nav-item" *ngIf="currentLanguage == 'ar'" (click)="Translate('en')">
                 <span class="nav-link" >English</span>
               </li>
 
-              <li class="nav-item" (click)="Translate('ar')">
+              <li class="nav-item" *ngIf="currentLanguage == 'en'" (click)="Translate('ar')">
                 <span class="nav-link" >عربي</span>
               </li>
 
