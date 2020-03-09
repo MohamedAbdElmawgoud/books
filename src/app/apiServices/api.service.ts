@@ -13,7 +13,7 @@ export class ApiService {
   private url = 'http://backend.q3seo.com/books/public/api/';
   defaultLng;
   constructor(private httpClient: HttpClient, private translateService: TranslateService) {
-    this.defaultLng = this.translateService.defaultLang
+    this.defaultLng = localStorage.getItem('lng')
   }
 
   async getSlider() {
