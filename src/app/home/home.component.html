@@ -5,78 +5,25 @@
           
 </div>
 
-<section class="home-slider owl-carousel">
-  <div class="slider-item" style="background-image: url({{data[0].pathImage}});">
+<section class="home-slider owl-carousel"  *ngFor="let item of slider">
+  <div class="slider-item" style="background-image: url({{item.image}});">
     <div class="container">
       <div class="row slider-text align-items-center justify-content-center">
         <div class="col-lg-7 text-center col-sm-12 element-animate">
-          <div class="btn-play-wrap mx-auto"><p class="mb-4"><a href="https://vimeo.com/59256790" data-fancybox data-ratio="2" class="btn-play"><span class="ion ion-ios-play"></span></a></p></div>
-          <h1 class="mb-4"><span>{{data[0].descrption}}</span></h1>
-          <p class="mb-5 w-75">{{data[0].paragraph}}</p>
+          <h1 class="mb-4"><span>{{item.id}}</span></h1>
+          <p class="mb-5 w-75">{{item.content}}</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="slider-item" style="background-image: url({{data[1].pathImage}});">
-    <div class="container">
-      <div class="row slider-text align-items-center justify-content-center">
-        <div class="col-lg-7 text-center col-sm-12 element-animate">
-          <div class="btn-play-wrap mx-auto"><p class="mb-4"><a href="https://vimeo.com/59256790" data-fancybox data-ratio="2" class="btn-play"><span class="ion ion-ios-play"></span></a></p></div>
-          <h1><span>{{data[1].descrption}}</span></h1>
-          <p class="mb-5 w-75">{{data[1].paragraph}}</p>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-
+  
 </section>
 <!-- END slider -->
 
 
 
 
-
-<section class="section element-animate">
-  <div class="container">
-    <div class="row align-items-center mb-5">
-      <div class="col-lg-7 order-md-2">
-        <div class="scaling-image"><div class="frame"><img src={{data[2].pathImage}} alt="Free template by Free-Template.co" class="img-fluid"></div></div>
-      </div>
-      <div class="col-md-5 pr-md-5 mb-5">
-        <div class="block-41">
-          <h2 class="block-41-heading mb-5">{{data[2].descrption}}</h2>
-          <div class="block-41-text">
-            <p>{{data[2].paragraph}}</p>
-            <p><a href="#" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="section element-animate bg-light">
-  <div class="container">
-    <div class="row align-items-center mb-5">
-      <div class="col-lg-7 order-md-1">
-        <div class="scaling-image"><div class="frame"><img src={{data[3].pathImage}} alt="Free template by Free-Template.co" class="img-fluid"></div></div>
-      </div>
-      <div class="col-md-5 pl-md-5 mb-5 order-md-2">
-        <div class="block-41">
-          <h2 class="block-41-heading mb-5">{{data[3].descrption}}</h2>
-          <div class="block-41-text">
-            <p>{{data[3].paragraph}}</p>
-            <p><a href="#" class="readmore">Read More <span class="ion-android-arrow-dropright-circle"></span></a></p>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
 
 
 <!-- contact -->
@@ -86,7 +33,7 @@
       <div class="col-md-6 mb-5 order-2">
         <form action="#" method="post">
           <div class="row">
-            <div class="col-md-6 form-group">
+            <div class="col-md-6 form-group" *ngFor="let item of contact">
               <label for="name">{{ 'Name' | translate }}</label>
               <input type="text" id="name" class="form-control ">
             </div>

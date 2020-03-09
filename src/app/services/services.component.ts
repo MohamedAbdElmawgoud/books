@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../apiServices/api.service';
 
 @Component({
   selector: 'app-services',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent implements OnInit {
+  service;
 
-  constructor() { }
+  constructor(private apiService : ApiService  ) { }
 
-  ngOnInit(): void {
-  }
+  async ngOnInit() {
+    this.service = await this.apiService.getServices();
 
+  };
+  
 }

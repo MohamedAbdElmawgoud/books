@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from "src/app/admin/service.service";
+import { ApiService } from '../apiServices/api.service';
 
 @Component({
   selector: 'about',
@@ -7,18 +8,16 @@ import { ServiceService } from "src/app/admin/service.service";
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  data: {};
+  about: {};
 
-  constructor(public Service: ServiceService) {
+  constructor(private apiService : ApiService) {
     
   }
 
 
-  ngOnInit(): void {
-    this.Service.get('about').subscribe(data=>{
-      console.log(data);
-      this.data= data;
-    })
-  }
+  async ngOnInit() {
+    this.about = await this.apiService.getAboutUs();
 
+  };
+  
 }

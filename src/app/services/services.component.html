@@ -17,71 +17,23 @@
 
 
 <section class="section bg-light">
-  <div class="container">
+  <div class="container" *ngFor="let item of service" >
     <div class="row">
       <div class="col-md-6 col-lg-4 element-animate mb-4">
         <div class="media block-6 d-block text-center">
           <div class="icon mb-3"><span class="ion-android-notifications text-primary"></span></div>
           <div class="media-body">
-            <h3 class="heading">Modern Design</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+            <h3 class="heading">{{item.name}}</h3>
+            <p>{{item.caption}}</p>
           </div>
         </div>  
 
       </div>
-      <div class="col-md-6 col-lg-4 element-animate mb-4">
-        <div class="media block-6 d-block text-center">
-          <div class="icon mb-3"><span class="ion-heart text-primary"></span></div>
-          <div class="media-body">
-            <h3 class="heading">Built With Passion</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-          </div>
-        </div> 
-
-      </div>
-      <div class="col-md-6 col-lg-4 element-animate mb-4">
-        <div class="media block-6 d-block text-center">
-          <div class="icon mb-3"><span class="ion-flash text-primary"></span></div>
-          <div class="media-body">
-            <h3 class="heading">Fast Loading</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-          </div>
-        </div> 
-
-      </div>
-
-      <div class="col-md-6 col-lg-4 element-animate mb-4">
-        <div class="media block-6 d-block text-center">
-          <div class="icon mb-3"><span class="ion-leaf text-primary"></span></div>
-          <div class="media-body">
-            <h3 class="heading">Renewable</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-          </div>
-        </div>  
-
-      </div>
-      <div class="col-md-6 col-lg-4 element-animate mb-4">
-        <div class="media block-6 d-block text-center">
-          <div class="icon mb-3"><span class="ion-ios-lightbulb text-primary"></span></div>
-          <div class="media-body">
-            <h3 class="heading">Versatile</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-          </div>
-        </div> 
-
-      </div>
-      <div class="col-md-6 col-lg-4 element-animate mb-4">
-        <div class="media block-6 d-block text-center">
-          <div class="icon mb-3"><span class="ion-android-apps text-primary"></span></div>
-          <div class="media-body">
-            <h3 class="heading">Industrial Projects</h3>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-          </div>
-        </div> 
+      
 
       </div>
     </div>
-  </div>
+  
 </section>
 <!-- END section -->
 

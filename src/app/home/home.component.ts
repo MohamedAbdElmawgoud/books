@@ -9,7 +9,8 @@ import { ApiService } from '../apiServices/api.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-   data;
+   slider;
+   contact;
   
   constructor(public Service: ServiceService,public translate:  TranslateService ,private apiService : ApiService ) { 
     const  currentLanguage  =  translate.getBrowserLang();
@@ -18,13 +19,10 @@ export class HomeComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.Service.get('slider').subscribe(data=>{
-      this.data= data;
-      
-    })
-    
-  }
-
+    this.slider = await this.apiService.getFaqs();
+  // this.contact = await this.apiService.contact();
+  };
+  
   Translate(type: string){
     
     

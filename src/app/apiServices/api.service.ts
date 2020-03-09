@@ -161,7 +161,7 @@ export class ApiService {
 
   async contact(params: {
     'name': string,
-    'phone': string,
+    'phone': number,
     "mail": string,
     "message": string
 
