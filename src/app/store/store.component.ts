@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../apiServices/api.service';
 
 @Component({
   selector: 'store',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./store.component.css']
 })
 export class StoreComponent implements OnInit {
+shop;
+  constructor(private apiService : ApiService ) { }
 
-  constructor() { }
+  async ngOnInit() {
+    this.shop = await this.apiService.getShop();
 
-  ngOnInit(): void {
-  }
-
+  };
 }
