@@ -31,7 +31,15 @@
        "store":"store",
        "faq":"faq",
        "order":"order",
-       "report":"report"
+       "report":"report",
+       "All_Products":"All Products",
+       "First Name":"First Name",
+       "Last Name":"Last Name",
+       "is required":" is required",
+       "must be":"must be",
+       " a letaset 6 charector":" a letaset 6 charector",
+       "match":"match"
+       
        
      
      

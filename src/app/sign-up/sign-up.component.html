@@ -7,19 +7,19 @@
                         </h3>
                     <div class="form-group">
                            
-                            <label for="firstName">First Name</label>
+                            <label for="firstName">{{ 'First Name' | translate }}</label>
                             <input type="text"  class="form-control" formControlName="firstName" 
                             [ngClass]="{'is-invalid':registerForm.get('firstName').touched && registerForm.get('firstName').invalid}" required />
                             <div class="invalid-feedback">
-                              <div>First Name is required</div>
+                              <div>{{ 'First Name' | translate }} {{ 'is required' | translate }}</div>
                             </div>
                           </div>
                           <div class="form-group">
-                                <label for="lastName">Last Name</label>
+                                <label for="lastName">{{ 'Last Name' | translate }}</label>
                                 <input type="text" class="form-control" formControlName="lastName" 
                                 [ngClass]="{'is-invalid':registerForm.get('lastName').touched && registerForm.get('lastName').invalid}" required />
                                 <div class="invalid-feedback">
-                                  <div>Last Name is required</div>
+                                  <div>{{ 'Last Name' | translate }} {{ 'is required' | translate }}</div>
                                 </div>
                               </div>
                     <div class="form-group">
@@ -28,8 +28,8 @@
                                  [ngClass]="{'is-invalid':registerForm.get('email').touched && registerForm.get('email').invalid}"   />
                                <div *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid"  class="invalid-feedback"
                                >
-                                 <div *ngIf="registerForm.get('email').errors.required">Email Name is required</div>
-                                 <div *ngIf="registerForm.get('email').errors.email">Email must be a valid email Address</div>
+                                 <div *ngIf="registerForm.get('email').errors.required">{{ 'Email' | translate }} {{ 'is required' | translate }}</div>
+                                 <div *ngIf="registerForm.get('email').errors.email">{{ 'Email' | translate }} {{ 'must be' | translate }} a valid {{ 'Email' | translate }} </div>
                                </div>
                            </div>
                            
@@ -38,19 +38,19 @@
                             <input type="password" class="form-control"  formControlName="password" placeholder="password"
                             [ngClass]="{'is-invalid':registerForm.get('password').touched && registerForm.get('password').invalid}" />
                             <div *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid"  class="invalid-feedback">
-                              <div *ngIf="registerForm.get('password').errors.required">Password is required</div>
-                              <div *ngIf="registerForm.get('password').errors.minlength">Password  must be a letaset 6 charector</div>
+                              <div *ngIf="registerForm.get('password').errors.required">{{ 'Password' | translate }} {{ 'is required' | translate }}</div>
+                              <div *ngIf="registerForm.get('password').errors.minlength">{{ 'Password' | translate }}  {{ 'must be' | translate }}{{ ' a letaset 6 charector' | translate }}</div>
                             </div>
                         </div>
                 
                       
                     <div class="form-group">
-                        <label>Confirm Password</label>
+                        <label>{{ 'confirm Password' | translate }}</label>
                         <input type="password" formControlName="confirmPassword" class="form-control"
                          [ngClass]="{ 'is-invalid': submitted && registerForm.get('confirmPassword').errors }" />
                         <div *ngIf="submitted && registerForm.get('confirmPassword').errors" class="invalid-feedback">
-                            <div *ngIf="registerForm.get('confirmPassword').errors.required">Confirm Password is required</div>
-                            <div *ngIf="registerForm.get('confirmPassword').errors.checkPasswords">Passwords must match</div>
+                            <div *ngIf="registerForm.get('confirmPassword').errors.required">{{ 'confirm Password' | translate }} {{ 'is required' | translate }}</div>
+                            <div *ngIf="registerForm.get('confirmPassword').errors.checkPasswords">{{ 'Password' | translate }} {{ 'must be' | translate }} {{ 'match' | translate }}</div>
                         </div>
                     </div>
                   

@@ -30,5 +30,13 @@
     "store":"المتجر",
     "faq":"اساله شائعه",
     "order":"طلب",
-    "report":"تقرير"
+    "report":"تقرير",
+    "All_Products":"كل المنتجات",
+    "First Name":"الاسم الاول",
+    "Last Name":"الاسم الاخير",
+    "is required":" مطلوب ",
+    "must be":"يجب أن يكون",
+    " a letaset 6 charector":"على الأقل 6 خانات",
+    "match":"تطابق"
+    
   }
