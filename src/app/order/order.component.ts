@@ -19,8 +19,7 @@ export class OrderComponent implements OnInit {
   constructor(private apiService : ApiService ) { }
 
   async ngOnInit() {
-    this.extras = await this.apiService.getExtras();
-    this.Categories = await this.apiService.getCategories();
+
    
   }
   getForm(){

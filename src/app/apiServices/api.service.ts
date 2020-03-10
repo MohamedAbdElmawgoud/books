@@ -86,7 +86,8 @@ export class ApiService {
     return data.map(ele => {
       return {
         name: this.defaultLng == LNGS.en ? ele.name : ele.nameAr,
-        price: ele.price
+        price: ele.price,
+        id : ele.data ? JSON.parse((ele.data)).id : ''
       }
     });
   }
@@ -97,6 +98,7 @@ export class ApiService {
       return {
         id: ele.id,
         name: this.defaultLng == LNGS.en ? ele.name : ele.nameAr,
+        data : ele.data ? Object.keys(JSON.parse(ele.data))[0] : ''
       }
     });
   }
