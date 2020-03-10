@@ -2,9 +2,9 @@
 
 
 <section class="section bg-light">
-  <div class="container" *ngFor="let item of service" >
+  <div class="container" >
     <div class="row">
-      <div class="col-md-6 col-lg-4   mb-4">
+      <div *ngFor="let item of service"  class="col-md-6 col-lg-4   mb-4">
         <div class="media block-6 d-block text-center">
           <img width="120px" src="{{item.image}}" alt="">
           <div class="media-body">

@@ -12,12 +12,10 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 })
 export class SignUpComponent implements OnInit {
   registerForm=new FormGroup({
-    firstName: new FormControl('', [
+    name: new FormControl('', [
       Validators.required,
     ]),
-    lastName: new FormControl('', [
-      Validators.required,
-    ]),
+
     email: new FormControl('', [
       Validators.required,
       Validators.email
@@ -54,34 +52,32 @@ export class SignUpComponent implements OnInit {
 
   return pass === confirmPass ? null : { notSame: true }     
 }
-  onSubmit() {
-    console.log(this.registerForm.value);
-  }
+
 
   Translate(type: string) {
 
     this.translate.use(type);// ar or en
 
   }
-  // async signUp() {
-  //   if (this.signForm.valid) {
-  //     try {
-  //       await this.apiService.register(this.signForm.value);
-  //       Swal.fire({
-  //         icon: 'success',
-  //         showConfirmButton: false,
-  //         timer: 1500
-  //       })
-  //       this.router.navigate(['profile'])
-  //     } catch (e) {
-  //       Swal.fire({
-  //         icon: 'error',
-  //         showConfirmButton: false,
-  //         timer: 1500,
-  //         title: "please enter valid data"
-  //       })
-  //     }
+  async signUp() {
+    if (this.registerForm.valid) {
+      try {
+        await this.apiService.register(this.registerForm.value);
+        Swal.fire({
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.router.navigate(['profile'])
+      } catch (e) {
+        Swal.fire({
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 1500,
+          title: "please enter valid data"
+        })
+      }
 
-  //   }
-  // }
+    }
+  }
 }

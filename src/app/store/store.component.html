@@ -67,7 +67,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">make an order</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -122,24 +122,20 @@
                 " required=""></textarea>
 
             </div>
-            <div id="keywords-block" class="form-group">
+            <!-- <div id="keywords-block" class="form-group">
               <label for="keywords">comment:</label>
-              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="One keyword per line or comma separated.">
-                <span class="fi-question-circle text-yellow">
-                </span>
-              </a>
+  
               <textarea formControlName="comment" class="form-control" name="comment" id="keywords" cols="30" rows="4" placeholder="Keyword Example One
                 " required=""></textarea>
 
-            </div>
+            </div> -->
 
 
 
-            <div id="extras" class="form-group">
-              <div>Categories:
+            <div  class="form-group" style="width: 100%;" >  
+              <label>Categories:
 
-              </div>
+              </label>
                 <select  formControlName="article" class="form-control" >
                     <option *ngFor="let item of Categories" value="{{item.data}}">
                         {{item.name}}
@@ -149,7 +145,7 @@
 
 
 
-            <div class="form-group mt-4">
+            <div class=" buttons form-group mt-4">
               <button class="btn bg-blue" (click)="submit()" name="submit">
                 <span class="fi-checkmark"></span> Make Order</button>
               <div class="btn bg-gray-10 shadow-none">Total price: <b>$<span id="usd-price">{{total}}</span></b>

@@ -49,19 +49,17 @@ export class LogInComponent implements OnInit {
 
   }
 
-  onSubmit(){
-    console.log(this.logInForm.value);
-  }
 
-  // async login() {
-  //   if (this.logInForm.valid) {
-  //     await this.apiService.login(this.logInForm.value);
-  //     Swal.fire({
-  //             icon: 'success',
-  //       showConfirmButton: false,
-  //       timer: 1500
-  //           })
-  //     this.router.navigate(['profile'])
-  //   }
-  // }
+
+  async login() {
+    if (this.logInForm.valid) {
+      await this.apiService.login(this.logInForm.value);
+      Swal.fire({
+              icon: 'success',
+        showConfirmButton: false,
+        timer: 1500
+            })
+      this.router.navigate(['profile'])
+    }
+  }
 }

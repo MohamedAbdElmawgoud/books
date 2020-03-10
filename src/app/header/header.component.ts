@@ -30,4 +30,8 @@ export class HeaderComponent implements OnInit {
     this.translate.use(type);// ar or en
     localStorage.setItem('lng' ,type)
   }
+  logout(){
+    localStorage.clear()
+    window.location.reload()
+  }
 }
