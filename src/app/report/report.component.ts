@@ -8,11 +8,14 @@ import { ApiService } from '../apiServices/api.service';
 })
 export class ReportComponent implements OnInit {
   orders;
+  pendingOrders ;
+  completedOrders;
   constructor(private apiService : ApiService) { }
 
   async ngOnInit() {
     this.orders = await this.apiService.getOrders();
-    console.log(this.orders);
+    this.pendingOrders = this.orders.filter(ele=>ele.status== 'pending').length
+    this.completedOrders = this.orders.filter(ele=>ele.response[0]).length
     
   }
 
