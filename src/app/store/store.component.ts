@@ -78,7 +78,7 @@ export class StoreComponent implements OnInit {
   "extras": this.selectedExtras.map(ele=>ele.id),
       ...this.orderForm.value,
     }
-  // await this.apiService.order(params);
+  await this.apiService.order(params);
   document.getElementById('close').click()
 
   Swal.fire({
