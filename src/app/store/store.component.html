@@ -1,61 +1,159 @@
-
 <section class="pt-6 pb-4">
-    <div class="container"  >
-        <div class="text-center">
-            <h3>Backlinks Services</h3>
-            <div class="line-shape line-shape-center bg-gray-90"></div>
-            <div class="mt-5 mb-5 row">
-                <div class="col-md-5 col-sm-12 m-auto">
-                    <div class="d-flex">
-                        <input type="text" class="form-control form-control-lg pr-5" id="search" placeholder="Search">
-                        <span class="fi-magnifier d-flex align-self-center search-icon"></span>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="text-center">
+      <h3>Backlinks Services</h3>
+      <div class="line-shape line-shape-center bg-gray-90"></div>
+      <div class="mt-5 mb-5 row">
+        <div class="col-md-5 col-sm-12 m-auto">
+          <div class="d-flex">
+            <input type="text" class="form-control form-control-lg pr-5" id="search" placeholder="Search">
+            <span class="fi-magnifier d-flex align-self-center search-icon"></span>
+          </div>
         </div>
-        <div class="mt-4" id="servicelist" *ngFor="let item of shop">
-            <div class="row">            <div class="col-lg-6 col-md-12 pb-5 item">
-                <div class="border rounded-xs shadow bg-white">
-                    <div class="row p-2">
-                        <div class="col-10" (click)="getOrder()">
-                            <div>
-                                <div class="mb-1">
-                                    {{item.description}}                                </div>
-                                <span data-toggle="tooltip" data-placement="top"  data-original-title="Service code" class="badge bg-aqua">{{item.name}}</span>
-                                <span data-toggle="tooltip" data-placement="top"  data-original-title="Price per 1" class="badge bg-yellow">{{item.price}}</span>
-                                <span data-toggle="tooltip" data-placement="top"  data-original-title="Order minimum quantity" class="badge bg-purple">{{item.id}}</span>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div>
-                                <a href="order.php?id=22">
-                                    <span data-toggle="tooltip" data-placement="top"  data-original-title="Submit WEB2 order" class="float-right p-3 bg-aqua rounded-xs fi-rocket f-150">
-                                       
-                                        
-                                    </span>
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2 collapse actions" style="display: none;">
-                        <div class="col">
-                            <div class="text-center bg-gray-05 m-0 pt-3">
-                                <a class="btn bg-blue text-white mb-3" href="order.php?id=22">
-                                    Make Order
-                                </a>
-                                <a class="small ml-2" href="details.php?id=22">
-                                    Details ...
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       
-                </div>
+      </div>
     </div>
-    
-    
+    <div class="mt-4" id="servicelist" *ngFor="let item of shop">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 pb-5 item">
+          <div class="border rounded-xs shadow bg-white">
+            <div class="row p-2">
+              <div class="col-10" data-toggle="modal" data-target="#exampleModal" (click)="getOrder(item)">
+                <div>
+                  <div class="mb-1">
+                    {{item.description}} </div>
+                  <span data-toggle="tooltip" data-placement="top" data-original-title="Service code"
+                    class="badge bg-aqua">{{item.name}}</span>
+                  <span data-toggle="tooltip" data-placement="top" data-original-title="Price per 1"
+                    class="badge bg-yellow">{{item.price}}</span>
+                  <span data-toggle="tooltip" data-placement="top" data-original-title="Order minimum quantity"
+                    class="badge bg-purple">{{item.id}}</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div>
+                  <a href="order.php?id=22">
+                    <span data-toggle="tooltip" data-placement="top" data-original-title="Submit WEB2 order"
+                      class="float-right p-3 bg-aqua rounded-xs fi-rocket f-150">
+
+
+                    </span>
+
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-2 collapse actions" style="display: none;">
+              <div class="col">
+                <div class="text-center bg-gray-05 m-0 pt-3">
+                  <a class="btn bg-blue text-white mb-3" href="order.php?id=22">
+                    Make Order
+                  </a>
+                  <a class="small ml-2" href="details.php?id=22">
+                    Details ...
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
 </section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">make an order</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <section class="pt-4 pb-4">
+          <form>
+
+            <div id="extras" class="form-group">
+              <div>Available Extras:
+
+              </div>
+              <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [data]="extras" 
+                [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="onDeSelect($event)">
+              </ng-multiselect-dropdown>
+
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity:</label>
+              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
+                data-original-title="Order quantity (minimum 10)">
+                <span class="fi-question-circle text-yellow">
+                </span>
+              </a>
+              <input  formControlName="quantity" min="10" type="number" class="form-control" name="qty" id="quantity" placeholder="Quantity" required="">
+
+            </div>
+
+
+
+            <div class="form-group">
+
+              <label for="links">Links:</label>
+              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
+                data-original-title="One link/URL per line.">
+                <span class="fi-question-circle text-yellow">
+                </span>
+              </a>
+
+              <textarea   formControlName="links" name="links" class="form-control" id="links" cols="30" rows="4" placeholder="http://example.com/page-one.html
+               " required=""></textarea>
+
+            </div>
+
+            <div id="keywords-block" class="form-group">
+              <label for="keywords">Keywords:</label>
+              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
+                data-original-title="One keyword per line or comma separated.">
+                <span class="fi-question-circle text-yellow">
+                </span>
+              </a>
+              <textarea formControlName="keywords" class="form-control" name="kws" id="keywords" cols="30" rows="4" placeholder="Keyword Example One
+                " required=""></textarea>
+
+            </div>
+
+
+
+            <div id="extras" class="form-group">
+              <div>Categories:
+
+              </div>
+                <select class="form-control" >
+                    <option *ngFor="let item of Categories" value="{{item.data}}">
+                        {{item.name}}
+                    </option>
+                </select>
+            </div>
+
+
+
+            <div class="form-group mt-4">
+              <button class="btn bg-blue" type="submit" name="submit">
+                <span class="fi-checkmark"></span> Make Order</button>
+              <div class="btn bg-gray-10 shadow-none">Total price: <b>$<span id="usd-price">{{total}}</span></b>
+              </div>
+
+            </div>
+
+          </form>
+
+        </section>
+      </div>
+
+    </div>
+  </div>
+</div>
