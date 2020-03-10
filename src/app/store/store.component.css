@@ -15,7 +15,7 @@ mat-icon{
   margin:0px;
 }
 section{
-  margin: 10%
+  margin: 3%
 }
 h1,
 h2,
@@ -38,11 +38,11 @@ ol {
 }
 
 a {
-    color: #048ed0;
+    color: #fd5f00;
 }
 
 a:hover {
-    color: #337ab7;
+    color: #fd5f00;
 }
 
 a,
@@ -123,13 +123,13 @@ li {
 .alert-info,
 .btn-info,
 .badge-info {
-  background-color: #00c0ef !important;
+  background-color: #fd5f00 !important;
 }
 .bg-blue,
 .alert-primary,
 .btn-primary,
 .badge-primary {
-  background-color: #048ed0 !important;
+  background-color: #fd5f00 !important;
 }
 
 
@@ -190,4 +190,26 @@ li {
 
  .fi-rocket:before {
   content: "\e908";
+}
+
+
+.popout {
+  animation: popout 0.4s ease;
+  -webkit-animation: popout 0.4s ease;
+}
+@keyframes popout {
+  from{transform:scale(0)}
+  80%{transform:scale(1.2)}
+  to{transform:scale(1)}
+}
+@-webkit-keyframes popout {
+  from{-webkit-transform:scale(0)}
+  80%{-webkit-transform:scale(1.2)}
+  to{-webkit-transform:scale(1)}
+}
+
+.head {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

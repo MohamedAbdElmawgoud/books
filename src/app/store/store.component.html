@@ -1,40 +1,38 @@
 <section class="pt-6 pb-4">
   <div class="container">
     <div class="text-center">
-      <h3>Backlinks Services</h3>
+      <h3>All Products</h3>
       <div class="line-shape line-shape-center bg-gray-90"></div>
-      <div class="mt-5 mb-5 row">
-        <div class="col-md-5 col-sm-12 m-auto">
-          <div class="d-flex">
-            <input type="text" class="form-control form-control-lg pr-5" id="search" placeholder="Search">
-            <span class="fi-magnifier d-flex align-self-center search-icon"></span>
-          </div>
-        </div>
-      </div>
+
     </div>
-    <div class="mt-4" id="servicelist" *ngFor="let item of shop">
-      <div class="row">
-        <div class="col-lg-6 col-md-12 pb-5 item">
+    <div class="row">
+
+        <div *ngFor="let item of shop" class=" popout col-lg-6 col-md-12 pb-5 item">
           <div class="border rounded-xs shadow bg-white">
             <div class="row p-2">
               <div class="col-10" data-toggle="modal" data-target="#exampleModal" (click)="getOrder(item)">
                 <div>
-                  <div class="mb-1">
-                    {{item.description}} </div>
-                  <span data-toggle="tooltip" data-placement="top" data-original-title="Service code"
-                    class="badge bg-aqua">{{item.name}}</span>
-                  <span data-toggle="tooltip" data-placement="top" data-original-title="Price per 1"
-                    class="badge bg-yellow">{{item.price}}</span>
-                  <span data-toggle="tooltip" data-placement="top" data-original-title="Order minimum quantity"
-                    class="badge bg-purple">{{item.id}}</span>
+                  <div class="mb-1 head ">
+                    <span>
+                        {{item.name}}
+                    </span>
+                    <span data-toggle="tooltip" data-placement="top" data-original-title="Price per 1"
+                    class="badge bg-yellow">{{item.price}} $ </span>
+                 </div>
+                 <p>
+                     {{item.description}}
+                 </p>
+    
+                
                 </div>
               </div>
               <div class="col-2">
                 <div>
-                  <a href="order.php?id=22">
+                  <a >
                     <span data-toggle="tooltip" data-placement="top" data-original-title="Submit WEB2 order"
-                      class="float-right p-3 bg-aqua rounded-xs fi-rocket f-150">
+                      class="float-right p-3 bg-aqua rounded-xs ">
 
+                      <i style="font-size: 25px;" class="fa fa-file-text" aria-hidden="true"></i>
 
                     </span>
 
@@ -56,7 +54,6 @@
             </div>
           </div>
         </div>
-      </div>
 
     </div>
   </div>
