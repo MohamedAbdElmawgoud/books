@@ -132,7 +132,7 @@ export class ApiService {
     "article": string,
     "quantity": number
   }) {
-    let data = (<any>await this.httpClient.post(`${this.url}users/orders`, params, {
+    let data = (<any>await this.httpClient.post(`${this.url}order/create`, params, {
       headers: {
         Authorization: localStorage.getItem('token')
       }

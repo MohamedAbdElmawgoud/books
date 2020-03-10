@@ -73,7 +73,7 @@
       </div>
       <div class="modal-body">
         <section class="pt-4 pb-4">
-          <form>
+          <form [formGroup]="orderForm" >
 
             <div id="extras" class="form-group">
               <div>Available Extras:
@@ -122,6 +122,17 @@
                 " required=""></textarea>
 
             </div>
+            <div id="keywords-block" class="form-group">
+              <label for="keywords">comment:</label>
+              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
+                data-original-title="One keyword per line or comma separated.">
+                <span class="fi-question-circle text-yellow">
+                </span>
+              </a>
+              <textarea formControlName="comment" class="form-control" name="comment" id="keywords" cols="30" rows="4" placeholder="Keyword Example One
+                " required=""></textarea>
+
+            </div>
 
 
 
@@ -129,7 +140,7 @@
               <div>Categories:
 
               </div>
-                <select class="form-control" >
+                <select  formControlName="article" class="form-control" >
                     <option *ngFor="let item of Categories" value="{{item.data}}">
                         {{item.name}}
                     </option>
@@ -139,7 +150,7 @@
 
 
             <div class="form-group mt-4">
-              <button class="btn bg-blue" type="submit" name="submit">
+              <button class="btn bg-blue" (click)="submit()" name="submit">
                 <span class="fi-checkmark"></span> Make Order</button>
               <div class="btn bg-gray-10 shadow-none">Total price: <b>$<span id="usd-price">{{total}}</span></b>
               </div>

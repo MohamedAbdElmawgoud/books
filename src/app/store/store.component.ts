@@ -26,9 +26,12 @@ export class StoreComponent implements OnInit {
   }
 
   orderForm  = new FormGroup({
-    quantity: new FormControl('', [Validators.required]),
-    links: new FormControl('', [Validators.required]),
+    quantity: new FormControl('', ),
+    links: new FormControl('', ),
     keywords: new FormControl('', [Validators.required]),
+    article : new FormControl('', ),
+    comment : new FormControl('', ),
+
 
   });
   constructor(private apiService: ApiService, private router: Router) { }
@@ -66,5 +69,14 @@ export class StoreComponent implements OnInit {
     this.total = this.total - selectedItem.price;
 
 
+  }
+  async submit(){
+    let params = {
+  "itemId": this.selectedItem.id,
+  "totalAmount": this.total,
+  "extras": this.selectedExtras.map(ele=>ele.id),
+      ...this.selectedItem
+    }
+  await this.apiService.order(params)
   }
 }
