@@ -12,18 +12,35 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 })
 
 export class LogInComponent implements OnInit {
-  loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
-  });
+  logInForm = new FormGroup({
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6)
+    ])
+    
+   });
   constructor(public translate: TranslateService, private apiService: ApiService , private router : Router) {
     const currentLanguage = translate.getBrowserLang();
     translate.setDefaultLang(currentLanguage);
     translate.use('currentLanguage');
+    
+    
   }
 
   ngOnInit(): void {
   }
+  
+
+  revert() {
+    this.logInForm.reset();
+  }
+
+
+
   Translate(type: string) {
 
 
@@ -32,15 +49,19 @@ export class LogInComponent implements OnInit {
 
   }
 
-  async login() {
-    if (this.loginForm.valid) {
-      await this.apiService.login(this.loginForm.value);
-      Swal.fire({
-              icon: 'success',
-        showConfirmButton: false,
-        timer: 1500
-            })
-      this.router.navigate(['profile'])
-    }
+  onSubmit(){
+    console.log(this.logInForm.value);
   }
+
+  // async login() {
+  //   if (this.logInForm.valid) {
+  //     await this.apiService.login(this.logInForm.value);
+  //     Swal.fire({
+  //             icon: 'success',
+  //       showConfirmButton: false,
+  //       timer: 1500
+  //           })
+  //     this.router.navigate(['profile'])
+  //   }
+  // }
 }

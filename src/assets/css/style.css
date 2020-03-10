@@ -7557,7 +7557,8 @@ header {
       position: relative;
       z-index: 10;
       height: calc(50vh - 117px);
-      min-height: 550px; }
+      min-height: 550px; 
+    }
       .home-slider.home-slider.inner-page .slider-item .slider-text {
         color: #fff;
         height: calc(50vh - 117px);
@@ -7615,7 +7616,8 @@ header {
   .inner-page .slider-item .slider-text {
     color: #fff;
     height: calc(50vh - 117px);
-    min-height: 550px; }
+    min-height: 550px; 
+  }
 
 .slider-item {
   background-size: cover;
@@ -7675,7 +7677,10 @@ header {
           color: #fff;
           text-decoration: underline; }
       .slider-item .slider-text p.sub-text {
-        line-height: 2; }
+        line-height: 2; 
+        height: 100%;
+        
+      }
 
 .owl-custom-nav {
   float: right;
