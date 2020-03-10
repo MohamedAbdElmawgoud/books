@@ -1,28 +1,28 @@
 
 	<div class="main">
-		<form action="login"[formGroup]="logInForm" (ngSubmit)="logInForm.valid && onSubmit()" >
+		<form action="login"[formGroup]="logInForm" (ngSubmit)="logInForm.valid && login()" >
     		<h3 style="text-align: center;padding: 10px;" >
 				{{ 'LOG IN' | translate }}
 			</h3>
   			<div class="inset">
 					<div class="form-group">
 	    		 <label for="userName">{{ 'Email' | translate }}</label>
-					 <input type="text" class="form-control" formControlName="email" placeholder="Email"
+					 <input type="text" class="form-control" formControlName="email"
 					  [ngClass]="{'is-invalid':logInForm.get('email').touched && logInForm.get('email').invalid}"   />
 					<div *ngIf="logInForm.get('email').touched && logInForm.get('email').invalid"  class="invalid-feedback"
 					>
-					  <div *ngIf="logInForm.get('email').errors.required">Email Name is required</div>
-					  <div *ngIf="logInForm.get('email').errors.email">Email must be a valid email Address</div>
+					  <div *ngIf="logInForm.get('email').errors.required">{{ 'Email' | translate }} {{ 'is required' | translate }}</div>
+					  <div *ngIf="logInForm.get('email').errors.email">{{ 'Email' | translate }} {{ 'must be' | translate }} {{ 'a valid' | translate }} {{ 'Email' | translate }</div>
 					</div>
 				</div>
 				
 				<div class="form-group">
 				    <label for="password">{{ 'Password' | translate }}</label>
-					<input type="password" class="form-control"  formControlName="password" placeholder="password"
+					<input type="password" class="form-control"  formControlName="password"
 					[ngClass]="{'is-invalid':logInForm.get('password').touched && logInForm.get('password').invalid}" />
 					<div *ngIf="logInForm.get('password').touched && logInForm.get('password').invalid"  class="invalid-feedback">
-					  <div *ngIf="logInForm.get('password').errors.required">Password is required</div>
-					  <div *ngIf="logInForm.get('password').errors.minlength">Password  must be a letaset 6 charector</div>
+					  <div *ngIf="logInForm.get('password').errors.required">{{ 'Password' | translate }} {{ 'is required' | translate }}</div>
+					  <div *ngIf="logInForm.get('password').errors.minlength">{{ 'Password' | translate }}  {{ 'must be' | translate }}{{ ' a letaset 6 charector' | translate }}</div>
 					</div>
 				</div>
 		

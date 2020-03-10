@@ -17,7 +17,7 @@
     
                     <div class="form-group">
                             <label for="userName">{{ 'Email' | translate }}</label>
-                                <input type="text" class="form-control" formControlName="email" placeholder="Email"
+                                <input type="text" class="form-control" formControlName="email" 
                                  [ngClass]="{'is-invalid':registerForm.get('email').touched && registerForm.get('email').invalid}"   />
                                <div *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid"  class="invalid-feedback"
                                >
@@ -28,7 +28,7 @@
                            
                     <div class="form-group">
                             <label for="password">{{ 'Password' | translate }}</label>
-                            <input type="password" class="form-control"  formControlName="password" placeholder="password"
+                            <input type="password" class="form-control"  formControlName="password"
                             [ngClass]="{'is-invalid':registerForm.get('password').touched && registerForm.get('password').invalid}" />
                             <div *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid"  class="invalid-feedback">
                               <div *ngIf="registerForm.get('password').errors.required">{{ 'Password' | translate }} {{ 'is required' | translate }}</div>
