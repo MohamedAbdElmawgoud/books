@@ -10,7 +10,7 @@ const LNGS = {
   providedIn: 'root'
 })
 export class ApiService {
-  private url = 'http://backend.q3seo.com/books/public/api/';
+  private url = 'http://127.0.0.1:8000/api/';
   defaultLng;
   constructor(private httpClient: HttpClient, private translateService: TranslateService) {
     this.defaultLng = localStorage.getItem('lng')

@@ -140,11 +140,22 @@ li {
   background-color: #6f42c1 !important;
 }
 
+form div {
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+}
 
 
 
 
-
+@media (min-width: 576px)
+{
+  .modal-dialog {
+    max-width: 703px;
+    margin: 1.75rem auto;
+}
+}
 
  
 .pt-6 {
@@ -177,10 +188,6 @@ li {
 .line-shape-center {
   margin-left: calc(50% - 40px);
 }
- /*
- * END line shape
- * -------------------
- */
 
 
  
@@ -210,6 +217,13 @@ li {
 
 .head {
   display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ .buttons {
+    width: 100% !important;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
 }

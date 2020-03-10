@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../apiServices/api.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'store',
@@ -75,8 +76,15 @@ export class StoreComponent implements OnInit {
   "itemId": this.selectedItem.id,
   "totalAmount": this.total,
   "extras": this.selectedExtras.map(ele=>ele.id),
-      ...this.selectedItem
+      ...this.orderForm.value,
     }
-  await this.apiService.order(params)
+  // await this.apiService.order(params);
+  document.getElementById('close').click()
+
+  Swal.fire({
+    icon: 'success',
+    showConfirmButton: false,
+    timer: 1500
+  })
   }
 }
