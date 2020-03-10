@@ -1,34 +1,67 @@
 <body>
 
     <div class="main">
-        <form action="login" [formGroup]="signForm">
-            <h3 style="text-align: center;padding: 10px;" >
-				{{ 'sign up' | translate }}
-			</h3>
-            <div class="inset">
-              <p>
-               <label for="userName">{{ 'Username' | translate }}</label>
-                <input formControlName="name" type="text" placeholder="User Name" required/>
-            </p>
-            <p>
-                <label for="Email">{{ 'Email' | translate }}</label>
-                 <input formControlName="email" type="mail" placeholder="Email" required/>
-             </p>
-
-             <p>
-                <label for="psw"><b>{{ 'Password' | translate }}</b></label>
-                <input  formControlName="password" type="password"  name="psw" required>
-             </p>
-              <p>
-                  <label for="psw"><b>{{ 'confirm Password' | translate }}</b></label>
-                  <input type="password"  name="psw" required>
-              </p>
-
-            </div>
-        
-            <p class="p-container" style="text-align: center;" >
-              <button type="submit" (click)="signUp()" value="sign up">{{ 'sign up' | translate }}</button>
-            </p>
-        </form>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <h3 style="text-align: center;padding: 10px;" >
+                            {{ 'sign up' | translate }}
+                        </h3>
+                    <div class="form-group">
+                           
+                            <label for="firstName">First Name</label>
+                            <input type="text"  class="form-control" formControlName="firstName" 
+                            [ngClass]="{'is-invalid':registerForm.get('firstName').touched && registerForm.get('firstName').invalid}" required />
+                            <div class="invalid-feedback">
+                              <div>First Name is required</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" formControlName="lastName" 
+                                [ngClass]="{'is-invalid':registerForm.get('lastName').touched && registerForm.get('lastName').invalid}" required />
+                                <div class="invalid-feedback">
+                                  <div>Last Name is required</div>
+                                </div>
+                              </div>
+                    <div class="form-group">
+                            <label for="userName">{{ 'Email' | translate }}</label>
+                                <input type="text" class="form-control" formControlName="email" placeholder="Email"
+                                 [ngClass]="{'is-invalid':registerForm.get('email').touched && registerForm.get('email').invalid}"   />
+                               <div *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid"  class="invalid-feedback"
+                               >
+                                 <div *ngIf="registerForm.get('email').errors.required">Email Name is required</div>
+                                 <div *ngIf="registerForm.get('email').errors.email">Email must be a valid email Address</div>
+                               </div>
+                           </div>
+                           
+                    <div class="form-group">
+                            <label for="password">{{ 'Password' | translate }}</label>
+                            <input type="password" class="form-control"  formControlName="password" placeholder="password"
+                            [ngClass]="{'is-invalid':registerForm.get('password').touched && registerForm.get('password').invalid}" />
+                            <div *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid"  class="invalid-feedback">
+                              <div *ngIf="registerForm.get('password').errors.required">Password is required</div>
+                              <div *ngIf="registerForm.get('password').errors.minlength">Password  must be a letaset 6 charector</div>
+                            </div>
+                        </div>
+                
+                      
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" formControlName="confirmPassword" class="form-control"
+                         [ngClass]="{ 'is-invalid': submitted && registerForm.get('confirmPassword').errors }" />
+                        <div *ngIf="submitted && registerForm.get('confirmPassword').errors" class="invalid-feedback">
+                            <div *ngIf="registerForm.get('confirmPassword').errors.required">Confirm Password is required</div>
+                            <div *ngIf="registerForm.get('confirmPassword').errors.checkPasswords">Passwords must match</div>
+                        </div>
+                    </div>
+                  
+                    
+                    <div class="form-group">
+                        <button class="p-container" style="text-align: center;" >{{ 'sign up' | translate }}</button>
+                    </div>
+                  
+                </form>
     </div>
     </body>
+
+
+    

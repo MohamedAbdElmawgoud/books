@@ -1,23 +1,35 @@
 
 	<div class="main">
-		<form action="login" [formGroup]="loginForm" >
+		<form action="login"[formGroup]="logInForm" (ngSubmit)="logInForm.valid && onSubmit()" >
     		<h3 style="text-align: center;padding: 10px;" >
 				{{ 'LOG IN' | translate }}
 			</h3>
   			<div class="inset">
-	  			<p>
+					<div class="form-group">
 	    		 <label for="userName">{{ 'Email' | translate }}</label>
-   	 			<input formControlName="email" type="text" placeholder="User Name" required/>
-				</p>
-  				<p>
+					 <input type="text" class="form-control" formControlName="email" placeholder="Email"
+					  [ngClass]="{'is-invalid':logInForm.get('email').touched && logInForm.get('email').invalid}"   />
+					<div *ngIf="logInForm.get('email').touched && logInForm.get('email').invalid"  class="invalid-feedback"
+					>
+					  <div *ngIf="logInForm.get('email').errors.required">Email Name is required</div>
+					  <div *ngIf="logInForm.get('email').errors.email">Email must be a valid email Address</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
 				    <label for="password">{{ 'Password' | translate }}</label>
-				    <input formControlName="password" type="password" placeholder="password" required/>
-  				</p>
+					<input type="password" class="form-control"  formControlName="password" placeholder="password"
+					[ngClass]="{'is-invalid':logInForm.get('password').touched && logInForm.get('password').invalid}" />
+					<div *ngIf="logInForm.get('password').touched && logInForm.get('password').invalid"  class="invalid-feedback">
+					  <div *ngIf="logInForm.get('password').errors.required">Password is required</div>
+					  <div *ngIf="logInForm.get('password').errors.minlength">Password  must be a letaset 6 charector</div>
+					</div>
+				</div>
 		
  			 </div>
  	 
 			  <div class="p-container" style="text-align: center;" >
-			    <button type="submit" (click)="login()">{{ 'Login' | translate }}</button>
+			    <button type="submit" (click)="onSubmit()">{{ 'Login' | translate }}</button>
 			  </div>
 		</form>
 	</div>  
