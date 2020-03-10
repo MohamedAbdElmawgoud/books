@@ -20,7 +20,6 @@ import { StoreComponent } from './store/store.component';
 import { FaqComponent } from './faq/faq.component';
 import { OrderComponent } from './order/order.component';
 import { ReportComponent } from './report/report.component';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 export  function  HttpLoaderFactory(http:  HttpClient) {
   return  new  TranslateHttpLoader(http, './assets/translate/', '.json');
@@ -49,9 +48,7 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    NgMultiSelectDropDownModule.forRoot(),
-   
+    ReactiveFormsModule,   
     TranslateModule.forRoot({
       loader: {
         provide:  TranslateLoader,

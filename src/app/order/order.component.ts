@@ -10,18 +10,21 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 })
 export class OrderComponent implements OnInit {
   extras;
-  form: FormGroup;
+  Categories;
+  Keywords;
+  quantity;
+  links;
   check;
-  quantity
 
   constructor(private apiService : ApiService ) { }
 
   async ngOnInit() {
     this.extras = await this.apiService.getExtras();
+    this.Categories = await this.apiService.getCategories();
    
   }
-  calculate(check,quantity){
-        console.log(check*quantity);
+  getForm(){
+        console.log('the quantity is  '+this.quantity+ '   links: '+this.links + '  the comment is '+this.Keywords);
 
   }
 }

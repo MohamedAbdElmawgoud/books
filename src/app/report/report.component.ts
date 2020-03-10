@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../apiServices/api.service';
 
 @Component({
-  selector: 'report',
+  selector: 'profile',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.css']
 })
