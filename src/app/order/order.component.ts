@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ApiService } from '../apiServices/api.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -8,7 +8,8 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
-export class OrderComponent implements OnInit {
+export class OrderComponent implements OnInit , OnDestroy {
+
   shop;
   Categories;
   extras;
@@ -34,7 +35,14 @@ export class OrderComponent implements OnInit {
 
 
   });
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router) {
+    let item = JSON.parse(localStorage.getItem('order'));
+    if(!item){
+      this.router.navigate(['store'])
+    }
+      this.selectedItem = item;
+    this.total = item.price;
+   }
 
   async ngOnInit() {
     this.shop = await this.apiService.getShop();
@@ -69,6 +77,9 @@ export class OrderComponent implements OnInit {
     this.total = this.total - selectedItem.price;
 
 
+  }
+  ngOnDestroy(): void {
+    localStorage.removeItem('order')
   }
   async submit(){
     let params = {

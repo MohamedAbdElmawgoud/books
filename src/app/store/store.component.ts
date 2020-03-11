@@ -52,8 +52,10 @@ export class StoreComponent implements OnInit {
 
   };
   getOrder(item) {
-    this.selectedItem = item;
-    this.total = item.price;
+    // this.selectedItem = item;
+    // this.total = item.price;
+    localStorage.setItem('order' , JSON.stringify(item))
+    this.router.navigate(['order'])
   }
 
   onItemSelect(item: any) {

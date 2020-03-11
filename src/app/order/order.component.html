@@ -56,25 +56,16 @@
     
        
       
-<div id="extras" class="form-group">
-        <div>{{ 'Categories' | translate }}
+  <div  class="form-group" style="width: 100%;" >  
+    <label>{{ 'Categories' | translate }}
 
-        </div>
-                    <label *ngFor="let item of Categories" style="display: block;">
-                <div class="icheckbox_minimal-blue" style="position: relative;">
-                    <input class="extras check-record minimal" type="checkbox" name="extras[]" 
-                    price="0.01" multiply="1" value="1" 
-                    style="position: absolute; "
-                    >
-                    <ins class="iCheck-helper" 
-                    style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(210, 206, 206); border: 0px; ">
-                </ins>
-                </div> {{item.name}}   <div class="badge bg-gray-10">
-                        {{item.price}}                
-                </div>
-                
-            </label>
-    </div>
+    </label>
+      <select  formControlName="article" class="form-control" >
+          <option *ngFor="let item of Categories" value="{{item.data}}">
+              {{item.name}}
+          </option>
+      </select>
+  </div>
        
     
     <div class=" buttons form-group mt-4">
