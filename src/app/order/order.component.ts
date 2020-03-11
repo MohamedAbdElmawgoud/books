@@ -31,7 +31,7 @@ export class OrderComponent implements OnInit , OnDestroy {
     links: new FormControl('', [Validators.required]),
     keywords: new FormControl('', [Validators.required]),
     article : new FormControl('', [Validators.required]),
-    comment : new FormControl('', [Validators.required]),
+    // comment : new FormControl('', [Validators.required]),
 
 
   });
@@ -82,6 +82,10 @@ export class OrderComponent implements OnInit , OnDestroy {
     localStorage.removeItem('order')
   }
   async submit(){
+    if(this.orderForm.invalid){
+      this.orderForm.markAllAsTouched();
+      return;
+    }
     let params = {
   "itemId": this.selectedItem.id,
   "totalAmount": this.total,
@@ -89,7 +93,8 @@ export class OrderComponent implements OnInit , OnDestroy {
       ...this.orderForm.value,
     }
   await this.apiService.order(params);
-  document.getElementById('close').click()
+  // document.getElementById('close').click()
+  this.router.navigate(['store'])
 
   Swal.fire({
     icon: 'success',
