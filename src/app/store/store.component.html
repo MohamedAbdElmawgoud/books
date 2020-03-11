@@ -66,7 +66,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">make an order</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ 'Make Order' | translate }}</h5>
         <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -76,7 +76,7 @@
           <form [formGroup]="orderForm" >
 
             <div id="extras" class="form-group">
-              <div>Available Extras:
+              <div>{{ 'Available Extras' | translate }}
 
               </div>
               <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [data]="extras" 
@@ -85,7 +85,7 @@
 
             </div>
             <div class="form-group">
-              <label for="quantity">Quantity:</label>
+              <label for="quantity">{{ 'Quantity' | translate }}</label>
               <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
                 data-original-title="Order quantity (minimum 10)">
                 <span class="fi-question-circle text-yellow">
@@ -99,7 +99,7 @@
 
             <div class="form-group">
 
-              <label for="links">Links:</label>
+              <label for="links">{{ 'Links' | translate }}</label>
               <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
                 data-original-title="One link/URL per line.">
                 <span class="fi-question-circle text-yellow">
@@ -112,7 +112,7 @@
             </div>
 
             <div id="keywords-block" class="form-group">
-              <label for="keywords">Keywords:</label>
+              <label for="keywords">{{ 'comment' | translate }}</label>
               <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
                 data-original-title="One keyword per line or comma separated.">
                 <span class="fi-question-circle text-yellow">
@@ -122,18 +122,11 @@
                 " required=""></textarea>
 
             </div>
-            <!-- <div id="keywords-block" class="form-group">
-              <label for="keywords">comment:</label>
-  
-              <textarea formControlName="comment" class="form-control" name="comment" id="keywords" cols="30" rows="4" placeholder="Keyword Example One
-                " required=""></textarea>
-
-            </div> -->
-
+           
 
 
             <div  class="form-group" style="width: 100%;" >  
-              <label>Categories:
+              <label>{{ 'Categories' | translate }}
 
               </label>
                 <select  formControlName="article" class="form-control" >
@@ -147,8 +140,8 @@
 
             <div class=" buttons form-group mt-4">
               <button class="btn bg-blue" (click)="submit()" name="submit">
-                <span class="fi-checkmark"></span> Make Order</button>
-              <div class="btn bg-gray-10 shadow-none">Total price: <b>$<span id="usd-price">{{total}}</span></b>
+                <span class="fi-checkmark"></span> {{ 'Make Order' | translate }}</button>
+              <div class="btn bg-gray-10 shadow-none">{{ 'Total price' | translate }} <b>$<span id="usd-price">{{total}}</span></b>
               </div>
 
             </div>

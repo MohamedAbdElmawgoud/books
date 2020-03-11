@@ -39,10 +39,30 @@
        "must be":"must be",
        " a letaset 6 charector":" a letaset 6 charector",
        "match":"match",
-       "a valid":"a valid"
+       "a valid":"a valid",
+       "profile":"profile",
+       "Add credit":"Add credit",
+       "purchase":"purchase",
+       "balance":"The total balance",
+       "requests":"Completed requests",
+       "Pending":"Pending requests",
+       "item name":"item name",
+       "price":"price",
+       "date":"date",
+       "status":"status",
+       "download":"download",
+       "Available Extras":"Available Extras",
+       "Quantity":"Quantity",
+       "Links":"Links",
+       "Categories":"Categories",
+       "comment:":"comment",
+       "Make Order":"Make Order",
+       "Total price":"Total price",
+       "log out":"log out"
+      
        
        
      
      
      
-}
+}   

@@ -3,28 +3,28 @@
 <div class="carda__body pdn--as">
 	<div class="purusha" >
 		<h2>
-			Add  credit
+			{{ 'Add credit' | translate }}
 		</h2>
 		<button  data-toggle="modal" data-target="#exampleModal" style="height:  40px;" class="btn btn-success" >
-Purusha
+			{{ 'purchase' | translate }}
 		</button>
 	</div>
 		<div class="row no-gutter">
 				<div class="col-sm-4 clr-greenflat ">
 					<h4 class="mrg--vt">
-						الرصيد الكلي
+						{{ 'balance' | translate }}
 					</h4>
 					<span class="text-mega"><span dir="rtl">$0.00</span></span>
 				</div>
 				<div class="col-sm-4 clr-greenflat ">
 					<h4 class="mrg--vt">
-						 المكتملة الطلبات
+						{{ 'requests' | translate }}
 					</h4>
 					<span class="text-mega"><span dir="rtl">{{completedOrders}}</span></span>
 				</div>
 				<div class="col-sm-4 clr-greenflat ">
 					<h4 class="mrg--vt">
-						الطلبات في الانتظار
+						{{ 'Pending' | translate }}
 					</h4>
 					<span class="text-mega"><span dir="rtl">{{pendingOrders}}</span></span>
 				</div>
@@ -34,16 +34,19 @@ Purusha
 	
 
 
+	
+	
+	
+	
 
 	<table class="table table-hover table-responsive-sm">
 			<thead>
 			  <tr>
-				<th scope="col">id</th>
-				<th scope="col">item name</th>
-				<th scope="col">price</th>
-				<th scope="col">date</th>
-				<th scope="col">status</th>
-				<th scope="col">download</th>
+				<th scope="col">{{ 'item name' | translate }}</th>
+				<th scope="col">{{ 'price' | translate }}</th>
+				<th scope="col">{{ 'date' | translate }}</th>
+				<th scope="col">{{ 'status' | translate }}</th>
+				<th scope="col">{{ 'download' | translate }}</th>
 			  </tr>
 			</thead>
 			<tbody>

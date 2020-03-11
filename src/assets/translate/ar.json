@@ -38,6 +38,25 @@
     "must be":"يجب أن يكون",
     " a letaset 6 charector":"على الأقل 6 خانات",
     "match":"تطابق",
-    "a valid":"صالحة"
+    "a valid":"صالح",
+    "profile":"الصفحه الشخصيه",
+    "Add credit":"اضافه رصيد",
+    "purchase":"عملية الشراء",
+    "balance":"الرصيد الكلي",
+    "requests":"الطلبات المكتملة",
+    "Pending":"الطلبات المعلقة",
+    "item name":"اسم العنصر",
+    "price":"السعر",
+    "date":"تاريخ",
+    "status":"الحالة",
+    "download":"تحميل",
+    "Available Extras":"الإضافات المتاحة",
+    "Quantity":"الكمية",
+    "Links":"روابط",
+    "Categories":"الفئات",
+    "comment":"تعليق",
+    "Make Order":"عمل طلب",
+    "Total price":"السعر الإجمالي",
+    "log out":"تسجيل خروج"
     
   }
