@@ -27,11 +27,11 @@ export class OrderComponent implements OnInit , OnDestroy {
   }
 
   orderForm  = new FormGroup({
-    quantity: new FormControl('', ),
-    links: new FormControl('', ),
+    quantity: new FormControl('', [Validators.required]),
+    links: new FormControl('', [Validators.required]),
     keywords: new FormControl('', [Validators.required]),
-    article : new FormControl('', ),
-    comment : new FormControl('', ),
+    article : new FormControl('', [Validators.required]),
+    comment : new FormControl('', [Validators.required]),
 
 
   });

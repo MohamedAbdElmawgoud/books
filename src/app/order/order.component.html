@@ -11,7 +11,8 @@
   
                 </div>
                 <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [data]="extras" 
-                  [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="onDeSelect($event)">
+                  [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="onDeSelect($event)"
+                  >
                 </ng-multiselect-dropdown>
   
               </div>
@@ -19,10 +20,14 @@
                 <label for="quantity">{{ 'Quantity' | translate }}</label>
                 <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
                   data-original-title="Order quantity (minimum 10)">
-                  <span class="fi-question-circle text-yellow">
-                  </span>
+                 
                 </a>
-                <input  formControlName="quantity" min="10" type="number" class="form-control" name="qty" id="quantity" placeholder="Quantity" required="">
+                <input  formControlName="quantity" min="10" type="number" class="form-control" name="qty" id="quantity" 
+                placeholder="Quantity" required="" 
+                [ngClass]="{'is-invalid':orderForm.get('quantity').touched && orderForm.get('quantity').invalid}" required />
+                <div class="invalid-feedback">
+                  <div>{{ 'Quantity' | translate }} {{ 'is required' | translate }}</div>
+                </div>
   
               </div>
     
@@ -37,9 +42,18 @@
                             </span>
                           </a>
             
-                          <textarea   formControlName="links" name="links" class="form-control" id="links" cols="30" rows="4" placeholder="http://example.com/page-one.html
-                           " required=""></textarea>
-            
+                          <textarea   formControlName="links" name="links" class="form-control" id="links" cols="30" rows="4" 
+                          placeholder="http://example.com/page-one.html
+                           " required=""
+                           [ngClass]="{'is-invalid':orderForm.get('links').touched && orderForm.get('links').invalid}"
+                           
+                           >
+                        
+                        
+                        </textarea>
+                        <div class="invalid-feedback">
+                            <div>{{ 'Links' | translate }} {{ 'is required' | translate }}</div>
+                          </div>
                         </div>
             
 <div id="keywords-block" class="form-group">
@@ -50,8 +64,13 @@
       </span>
     </a>
     <textarea formControlName="keywords" class="form-control" name="kws" id="keywords" cols="30" rows="4" placeholder="Keyword Example One
-      " required=""></textarea>
-
+      " required=""
+      [ngClass]="{'is-invalid':orderForm.get('keywords').touched && orderForm.get('keywords').invalid}"
+      
+      ></textarea>
+      <div class="invalid-feedback">
+        <div>{{ 'comment' | translate }} {{ 'is required' | translate }}</div>
+      </div>
   </div>
     
        
@@ -60,11 +79,17 @@
     <label>{{ 'Categories' | translate }}
 
     </label>
-      <select  formControlName="article" class="form-control" >
-          <option *ngFor="let item of Categories" value="{{item.data}}">
+      <select  formControlName="article" class="form-control"
+      [ngClass]="{'is-invalid':orderForm.get('article').touched && orderForm.get('article').invalid}"
+      >
+          <option *ngFor="let item of Categories" value="{{item.data}}"
+          >
               {{item.name}}
           </option>
       </select>
+      <div class="invalid-feedback">
+        <div>{{ 'Categories' | translate }} {{ 'is required' | translate }}</div>
+      </div>
   </div>
        
     
