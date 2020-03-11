@@ -66,3 +66,14 @@ section{
         background-position: -180px 0;
     }
 
+    
+    
+    .bg-blue,
+    .alert-primary,
+    .btn-primary,
+    .badge-primary {
+      background-color: #fd5f00 !important;
+      color: white;
+    }
+    
+    

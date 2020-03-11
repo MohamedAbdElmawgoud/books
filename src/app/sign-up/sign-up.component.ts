@@ -29,9 +29,13 @@ export class SignUpComponent implements OnInit {
     confirmPassword: new FormControl('', [
           Validators.required,
           Validators.minLength(6)
-        ])
-    
-   });
+        ]) ,
+       
+      }, 
+      // {validator: this.checkPasswords }
+    );
+
+      
   submitted = false;
   constructor(public translate: TranslateService, 
     private apiService: ApiService, 
