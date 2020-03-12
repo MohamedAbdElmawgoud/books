@@ -63,12 +63,18 @@ export class OrderComponent implements OnInit , OnDestroy {
     this.total = item.price;
   }
 
-  onItemSelect(item: any) {
+  onItemSelect(item: any , e ) {
+    
+    if(!e.target.checked){
+      this.onDeSelect(item);
+      return
+    }
     let selectedItem=  this.extras.filter(ele=>ele.id == item.id)[0]
     this.selectedExtras.push(selectedItem)
     this.total = this.total + selectedItem.price;
   }
-  onDeSelect(item: any) {
+  onDeSelect(item: any ) {
+
     let selectedItem;
     this.selectedExtras =  this.selectedExtras.filter(ele=>{
       selectedItem = ele;

@@ -1,115 +1,117 @@
+
 <section class="pt-4 pb-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 pb-4">
-                    
-                    <form [formGroup]="orderForm">
-                           
-        <div id="extras" class="form-group">
+  <h3>
+    {{selectedItem.name}}
+  </h3>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 pb-4">
+
+        <form [formGroup]="orderForm">
+
+          <div id="extras" class="form-group">
             <div id="extras" class="form-group">
-                <div>{{ 'Available Extras' | translate }}
-  
-                </div>
-                <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [data]="extras" 
-                  [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="onDeSelect($event)"
-                  >
-                </ng-multiselect-dropdown>
-  
+              <label>{{ 'Available Extras' | translate }}
+
+              </label>
+              <div *ngFor="let item of extras" >
+                <input type="checkbox" (change)="onItemSelect(item, $event)">
+                {{item.name}}
+                <span class="badge badge-secondary">{{item.price}} $</span>
               </div>
-              <div class="form-group">
-                <label for="quantity">{{ 'Quantity' | translate }}</label>
-                <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
-                  data-original-title="Order quantity (minimum 10)">
-                 
-                </a>
-                <input  formControlName="quantity" min="10" type="number" class="form-control" name="qty" id="quantity" 
-                placeholder="Quantity" required="" 
-                [ngClass]="{'is-invalid':orderForm.get('quantity').touched && orderForm.get('quantity').invalid}" required />
-                <div class="invalid-feedback">
-                  <div>{{ 'Quantity' | translate }} {{ 'is required' | translate }}</div>
-                </div>
-  
+
+            </div>
+            <div class="form-group">
+              <label for="quantity">{{ 'Quantity' | translate }}</label>
+              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
+                data-original-title="Order quantity (minimum 10)">
+
+              </a>
+              <input formControlName="quantity" min="10" type="number" class="form-control" name="qty" id="quantity"
+                placeholder="Quantity" required=""
+                [ngClass]="{'is-invalid':orderForm.get('quantity').touched && orderForm.get('quantity').invalid}"
+                required />
+              <div class="invalid-feedback">
+                <div>{{ 'Quantity' | translate }} {{ 'is required' | translate }}</div>
               </div>
-    
-    
-    
-        <div class="form-group">
-            
-                          <label for="links">{{ 'Links' | translate }}</label>
-                          <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
-                            data-original-title="One link/URL per line.">
-                            <span class="fi-question-circle text-yellow">
-                            </span>
-                          </a>
-            
-                          <textarea   formControlName="links" name="links" class="form-control" id="links" cols="30" rows="4" 
-                          placeholder="http://example.com/page-one.html
+
+            </div>
+
+
+
+            <div class="form-group">
+
+              <label for="links">{{ 'Links' | translate }}</label>
+              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
+                data-original-title="One link/URL per line.">
+                <span class="fi-question-circle text-yellow">
+                </span>
+              </a>
+
+              <textarea formControlName="links" name="links" class="form-control" id="links" cols="30" rows="4"
+                placeholder="http://example.com/page-one.html
                            " required=""
-                           [ngClass]="{'is-invalid':orderForm.get('links').touched && orderForm.get('links').invalid}"
-                           
-                           >
-                        
-                        
+                [ngClass]="{'is-invalid':orderForm.get('links').touched && orderForm.get('links').invalid}">
+
+
                         </textarea>
-                        <div class="invalid-feedback">
-                            <div>{{ 'Links' | translate }} {{ 'is required' | translate }}</div>
-                          </div>
-                        </div>
-            
-<div id="keywords-block" class="form-group">
-    <label for="keywords">{{ 'comment' | translate }}</label>
-    <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
-      data-original-title="One keyword per line or comma separated.">
-      <span class="fi-question-circle text-yellow">
-      </span>
-    </a>
-    <textarea formControlName="keywords" class="form-control" name="kws" id="keywords" cols="30" rows="4" placeholder="Keyword Example One
+              <div class="invalid-feedback">
+                <div>{{ 'Links' | translate }} {{ 'is required' | translate }}</div>
+              </div>
+            </div>
+
+            <div id="keywords-block" class="form-group">
+              <label for="keywords">{{ 'comment' | translate }}</label>
+              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
+                data-original-title="One keyword per line or comma separated.">
+                <span class="fi-question-circle text-yellow">
+                </span>
+              </a>
+              <textarea formControlName="keywords" class="form-control" name="kws" id="keywords" cols="30" rows="4"
+                placeholder="Keyword Example One
       " required=""
-      [ngClass]="{'is-invalid':orderForm.get('keywords').touched && orderForm.get('keywords').invalid}"
-      
-      ></textarea>
-      <div class="invalid-feedback">
-        <div>{{ 'comment' | translate }} {{ 'is required' | translate }}</div>
-      </div>
-  </div>
-    
-       
-      
-  <div  class="form-group" style="width: 100%;" >  
-    <label>{{ 'Categories' | translate }}
-
-    </label>
-      <select  formControlName="article" class="form-control"
-      [ngClass]="{'is-invalid':orderForm.get('article').touched && orderForm.get('article').invalid}"
-      >
-          <option *ngFor="let item of Categories" value="{{item.data}}"
-          >
-              {{item.name}}
-          </option>
-      </select>
-      <div class="invalid-feedback">
-        <div>{{ 'Categories' | translate }} {{ 'is required' | translate }}</div>
-      </div>
-  </div>
-       
-    
-    <div class=" buttons form-group mt-4">
-        <button class="btn bg-blue" (click)="submit()" name="submit">
-          <span class="fi-checkmark"></span> {{ 'Make Order' | translate }}</button>
-        <div class="btn bg-gray-10 shadow-none">{{ 'Total price' | translate }} <b>$<span id="usd-price">{{total}}</span></b>
-        </div>
-
-      </div>
-
-        </div>
-        
-    </form>
-    
-                
+                [ngClass]="{'is-invalid':orderForm.get('keywords').touched && orderForm.get('keywords').invalid}"></textarea>
+              <div class="invalid-feedback">
+                <div>{{ 'comment' | translate }} {{ 'is required' | translate }}</div>
+              </div>
             </div>
-            
+
+
+
+            <div class="form-group" style="width: 100%;">
+              <label>{{ 'Categories' | translate }}
+
+              </label>
+              <select formControlName="article" class="form-control"
+                [ngClass]="{'is-invalid':orderForm.get('article').touched && orderForm.get('article').invalid}">
+                <option *ngFor="let item of Categories" value="{{item.data}}">
+                  {{item.name}}
+                </option>
+              </select>
+              <div class="invalid-feedback">
+                <div>{{ 'Categories' | translate }} {{ 'is required' | translate }}</div>
+              </div>
             </div>
-        
-        </div>
-                     
-   </section>
+
+
+            <div class=" buttons form-group mt-4">
+              <button class="btn bg-blue" (click)="submit()" name="submit">
+                <span class="fi-checkmark"></span> {{ 'Make Order' | translate }}</button>
+              <div class="btn bg-gray-10 shadow-none">{{ 'Total price' | translate }} <b>$<span
+                    id="usd-price">{{total}}</span></b>
+              </div>
+
+            </div>
+
+          </div>
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
