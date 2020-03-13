@@ -57,6 +57,10 @@ export class StoreComponent implements OnInit {
     localStorage.setItem('order' , JSON.stringify(item))
     this.router.navigate(['order'])
   }
+  viewDetails(item){
+    localStorage.setItem('order' , JSON.stringify(item))
+    this.router.navigate(['details'])
+  }
 
   onItemSelect(item: any) {
     let selectedItem=  this.extras.filter(ele=>ele.id == item.id)[0]

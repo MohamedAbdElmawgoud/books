@@ -10,6 +10,7 @@ import { StoreComponent } from "src/app/store/store.component";
 import { FaqComponent } from "src/app/faq/faq.component";
 import { OrderComponent } from "src/app/order/order.component";
 import { ReportComponent } from "src/app/report/report.component";
+import { OrderDetailsComponent } from './order-details/order-details.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
  { path : 'store' , component: StoreComponent},
  { path : 'faq' , component: FaqComponent},
  { path : 'order' , component: OrderComponent},
+ { path : 'details' , component: OrderDetailsComponent},
  { path : 'profile' , component: ReportComponent},
  
  

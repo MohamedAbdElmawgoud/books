@@ -16,6 +16,7 @@ export class OrderComponent implements OnInit , OnDestroy {
   selectedItem;
   selectedExtras = [];
   total ;
+  faqs;
   dropdownSettings = {
     singleSelection: false,
     idField: 'id',
@@ -46,6 +47,8 @@ export class OrderComponent implements OnInit , OnDestroy {
 
   async ngOnInit() {
     this.shop = await this.apiService.getShop();
+  this.faqs = (<[]>await this.apiService.getFaqs()).splice(0 , 8);
+
     this.extras = (await this.apiService.getExtras()).map(ele=>{
       return { 
         ...ele,
@@ -107,6 +110,9 @@ export class OrderComponent implements OnInit , OnDestroy {
     showConfirmButton: false,
     timer: 1500
   })
+  }
+  viewFaq(item){
+    this.router.navigate(['faq'])
   }
 }
 
