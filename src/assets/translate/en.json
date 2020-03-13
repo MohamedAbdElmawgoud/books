@@ -58,7 +58,13 @@
        "comment:":"comment",
        "Make Order":"Make Order",
        "Total price":"Total price",
-       "log out":"log out"
+       "log out":"log out",
+       "Id":"Id",
+       "Description":"Description",
+       "Services List":"Services List",
+       "Message":"Message",
+       "More":"More"
+
       
        
        

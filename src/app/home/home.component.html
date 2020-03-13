@@ -26,7 +26,7 @@
   <div class="container" >
     <div class="row">
       <div *ngFor="let item of services"  class="col-md-6 col-lg-4   mb-4">
-        <div class="media block-6 d-block text-center">
+        <div class="size media block-6 d-block text-center">
           <img width="120px" src="{{item.image}}" alt="">
           <div class="media-body">
             <h3 class="heading">{{item.name}}</h3>
@@ -54,11 +54,21 @@
           <div class="row">
             <div class="col-md-6 form-group" >
               <label for="name">{{ 'Name' | translate }}</label>
-              <input formControlName="name" type="text" id="name" class="form-control ">
+              <input formControlName="name" type="text" id="name" class="form-control "
+              [ngClass]="{'is-invalid':contactForm.get('name').touched && contactForm.get('name').invalid}"
+              >
+              <div class="invalid-feedback">
+                <div>{{ 'Name' | translate }} {{ 'is required' | translate }}</div>
+              </div>            
             </div>
             <div class="col-md-6 form-group">
               <label for="phone">{{ 'Telephone' | translate }}</label>
-              <input formControlName="phone" type="text" id="phone" class="form-control ">
+              <input formControlName="phone" type="text" id="phone" class="form-control "
+              [ngClass]="{'is-invalid':contactForm.get('phone').touched && contactForm.get('phone').invalid}" 
+              >
+              <div class="invalid-feedback">
+                <div>{{ 'Telephone' | translate }} {{ 'is required' | translate }}</div>
+              </div>            
             </div>
           </div>
           <div class="row">
@@ -69,13 +79,24 @@
           <div class="row">
             <div class="col-md-12 form-group">
               <label for="email">{{ 'Email' | translate }}</label>
-              <input formControlName="mail" type="email" id="email" class="form-control ">
+              <input formControlName="mail" type="email" id="email" class="form-control "
+              [ngClass]="{'is-invalid':contactForm.get('mail').touched && contactForm.get('mail').invalid}"
+              >
+              <div class="invalid-feedback">
+                <div>{{ 'Email' | translate }} {{ 'is required' | translate }}</div>
+              </div>      
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 form-group">
               <label for="message">{{ 'Write Message' | translate }}</label>
-              <textarea formControlName="message" name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+              <textarea formControlName="message" name="message" id="message" class="form-control " cols="30" rows="8"
+              [ngClass]="{'is-invalid':contactForm.get('message').touched && contactForm.get('message').invalid}"
+              >
+            </textarea>
+            <div class="invalid-feedback">
+              <div>{{ 'Message' | translate }} {{ 'is required' | translate }}</div>
+            </div>   
             </div>
           </div>
           <div class="row">

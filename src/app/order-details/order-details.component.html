@@ -1,74 +1,76 @@
-<div class="container-fluid" style="margin-top: 8%;" >
-<div class="row">
+<div class="container-fluid" style="margin-top: 8%;">
+    <div class="row">
 
-    <div class="col-md-4">
-        <h3  >
-        {{'Services List' | translate}}
-        </h3>
+        <div class="col-md-4">
+            <h3>
+                {{'Services List' | translate}}
+            </h3>
 
-        <ul style="
+            <ul style="
         overflow-y: scroll;
     " class="list-group list-group-flush">
-            <li *ngFor="let item of services" (click)="viewDetails(item)" style="font-size: 18px;" class="list-group-item">
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <li *ngFor="let item of services" (click)="viewDetails(item)" style="font-size: 18px;"
+                    class="list-group-item">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
 
-                {{
+                    {{
             item.name    
             }}</li>
- 
-          </ul>
-    </div>
 
-    <div class="col-md-8">
-        <h3 style="
+            </ul>
+        </div>
+
+        <div class="col-md-8">
+            <h3 style="
         border-bottom: 1px solid #ddd;
         display: inline-block;
         padding: 0px 20px;
-    " >
-            {{selectedItem.name}}
-        </h3>
-        <br>
-        <img  src="/assets/web2-shared (1).jpg" alt="">
-        
-        <div class="row" style="margin-top: 25px;" >
-            <div class="col-md-6">
-        
+    ">
+                {{selectedItem.name}}
+            </h3>
+            <br>
+            <img src="/assets/web2-shared (1).jpg" alt="">
 
-                <ul class="list-group list-group-flush">
-                    <li *ngFor="let item of faqs" (click)="viewFaq(item)" style="font-size: 18px;cursor: pointer" class="list-group-item">
-                        <i class="fa fa-question-circle" aria-hidden="true"></i>
-        
-                        {{
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-md-6">
+
+
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let item of faqs" (click)="viewFaq(item)" style="font-size: 18px;cursor: pointer"
+                            class="list-group-item">
+                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+
+                            {{
                     item.header    
                     }}</li>
-         
-                  </ul>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 100%;box-shadow: 1px 1px 10px #0000003b;">
+                        <div class="card-header">
+                            {{'Id' | translate }} : {{selectedItem.id}}
+                        </div>
+
+                        <div class="card-header">
+                            {{'price' | translate}} : {{selectedItem.price}} $
+                        </div>
+
+                        <div class="card-header">
+                            {{'Description' | translate}} : {{selectedItem.description}}
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="card" style="width: 100%;box-shadow: 1px 1px 10px #0000003b;">
-                    <div class="card-header">
-                     {{'Id' | translate }} : {{selectedItem.id}}
-                    </div>
-
-                    <div class="card-header">
-                        {{'Price' | translate}} : {{selectedItem.price}} $
-                    </div>
-
-                    <div class="card-header">
-                        {{'Description' | translate}} : {{selectedItem.description}}
-                    </div>
-            
-                  </div>
+            <div style="text-align: center;padding: 20px;width: 85%;">
+                <button class="btn" style="background-color: #fd5f00; color: #fff;" (click)="getOrder(selectedItem)">
+                    {{'Make order' | translate }}
+                </button>
             </div>
-        </div>
-
-        <div style="text-align: center;padding: 20px;width: 85%;" >
-            <button class="btn" style="background-color: #fd5f00; color: #fff;" (click)="getOrder(selectedItem)" >
-                {{'Make order' | translate }}
-              </button>
         </div>
     </div>
-</div>
 
 </div>

@@ -1,88 +1,97 @@
-<header role="banner" >
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand " href="index.html">Back Links</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        
-        <div class="collapse navbar-collapse" id="navbarsExample05">
-          <ul class="navbar-nav pl-md-5 ml-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">{{ 'HOME' | translate }}</a>
-            </li>
+<header role="banner">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="index.html">Back Links</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+        aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
 
-            <li class="nav-item">
-                <a class="nav-link" routerLink="services">{{ 'SERVICES' | translate }}</a>
-              </li>
+      <div class="collapse navbar-collapse" id="navbarsExample05">
+        <ul class="navbar-nav pl-md-5 ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">{{ 'HOME' | translate }}</a>
+          </li>
 
 
-            <li class="nav-item">
-              <a class="nav-link" routerLink="about">{{ 'ABOUT' | translate }}</a>
-            </li>
-           
-            
-           
+          <li class="nav-item">
+            <a class="nav-link" routerLink="services">{{ 'SERVICES' | translate }}</a>
+          </li>
+          <li class="nav-item" *ngIf="!isLoggedIn">
+            <a class="nav-link" routerLink="log-in">{{ 'LOG IN' | translate }}</a>
+          </li>
 
-  
-
-            <li class="nav-item">
-                <a class="nav-link" routerLink="store">{{ 'store' | translate }}</a>
-              </li>
-
-
-              <li class="nav-item">
-                  <a class="nav-link" routerLink="faq">{{ 'faq' | translate }}</a>
-                </li>
-                
-                <!-- <li class="nav-item">
-                    <a class="nav-link" routerLink="profile">{{ 'report' | translate }}</a>
-                  </li> -->
-
-            <li class="nav-item" *ngIf="!isLoggedIn" >
-                <a class="nav-link" routerLink="log-in">{{ 'LOG IN' | translate }}</a>
-              </li>
-
-              <li class="nav-item" *ngIf="!isLoggedIn">
-                <a class="nav-link" routerLink="sign-up">{{ 'sign up' | translate }}</a>
-              </li>
-              <li class="nav-item" *ngIf="isLoggedIn">
-                <a class="nav-link" routerLink="profile">{{ 'profile' | translate }}</a>
-              </li>
-              <li class="nav-item" *ngIf="isLoggedIn">
-                <a class="nav-link" (click)="logout()">{{ 'log out' | translate }}</a>
-              </li>
-
-             
-
-             
-              <li class="nav-item" *ngIf="currentLanguage == 'ar'" (click)="Translate('en')">
-                <span class="nav-link" >English</span>
-              </li>
-
-              <li class="nav-item" *ngIf="currentLanguage == 'en'" (click)="Translate('ar')">
-                <span class="nav-link" >عربي</span>
-              </li>
+          <li class="nav-item" *ngIf="!isLoggedIn">
+            <a class="nav-link" routerLink="sign-up">{{ 'sign up' | translate }}</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link" routerLink="profile">{{ 'profile' | translate }}</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link" (click)="logout()">{{ 'log out' | translate }}</a>
+          </li>
 
 
-          </ul>
+          <li class="nav-item" *ngIf="currentLanguage == 'ar'" (click)="Translate('en')">
+            <span class="nav-link">English</span>
+          </li>
 
-           
+          <li class="nav-item" *ngIf="currentLanguage == 'en'" (click)="Translate('ar')">
+            <span class="nav-link">عربي</span>
+          </li>
 
 
-         
 
-          <!-- <div class="navbar-nav ml-auto">
+
+          <div class="dropdown">
+            <button class="dropbtn">{{ 'More' | translate }}</button>
+            <div class="dropdown-content">
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="about">{{ 'ABOUT' | translate }}</a>
+          </li>
+
+
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="store">{{ 'store' | translate }}</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="faq">{{ 'faq' | translate }}</a>
+          </li>
+
+          
+
+        </div>
+      </div>
+
+
+
+
+          
+      
+        </ul>
+
+
+
+
+
+
+        <!-- <div class="navbar-nav ml-auto">
             <form method="post" class="search-form">
               <span class="icon ion ion-search"></span>
               <input type="text" class="form-control" placeholder="Search...">
             </form>
           </div>
            -->
-        </div>
       </div>
-    </nav>
-  </header>
-  <!-- END header -->
+    </div>
+  </nav>
+</header>
+<!-- END header -->
