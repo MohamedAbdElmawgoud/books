@@ -8278,3 +8278,8 @@ header {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2); }
+@media(min-width : 770px){
+  .owl-item{
+    height: 700px;
+  }
+}
