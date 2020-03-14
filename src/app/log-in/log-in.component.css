@@ -46,7 +46,7 @@ form h1:after {
 }
 
 form h1  {
-	color:orange;
+	color:#2386c9;
 	text-shadow:0 1px 0 #000;
 	font-size:18px;
 	font-weight: 600;
@@ -61,7 +61,7 @@ form h1 span{
 	background:#0184ff;
 }
 label {
-	color: #fd7e14;
+	color: #234fc9;
 	display:block;
   	font-size:13px;
   	padding-bottom:9px;
@@ -84,7 +84,7 @@ input[type=password] {
   outline: none;
 }
 label[for=remember]{
- 	color:#FF7900;
+ 	color:#234fc9;
   	display:inline-block;
   	font-size: 13px;
 }
@@ -114,13 +114,13 @@ input[type=checkbox] {
 
 button {
  	padding:5px 20px;
-  border:0px solid #E57E08;
+  border:0px solid #094268;
   text-shadow:0 -1px 0 rgba(0,0,0,0.4);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.3),
     inset 0 10px 10px rgba(255,255,255,0.1);
   border-radius:0.3em;
-  background: rgba(253, 104, 16, 0.96); /* Old browsers */
+  background: #2386c9; /* Old browsers */
  
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ac754', endColorstr='#66ae3f',GradientType=0 ); /* IE6-9 */
  color:#FFFFFF;
@@ -135,7 +135,7 @@ button:hover {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.3),
     inset 0 -10px 10px rgba(255,255,255,0.1);
-    background: rgb(194, 51, 51); /* Old browsers */
+    background: #0031b9; /* Old browsers */
 
 
 }
@@ -144,7 +144,7 @@ button:hover {
 	text-align: center;
 }
 .copy-right p {
-	color: orange;
+	color: #2386c9;
 	font-size:1em;
 	padding:6em 0;
 }
@@ -159,7 +159,7 @@ button:hover {
 	transition: all 0.3s ease-out;
 }
 .copy-right a:hover{
-	color:orange;
+	color:#2386c9;
 }
 /**//end-copy-right**/
 /*----start-responsive design-----*/
