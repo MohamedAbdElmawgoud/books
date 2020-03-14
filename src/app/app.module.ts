@@ -23,6 +23,8 @@ import { ReportComponent } from './report/report.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { TicketsComponent } from './tickets/tickets.component';
+import { TicketViewComponent } from './ticket-view/ticket-view.component';
 
 export  function  HttpLoaderFactory(http:  HttpClient) {
   return  new  TranslateHttpLoader(http, './assets/translate/', '.json');
@@ -44,6 +46,8 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     ReportComponent,
     OrderDetailsComponent,
     HowItWorksComponent,
+    TicketsComponent,
+    TicketViewComponent,
     
     
     

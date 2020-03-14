@@ -1,0 +1,9 @@
+.bg-gray-05, .btn-light, .badge-light {
+    background-color: #f8f9fb !important;
+}
+.bg-gray-10 {
+    background-color: #e6e9ef !important;
+}
+.container {
+    margin-top: 105px !important;
+}
