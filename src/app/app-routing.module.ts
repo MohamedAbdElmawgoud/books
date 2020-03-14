@@ -11,9 +11,9 @@ import { FaqComponent } from "src/app/faq/faq.component";
 import { OrderComponent } from "src/app/order/order.component";
 import { ReportComponent } from "src/app/report/report.component";
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { TicketViewComponent } from './ticket-view/ticket-view.component';
 import { PaymentComponent } from "src/app/payment/payment.component";
 import { OfferComponent } from "src/app/offer/offer.component";
-
 
 const routes: Routes = [
 
@@ -28,8 +28,10 @@ const routes: Routes = [
  { path : 'order' , component: OrderComponent},
  { path : 'details' , component: OrderDetailsComponent},
  { path : 'profile' , component: ReportComponent},
+ { path : 'tickets' , component: ReportComponent},
+ { path : 'ticket/:id' , component: TicketViewComponent},
  {path:'payment',component:PaymentComponent},
- {path:'offer',component:OfferComponent}
+ {path:'offer',component:OfferComponent
  
  
  

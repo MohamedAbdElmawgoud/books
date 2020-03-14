@@ -16,12 +16,12 @@
                     <span>
                         {{item.name}}
                     </span>
-                    <span data-toggle="tooltip" data-placement="top" data-original-title="Price per 1"
-                    class="badge bg-yellow">{{item.price}} $ </span>
+               
                  </div>
                  <p>
-                     {{item.description}}
-                 </p>
+                  <span data-toggle="tooltip" data-placement="top" data-original-title="Price per 1"
+                  class="badge bg-yellow">{{item.price}} $ </span>
+                                 </p>
               
                 
                 </div>
@@ -40,12 +40,7 @@
                 </div>
               </div>
             </div>
-            <div style="
-            padding: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        " >
+            <div class="collapse-buttons" >
               <button class="btn" style="background-color: #fd5f00; color: #fff;" (click)="getOrder(item)" >
                 {{'Make order' | translate }}
               </button>
@@ -71,7 +66,7 @@
 
 
 </section>
-
+<!-- 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -164,4 +159,4 @@
 
     </div>
   </div>
-</div>
+</div> -->

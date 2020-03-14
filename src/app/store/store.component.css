@@ -226,4 +226,19 @@ form div {
     display: flex !important;
     align-items: center;
     justify-content: space-between;
+    display: none;
+}
+
+
+.collapse-buttons{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  display: none;
+  justify-content: space-around;
+  transition: 0.5s;
+}
+.item:hover  .collapse-buttons {
+display: flex;
+
 }

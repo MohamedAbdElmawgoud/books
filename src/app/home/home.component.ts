@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     setTimeout(()=>{
     this.startSlider()
 
-    } , 1500)
+    } , 2000)
     // this.contact = await this.apiService.contact();
   };
 
