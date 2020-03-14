@@ -31,7 +31,7 @@ const routes: Routes = [
  { path : 'tickets' , component: ReportComponent},
  { path : 'ticket/:id' , component: TicketViewComponent},
  {path:'payment',component:PaymentComponent},
- {path:'offer',component:OfferComponent
+ {path:'offer',component:OfferComponent}
  
  
  
