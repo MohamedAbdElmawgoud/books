@@ -123,7 +123,7 @@ export class ApiService {
     return data
   }
   async transactions() {
-    let data = (<any>await this.httpClient.get(`${this.url}users/transactions`, {
+    let data = (<any>await this.httpClient.get(`${this.url}users/transactions?all=yes`, {
       headers: {
         Authorization: localStorage.getItem('token')
       }
