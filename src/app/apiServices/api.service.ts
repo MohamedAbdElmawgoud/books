@@ -87,7 +87,7 @@ export class ApiService {
       return {
         name: this.defaultLng == LNGS.en ? ele.name : ele.nameAr,
         price: ele.price,
-        id : ele.data ? JSON.parse((ele.data)).id : ''
+        id: ele.data ? JSON.parse((ele.data)).id : ''
       }
     });
   }
@@ -98,7 +98,7 @@ export class ApiService {
       return {
         id: ele.id,
         name: this.defaultLng == LNGS.en ? ele.name : ele.nameAr,
-        data : ele.data ? Object.keys(JSON.parse(ele.data))[0] : ''
+        data: ele.data ? Object.keys(JSON.parse(ele.data))[0] : ''
       }
     });
   }
@@ -131,7 +131,8 @@ export class ApiService {
 
     return data.data.map(ele => {
       return ele
-    })   }
+    })
+  }
 
   async tickets() {
     let data = (<any>await this.httpClient.get(`${this.url}tickets/userTickets?all=yes`, {
@@ -142,7 +143,8 @@ export class ApiService {
 
     return data.data.map(ele => {
       return ele
-    })  }
+    })
+  }
   async order(params: {
     "comment": string,
     "itemId": number,
@@ -191,6 +193,45 @@ export class ApiService {
   }) {
     let data = (<any>await this.httpClient.post(`${this.url}contact-us/create`, params).toPromise());
     return data;
+  }
+
+  async addTicket(params) {
+    let data = (<any>await this.httpClient.post(`${this.url}tickets/create`, params, {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    }).toPromise());
+
+    return data    ;
+  }
+
+  async getTicket(id) {
+    let data = (<any>await this.httpClient.get(`${this.url}tickets/get?id=` + id, {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    }).toPromise());
+
+    return data    ;
+  }
+  async getUser() {
+    let data = (<any>await this.httpClient.get(`${this.url}users/get`, {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    }).toPromise());
+
+    return data    ;
+  }
+
+  async editUser(params) {
+    let data = (<any>await this.httpClient.post(`${this.url}users/edit`, params, {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    }).toPromise());
+
+    return data    ;
   }
 
 
