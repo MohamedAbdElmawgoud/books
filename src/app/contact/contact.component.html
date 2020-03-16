@@ -1,9 +1,15 @@
 <!-- contact -->
 <section class="section">
+    <h3 style="text-align: center;padding: 10px;" >
+        {{ 'Contact Info' | translate }}
+      </h3>
   <div class="container">
+      
     <div class="row">
+      
       <div class="col-md-6 mb-5 order-2">
         <form [formGroup]="contactForm">
+            
           <div class="row">
             <div class="col-md-6 form-group" >
               <label for="name">{{ 'Name' | translate }}</label>

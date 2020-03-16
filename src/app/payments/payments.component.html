@@ -1,0 +1,29 @@
+<div>
+
+<table class="table table-hover table-responsive-sm">
+        <thead>
+          <tr>
+            <th scope="col">{{ 'Amount' | translate }}</th>
+            <th scope="col">{{ 'created_at' | translate }}</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of transAction" >
+           
+           
+            <td>{{item.amount}}$</td>
+            <td>{{item.created_at | date}}</td>
+           
+            <td  >
+                <a *ngIf="item.response[0]">
+                    <i class="fa fa-cloud-download" aria-hidden="true"></i>
+
+                </a>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+
+    </div>
