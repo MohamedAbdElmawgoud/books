@@ -129,7 +129,7 @@ export class ApiService {
       }
     }).toPromise());
 
-    return data.map(ele => {
+    return data.data.map(ele => {
       return ele
     })   }
 
@@ -140,7 +140,7 @@ export class ApiService {
       }
     }).toPromise());
 
-    return data.map(ele => {
+    return data.data.map(ele => {
       return ele
     })  }
   async order(params: {
