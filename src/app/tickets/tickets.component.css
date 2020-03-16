@@ -1,0 +1,18 @@
+.carda__body{
+    margin-top: 120px;
+    text-align: center
+  }
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;;
+}
+  .head select {
+    width: 180px;
+    display: inline-block !important;
+  }
+
+  .modal {
+    text-align: left !important;
+  }

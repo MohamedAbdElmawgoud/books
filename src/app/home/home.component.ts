@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {
     this.slider = await this.apiService.getSlider();
     this.services = (await this.apiService.getServices()).splice(0 , 3);
-
     setTimeout(()=>{
     this.startSlider()
 
