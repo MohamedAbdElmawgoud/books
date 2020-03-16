@@ -129,8 +129,20 @@ export class ApiService {
       }
     }).toPromise());
 
-    return data
-  }
+    return data.map(ele => {
+      return ele
+    })   }
+
+  async tickets() {
+    let data = (<any>await this.httpClient.get(`${this.url}tickets/userTickets?all=yes`, {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    }).toPromise());
+
+    return data.map(ele => {
+      return ele
+    })  }
   async order(params: {
     "comment": string,
     "itemId": number,
