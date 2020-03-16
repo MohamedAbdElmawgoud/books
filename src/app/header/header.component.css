@@ -1,5 +1,5 @@
 header{
-    background: black;
+    background: #2386c9;
  
 }
 h1{
@@ -14,7 +14,7 @@ ul{
     margin: auto; 
 }
 .dropbtn {
-    background-color: black;
+    background-color: #2386c9;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -35,7 +35,7 @@ ul{
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #000000;
+    background-color: #2386c9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -50,7 +50,7 @@ ul{
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: rgb(44, 43, 43);}
+  .dropdown-content a:hover {background-color: #094268;}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}

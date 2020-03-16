@@ -14,6 +14,9 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
 import { TicketViewComponent } from './ticket-view/ticket-view.component';
 import { PaymentComponent } from "src/app/payment/payment.component";
 import { OfferComponent } from "src/app/offer/offer.component";
+import { UpdateProfileComponent } from "src/app/update-profile/update-profile.component";
+import { PurchaseComponent } from "src/app/purchase/purchase.component";
+import { PaymentsComponent } from "src/app/payments/payments.component";
 
 const routes: Routes = [
 
@@ -31,7 +34,11 @@ const routes: Routes = [
  { path : 'tickets' , component: ReportComponent},
  { path : 'ticket/:id' , component: TicketViewComponent},
  {path:'payment',component:PaymentComponent},
- {path:'offer',component:OfferComponent}
+ {path:'offer',component:OfferComponent},
+ {path:'update-profile',component:UpdateProfileComponent},
+ {path:'purchase',component:PurchaseComponent},
+ {path:'payments',component:PaymentsComponent},
+ 
  
  
  

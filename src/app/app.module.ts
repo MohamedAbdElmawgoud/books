@@ -27,6 +27,9 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { TicketViewComponent } from './ticket-view/ticket-view.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OfferComponent } from './offer/offer.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { PurchaseComponent } from './purchase/purchase.component';
+import { PaymentsComponent } from './payments/payments.component';
 export  function  HttpLoaderFactory(http:  HttpClient) {
   return  new  TranslateHttpLoader(http, './assets/translate/', '.json');
 }
@@ -51,6 +54,9 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     TicketViewComponent,
     PaymentComponent,
     OfferComponent,
+    UpdateProfileComponent,
+    PurchaseComponent,
+    PaymentsComponent,
     
     
     

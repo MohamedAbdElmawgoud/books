@@ -1,0 +1,29 @@
+<body>
+    
+        <div class="main">
+ <form [formGroup]="updateForm" >
+<div class="form-group">
+    
+     <label for="name">{{ 'Name' | translate }}</label>
+     <input type="text"  class="form-control" formControlName="name" 
+     [ngClass]="{'is-invalid':updateForm.get('name').touched && updateForm.get('name').invalid}" required />
+     <div class="invalid-feedback">
+       <div>{{ 'Name' | translate }} {{ 'is required' | translate }}</div>
+     </div>
+   </div>
+
+   <div class="form-group">
+   <label for="password">{{ 'Password' | translate }}</label>
+   <input type="password" class="form-control"  formControlName="password"
+   [ngClass]="{'is-invalid':updateForm.get('password').touched && updateForm.get('password').invalid}" />
+   <div *ngIf="updateForm.get('password').touched && updateForm.get('password').invalid"  class="invalid-feedback">
+     <div *ngIf="updateForm.get('password').errors.required">{{ 'Password' | translate }} {{ 'is required' | translate }}</div>
+     <div *ngIf="updateForm.get('password').errors.minlength">{{ 'Password' | translate }}  {{ 'must be' | translate }}{{ ' a letaset 6 charector' | translate }}</div>
+   </div>
+</div>
+<div class="p-container" style="text-align: center;" >
+    <button type="submit" >{{ 'Update' | translate }}</button>
+  </div>
+ </form>
+        </div>
+</body>

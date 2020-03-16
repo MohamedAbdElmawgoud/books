@@ -28,9 +28,8 @@
           <li class="nav-item" *ngIf="isLoggedIn">
             <a class="nav-link" routerLink="profile">{{ 'profile' | translate }}</a>
           </li>
-          <li class="nav-item" *ngIf="isLoggedIn">
-            <a class="nav-link" (click)="logout()">{{ 'log out' | translate }}</a>
-          </li>
+        
+          
 
 
           <li class="nav-item" *ngIf="currentLanguage == 'ar'" (click)="Translate('en')">
@@ -62,13 +61,17 @@
           </li>
 
 
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="isLoggedIn">
             <a class="nav-link" routerLink="offer">{{ 'offer' | translate }}</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="isLoggedIn">
             <a class="nav-link" routerLink="payment">{{ 'payment' | translate }}</a>
           </li>
+
+          <li class="nav-item" *ngIf="isLoggedIn">
+              <a class="nav-link" routerLink="payments">{{ 'payments' | translate }}</a>
+            </li>
 
           <li class="nav-item">
             <a class="nav-link" routerLink="contact">{{ 'contact' | translate }}</a>
@@ -79,7 +82,11 @@
             <a class="nav-link" routerLink="faq">{{ 'faq' | translate }}</a>
           </li>
 
-          
+           
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link" (click)="logout()">{{ 'log out' | translate }}</a>
+          </li>
+
 
         </div>
       </div>
