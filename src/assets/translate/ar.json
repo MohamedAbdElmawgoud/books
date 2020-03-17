@@ -83,5 +83,25 @@
   "Redeem it now":"استردها الآن",
   "Payment Options":"خيارات الدفع",
   "Pay with Paypal":"الدفع بواسط باى بال",
-  "Instant - No minimum":"فوري - لا يوجد حد أدنى"
+  "Instant - No minimum":"فوري - لا يوجد حد أدنى",
+  "Add Funds":"أضف الأموال",
+  "tickets":"تذاكر",
+  "New Order":"طلب جديد",
+  "reports":"التقارير",
+  "Payments":"المدفوعات",
+  "Edit profile":"تعديل الملف الشخصي",
+  "Show Offers":"إظهار العروض", 
+  "Active orders":"الطلبات النشطه",
+  "orders":"الطلبات",
+  "All":"كل",
+  "Completed":"المكتمله",
+  "view details":"عرض التفاصيل",
+  "Your ticket's":"التذاكر الخاصة بك",
+  "Open":"مفتوح",
+  "Solved":"محلول",
+  "add new ticket":"أضف تذكرة جديدة"
+
+ 
+ 
+ 
 }

@@ -14,9 +14,9 @@ export class UpdateProfileComponent implements OnInit {
     name: new FormControl('', [
       Validators.required,
     ]),
-    password: new FormControl('', [
+    email: new FormControl('', [
       Validators.required,
-      Validators.minLength(6)
+      Validators.email
     ])
     
    });
@@ -25,7 +25,9 @@ export class UpdateProfileComponent implements OnInit {
   ngOnInit(): void {
   }
   async update(){
+await this.apiService.editUser({name:this.updateForm.value.name, email:this.updateForm.value.email});
 this.updateValue = await this.apiService.getUser();
 console.log(this.updateValue);
+
   }
 }

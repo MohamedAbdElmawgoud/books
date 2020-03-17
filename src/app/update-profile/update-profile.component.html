@@ -13,12 +13,12 @@
    </div>
 
    <div class="form-group">
-   <label for="password">{{ 'Password' | translate }}</label>
-   <input type="password" class="form-control"  formControlName="password"
-   [ngClass]="{'is-invalid':updateForm.get('password').touched && updateForm.get('password').invalid}" />
-   <div *ngIf="updateForm.get('password').touched && updateForm.get('password').invalid"  class="invalid-feedback">
-     <div *ngIf="updateForm.get('password').errors.required">{{ 'Password' | translate }} {{ 'is required' | translate }}</div>
-     <div *ngIf="updateForm.get('password').errors.minlength">{{ 'Password' | translate }}  {{ 'must be' | translate }}{{ ' a letaset 6 charector' | translate }}</div>
+   <label for="email">{{ 'Email' | translate }}</label>
+   <input type="email" class="form-control"  formControlName="email"
+   [ngClass]="{'is-invalid':updateForm.get('email').touched && updateForm.get('email').invalid}" />
+   <div *ngIf="updateForm.get('email').touched && updateForm.get('email').invalid"  class="invalid-feedback">
+     <div *ngIf="updateForm.get('email').errors.required">{{ 'Email' | translate }} {{ 'is required' | translate }}</div>
+     <div *ngIf="updateForm.get('email').errors.minlength">{{ 'Email' | translate }}  {{ 'must be' | translate }}{{ ' a letaset 6 charector' | translate }}</div>
    </div>
 </div>
 <div class="p-container" style="text-align: center;" >

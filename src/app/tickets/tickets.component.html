@@ -10,9 +10,9 @@
 
       <div class="head">
         <select (change)="onChange($event)" class="form-control">
-          <option value="all">All</option>
-          <option value="Open">Open</option>
-					<option value="Solved">Solved</option>
+          <option value="all"> {{ "All" | translate }}</option>
+          <option value="Open">{{ "Open" | translate }}</option>
+					<option value="Solved">{{ "Solved" | translate }}</option>
         </select>
 
         <button data-toggle="modal" data-target="#exampleModal"  class="btn btn-primary">

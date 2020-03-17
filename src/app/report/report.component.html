@@ -37,22 +37,22 @@
 	
 	<div class="container">
 			<div class="row">
-					<div class="col-md-3 col-sm-6 col-xs-12">
+					<!-- <div class="col-md-3 col-sm-6 col-xs-12">
 							<a href="?active=1" class="info-box no-active">
 								<span class="info-box-icon bg-blue"><i class="fa fa-flag"></i></span>
 								<div class="info-box-content">
-									<span class="info-box-text">Active orders</span>
+									<span class="info-box-text">{{ 'Active orders' | translate }}</span>
 									<span class="info-box-number">88</span>
-								</div><!-- /.info-box-content -->
-							</a><!-- /.info-box -->
-					</div>
+								</div>
+							</a>
+					</div> -->
 	
 					<div class="col-md-3 col-sm-6 col-xs-12">
 							<a href="?status=1" class="info-box no-active">
 								<span class="info-box-icon bg-light-gray"><i class="fa fa-circle-o-notch"></i></span>
 								<div class="info-box-content">
-									<span class="info-box-text">Pending orders</span>
-									<span class="info-box-number">0</span>
+									<span class="info-box-text">{{ 'Pending' | translate }} </span>
+									<span class="info-box-number">{{pendingOrders}}</span>
 								</div><!-- /.info-box-content -->
 							</a><!-- /.info-box -->
 					</div>
@@ -62,8 +62,8 @@
 							<a href="?status=3" class="info-box no-active">
 								<span class="info-box-icon bg-green"><i class="fa fa-check"></i></span>
 								<div class="info-box-content">
-									<span class="info-box-text">Completed orders</span>
-									<span class="info-box-number">98</span>
+									<span class="info-box-text"> {{ 'Completed' | translate }} {{ 'orders' | translate }}</span>
+									<span class="info-box-number">{{completedOrders}}</span>
 								</div><!-- /.info-box-content -->
 							</a><!-- /.info-box -->
 					</div>
@@ -71,8 +71,8 @@
 						<a href="?all=1" class="info-box no-active">
 							<span class="info-box-icon bg-black"><i class="fa fa-bars"></i></span>
 							<div class="info-box-content">
-								<span class="info-box-text">All orders</span>
-								<span class="info-box-number">107</span>
+								<span class="info-box-text">{{ 'All' | translate }} {{ 'orders' | translate }}</span>
+								<span class="info-box-number">{{AllOrders}}</span>
 							</div><!-- /.info-box-content -->
 						</a><!-- /.info-box -->
 				</div>

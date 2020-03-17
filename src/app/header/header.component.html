@@ -21,7 +21,7 @@
             <a class="nav-link" routerLink="services">{{ 'SERVICES' | translate }}</a>
           </li>
           <li class="nav-item" *ngIf="!isLoggedIn" >
-            <a class="nav-link" routerLink="contact" style=" ">{{ 'contact' | translate }}</a>
+            <a class="nav-link" routerLink="contact" style=" ">{{ 'CONTACT' | translate }}</a>
           </li>
 
           
@@ -102,10 +102,10 @@
               <span class="text-uper">{{user?.name}} (<span id="user-balance" class="">${{user?.user_balance?.totalBalance}}</span>)</span>
             </button>
             <div class="dropdown-menu w-100 shadow" aria-labelledby="usermenu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-              <a class="dropdown-item pt-3 pb-3" routerLink="add-f">Balance: ${{user?.user_balance?.totalBalance}} </a>
+              <a class="dropdown-item pt-3 pb-3" routerLink="add-f">{{ 'Balance' | translate }} ${{user?.user_balance?.totalBalance}} </a>
               <!-- <a class="dropdown-item pt-3 pb-3" href="payments.php">Payment History</a> -->
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item pt-3 pb-3" routerLink="payment">Payments</a>
+              <a class="dropdown-item pt-3 pb-3" routerLink="payments">{{ 'Payments' | translate }}</a>
              
               <a class="dropdown-item pt-3 pb-3" routerLink="update-profile">{{ 'Edit profile' | translate }}</a>
                

@@ -38,11 +38,11 @@ ol {
 }
 
 a {
-    color: #fd5f00;
+    color: #2386c9;
 }
 
 a:hover {
-    color: #fd5f00;
+    color: #2386c9;
 }
 
 a,
@@ -117,19 +117,19 @@ li {
 .alert-warning,
 .btn-warning,
 .badge-warning {
-  background-color: #fd935a !important;
+  background-color: #5A8FFD !important;
 }
 .bg-aqua,
 .alert-info,
 .btn-info,
 .badge-info {
-  background-color: #fd5f00 !important;
+  background-color: #2386c9 !important;
 }
 .bg-blue,
 .alert-primary,
 .btn-primary,
 .badge-primary {
-  background-color: #fd5f00 !important;
+  background-color: #2386c9 !important;
 }
 
 

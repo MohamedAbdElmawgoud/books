@@ -85,7 +85,24 @@
        "Redeem it now":"Redeem it now",
        "Payment Options":"Payment Options",
        "Pay with Paypal":"Pay with Paypal",
-       "Instant - No minimum":"Instant - No minimum"
+       "Instant - No minimum":"Instant - No minimum",
+       "Add Funds":"Add Funds",
+       "tickets":"tickets",
+       "New Order":"New Order",
+       "reports":"reports",
+       "Payments":"Payments",
+       "Edit profile":"Edit profile",
+       "Show Offers":"Show Offers", 
+       "Active orders":"Active orders",
+       "orders":"orders",
+       "All":"All",
+       "Completed":"Completed",
+       "view details":"view details",
+       "Your ticket's":"Your ticket's",
+       "Open":"Open",
+       "Solved":"Solved",
+       "add new ticket":"add new ticket"
+
       
 
       
