@@ -35,7 +35,7 @@
 
 
 	
-	<div class="container-fluid">
+	<div class="container">
 			<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-12">
 							<a href="?active=1" class="info-box no-active">
@@ -57,15 +57,6 @@
 							</a><!-- /.info-box -->
 					</div>
 	
-					<div class="col-md-3 col-sm-6 col-xs-12">
-							<a href="?status=2" class="info-box no-active">
-								<span class="info-box-icon bg-aqua"><i class="fa fa-cogs"></i></span>
-								<div class="info-box-content">
-									<span class="info-box-text">Processing orders</span>
-									<span class="info-box-number">0</span>
-								</div><!-- /.info-box-content -->
-							</a><!-- /.info-box -->
-					</div>
 	
 					<div class="col-md-3 col-sm-6 col-xs-12">
 							<a href="?status=3" class="info-box no-active">
@@ -76,50 +67,18 @@
 								</div><!-- /.info-box-content -->
 							</a><!-- /.info-box -->
 					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<a href="?all=1" class="info-box no-active">
+							<span class="info-box-icon bg-black"><i class="fa fa-bars"></i></span>
+							<div class="info-box-content">
+								<span class="info-box-text">All orders</span>
+								<span class="info-box-number">107</span>
+							</div><!-- /.info-box-content -->
+						</a><!-- /.info-box -->
+				</div>
 			</div>
 	
-			<div class="row">
-	
-					<div class="col-md-3 col-sm-6 col-xs-12">
-							<a href="?read=1" class="info-box no-active">
-								<span class="info-box-icon bg-purple"><i class="fa fa-exclamation"></i></span>
-								<div class="info-box-content">
-									<span class="info-box-text">Unread orders</span>
-									<span class="info-box-number">88</span>
-								</div><!-- /.info-box-content -->
-							</a><!-- /.info-box -->
-					</div>
-	
-					<div class="col-md-3 col-sm-6 col-xs-12">
-							<a href="?star=1" class="info-box no-active">
-								<span class="info-box-icon bg-yellow"><i class="fa fa-star"></i></span>
-								<div class="info-box-content">
-									<span class="info-box-text">Starred orders</span>
-									<span class="info-box-number">2</span>
-								</div><!-- /.info-box-content -->
-							</a><!-- /.info-box -->
-					</div>
-	
-					<div class="col-md-3 col-sm-6 col-xs-12">
-							<a href="?status=4" class="info-box no-active">
-								<span class="info-box-icon bg-red"><i class="fa fa-times"></i></span>
-								<div class="info-box-content">
-									<span class="info-box-text">Canceled orders</span>
-									<span class="info-box-number">9</span>
-								</div><!-- /.info-box-content -->
-							</a><!-- /.info-box -->
-					</div>
-	
-					<div class="col-md-3 col-sm-6 col-xs-12">
-							<a href="?all=1" class="info-box no-active">
-								<span class="info-box-icon bg-black"><i class="fa fa-bars"></i></span>
-								<div class="info-box-content">
-									<span class="info-box-text">All orders</span>
-									<span class="info-box-number">107</span>
-								</div><!-- /.info-box-content -->
-							</a><!-- /.info-box -->
-					</div>
-			</div>
+
 	
 	</div>
 	
@@ -128,7 +87,9 @@
 	<table class="table table-hover table-responsive-sm">
 			<thead>
 			  <tr>
+				<th scope="col">{{ 'Order id' | translate }}</th>
 				<th scope="col">{{ 'item name' | translate }}</th>
+
 				<th scope="col">{{ 'price' | translate }}</th>
 				<th scope="col">{{ 'date' | translate }}</th>
 				<th scope="col">{{ 'status' | translate }}</th>
@@ -138,7 +99,7 @@
 			<tbody>
 			  <tr *ngFor="let item of orders" >
 				<th scope="row">{{item.id}}</th>
-				<td>{{item.item.name}}</td>
+				<td>{{item.item?.name}}</td>
 				<td>{{item.totalAmount}}$</td>
                 <td>{{item.created_at | date}}</td>
 				<td>{{item.status }}</td>

@@ -1316,7 +1316,7 @@ a.tip {
   min-height: 52px;
   background: #fff;
   width: 100%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); */
   border-radius: 2px;
   margin-bottom: 15px;
 }
