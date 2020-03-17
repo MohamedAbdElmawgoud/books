@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./tickets.component.css']
 })
 export class TicketsComponent implements OnInit {
-  tickets
+  tickets;
+  allTickets
   constructor(private api : ApiService , private router : Router) { }
   ticketForm = new FormGroup({
     message : new FormControl('' , Validators.required),
@@ -23,6 +24,8 @@ export class TicketsComponent implements OnInit {
       
       return ele 
     })
+
+    this.allTickets = [...this.tickets]
   }
 
   async addTicket(){

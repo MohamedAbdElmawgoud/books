@@ -1,12 +1,12 @@
 <div class="container my-5">
 	<div class="row my-3">
 		<div class="col">
-			Ticket ID: <span class="badge badge-primary mr-2">#6478</span>
-			Order ID: <span class="badge badge-info"></span>
+			Ticket ID: <span class="badge badge-primary mr-2">#{{ticketId}}</span>
+			Order ID: <span *ngIf="tickets" class="badge badge-info"> {{tickets[0].orderId}} </span>
 		</div>
 		<div class="col">
 			<div class="text-right text-gray-70">
-				<a class="" href="./tickets.php">Back to tickets</a> <span class="mx-2">|</span>
+				<!-- <a class="" href="./tickets.php">Back to tickets</a> <span class="mx-2">|</span> -->
 				<!-- <a href="#" class="action" url="./ticket.php" data="{&quot;action&quot;:&quot;unread&quot;,&quot;id&quot;:&quot;6478&quot;}">Mark as unread</a> -->
 			</div>
 		</div>
@@ -15,7 +15,7 @@
 	<div class="shadow bg-white p-5">
 		<div class="line-shape bg-blue mb-4"></div>
 
-		<div *ngFor="let ticket of tickets" class="col-lg-12">
+		<div *ngFor="let ticket of tickets" [class]="ticket.user?.name == 'admin' ? 'bg-gray-10 col-lg-12' : 'col-lg-12'"   >
 			<div class="mb-5">
 				<div class="clearfix my-1">
 					<span class="float-right"><span class="tip badge bg-light font-weight-normal" data-toggle="tooltip"
@@ -35,7 +35,7 @@
 
 
 
-		<form [formGroup]="ticketForm" >
+		<form *ngIf="lastStatus != 'Solved'" [formGroup]="ticketForm" >
 			<input type="hidden" name="action" value="reply_submit">
 			<input type="hidden" name="id" value="6478">
 			<div class="form-group">
@@ -45,7 +45,7 @@
 			</div>
 			<div class="form-group">
 				<label for="formGroupExampleInput">Status:</label>
-				<select formControlName="status" name="status" class="custom-select" required="">
+				<select formControlName="status"  name="status" class="custom-select" required="">
 					<option value="Open">Open</option>
 					<option value="Solved">Solved</option>
 				</select>
@@ -54,5 +54,8 @@
 				<button type="button" (click)="replay()" class="btn btn-primary">Add reply</button>
 			</div>
 		</form>
+		<p style="text-align: center;" *ngIf="lastStatus == 'Solved'" >
+			{{'This ticket is closed start new one if you want' | translate}}
+		</p>
 	</div>
 </div>
