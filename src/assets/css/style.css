@@ -8283,3 +8283,7 @@ header {
     height: 700px;
   }
 }
+header , app-header{
+  background: #2386c9 !important;
+
+}

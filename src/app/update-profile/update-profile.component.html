@@ -1,7 +1,7 @@
 <body>
     
         <div class="main">
- <form [formGroup]="updateForm" >
+ <form [formGroup]="updateForm" (click)="update()">
 <div class="form-group">
     
      <label for="name">{{ 'Name' | translate }}</label>
