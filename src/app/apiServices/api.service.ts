@@ -145,6 +145,17 @@ export class ApiService {
       return ele
     })
   }
+  async offers() {
+    let data = (<any>await this.httpClient.get(`${this.url}offers/getAll?all=yes`, {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    }).toPromise());
+
+    return data.data.map(ele => {
+      return ele
+    })
+  }
   async order(params: {
     "comment": string,
     "itemId": number,
