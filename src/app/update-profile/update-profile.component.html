@@ -1,7 +1,11 @@
 <body>
     
         <div class="main">
- <form [formGroup]="updateForm" (click)="update()">
+    
+ <form [formGroup]="updateForm" *ngIf="updateForm" style="padding-bottom: 15px;;" (click)="update()">
+    <h3 style="padding: 10px;" >
+    {{'Update You Data' | translate}}
+  </h3>
 <div class="form-group">
     
      <label for="name">{{ 'Name' | translate }}</label>
