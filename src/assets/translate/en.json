@@ -101,8 +101,14 @@
        "Your ticket's":"Your ticket's",
        "Open":"Open",
        "Solved":"Solved",
-       "add new ticket":"add new ticket"
-
+       "add new ticket":"add new ticket",    
+       "Subject":"Subject",
+       "Category":"Category",
+       "Order ID":"Order ID",
+       "Status":"Status",
+       "Last update":"Last update",
+       "Amount":"Amount",
+       "created_at":"created_at"
       
 
       

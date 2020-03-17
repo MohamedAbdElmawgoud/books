@@ -99,7 +99,14 @@
   "Your ticket's":"التذاكر الخاصة بك",
   "Open":"مفتوح",
   "Solved":"محلول",
-  "add new ticket":"أضف تذكرة جديدة"
+  "add new ticket":"أضف تذكرة جديدة",    
+  "Subject":"الموضوع",
+  "Category":"الفئة",
+  "Order ID":"رقم الطلب",
+  "Status":"الحاله",
+  "Last update":"التحديث الأخير",
+  "Amount":"المبلغ",
+  "created_at":"تم إنشاؤه"
 
  
  
