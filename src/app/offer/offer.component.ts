@@ -16,7 +16,6 @@ offers ;
   
   }
   async pay(offer){
-    console.log(offer);
     
     try {
       await this.apiService.Purchase({amount : 

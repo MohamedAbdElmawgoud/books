@@ -9,9 +9,9 @@
 
 
       <div class="head">
-        <select class="form-control">
-          <option value="Open">Open</option>
+        <select (change)="onChange($event)" class="form-control">
           <option value="all">All</option>
+          <option value="Open">Open</option>
 					<option value="Solved">Solved</option>
         </select>
 
@@ -36,8 +36,7 @@
             <th scope="row">{{item.subject}}</th>
             <td>{{item.category}}</td>
             <td>{{item.orderId}}</td>
-            <td *ngIf="item.lastStatus">{{item.lastStatus | translate }}</td>
-            <td *ngIf="!item.lastStatus">{{ 'Open' | translate }}</td>
+            <td >{{item.lastStatus | translate }}</td>
 
             <td>{{item.updated_at | date}}</td>
 
