@@ -9,7 +9,7 @@
 
 
       <div class="collapse navbar-collapse" id="navbarsExample05">
-        <ul class="navbar-nav pl-md-5 ml-auto">
+        <ul style="width: 100%;" class="navbar-nav pl-md-5 ">
           <!-- <li class="nav-item">
             <a class="nav-link active" href="index.html">{{ 'HOME' | translate }}</a>
           </li> -->
@@ -20,39 +20,40 @@
           <li class="nav-item" *ngIf="!isLoggedIn">
             <a class="nav-link" routerLink="services">{{ 'SERVICES' | translate }}</a>
           </li>
-          <li class="nav-item" *ngIf="!isLoggedIn">
-            <a class="nav-link" routerLink="log-in">{{ 'LOG IN' | translate }}</a>
+          <li class="nav-item" *ngIf="!isLoggedIn" >
+            <a class="nav-link" routerLink="contact" style=" ">{{ 'contact' | translate }}</a>
           </li>
 
-          <li class="nav-item" *ngIf="!isLoggedIn">
-            <a class="nav-link" routerLink="sign-up">{{ 'sign up' | translate }}</a>
+          
+          <li class="nav-item" *ngIf="!isLoggedIn" >
+            <a class="nav-link" routerLink="faq" style="">{{ 'faq' | translate }}</a>
           </li>
+
           
           <li class="nav-item" *ngIf="isLoggedIn">
             <a class="nav-link" routerLink="tickets">{{ 'tickets' | translate }}</a>
           </li>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link" routerLink="profile">{{ 'reports' | translate }}</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link" routerLink="store">{{ 'New Order' | translate }}</a>
+          </li>
         
           
-
-
-          <li class="nav-item" *ngIf="currentLanguage == 'ar'" (click)="Translate('en')">
-            <span class="nav-link">English</span>
-          </li>
-
-          <li class="nav-item" *ngIf="currentLanguage == 'en'" (click)="Translate('ar')">
-            <span class="nav-link">عربي</span>
+          <li class="nav-item" *ngIf="!isLoggedIn" >
+            <a class="nav-link" routerLink="about" style=" ">{{ 'ABOUT' | translate }}</a>
           </li>
 
 
 
 
-          <div class="dropdown">
+
+          <!-- <div class="dropdown">
             <button class="dropbtn">{{ 'More' | translate }}</button>
             <div class="dropdown-content">
 
-          <li class="nav-item">
-            <a class="nav-link" routerLink="about" style=" color: black !important;">{{ 'ABOUT' | translate }}</a>
-          </li>
+     
 
 
 
@@ -74,14 +75,6 @@
               <a class="nav-link" routerLink="payments" style=" color: black !important;">{{ 'payments' | translate }}</a>
             </li>
 
-          <li class="nav-item">
-            <a class="nav-link" routerLink="contact" style=" color: black !important;">{{ 'contact' | translate }}</a>
-          </li>
-
-          
-          <li class="nav-item">
-            <a class="nav-link" routerLink="faq" style=" color: black !important;">{{ 'faq' | translate }}</a>
-          </li>
 
            
          
@@ -89,30 +82,11 @@
           
         </div>
        
-      </div>
+      </div> -->
 
 
    
-      <div id="header-user float-right" class="col-lg-3 mt-2 text-right" *ngIf="isLoggedIn" >
-          
-                       <div class="dropdown mb-2 drdown">
-                        <button class="btn btn-outline-info dropdown-toggle w-100" type="button" id="usermenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color :white;">
-                          <i class="fi-user pr-1"></i>
-                          <span class="text-uper">shaherwow (<span id="user-balance" class="">$23.4</span>)</span>
-                        </button>
-                        <div class="dropdown-menu w-100 shadow" aria-labelledby="usermenu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                          <a class="dropdown-item pt-3 pb-3" href="topup.php">Balance: $23.4 <span class="badge bg-red">Top up</span></a>
-                          <!-- <a class="dropdown-item pt-3 pb-3" href="payments.php">Payment History</a> -->
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item pt-3 pb-3" routerLink="profile">Profile</a>
-                         
-                              <a class="dropdown-item pt-3 pb-3" routerLink="update-profile">{{ 'update-profile' | translate }}</a>
-                           
-                          <a class="dropdown-item pt-3 pb-3" (click)="logout()">{{ 'log out' | translate }}</a>
-                        </div>
-                      </div>
-          
-                  </div>
+
           
       
         </ul>
@@ -121,14 +95,46 @@
 
 
 
-
-        <!-- <div class="navbar-nav ml-auto">
-            <form method="post" class="search-form">
-              <span class="icon ion ion-search"></span>
-              <input type="text" class="form-control" placeholder="Search...">
-            </form>
+        <div id="header-user float-right" class="col-lg-3 mt-2 text-right" >
+          <div *ngIf="isLoggedIn" class="dropdown mb-2 drdown">
+            <button class="btn btn-outline-info dropdown-toggle w-100" type="button" id="usermenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color :white;">
+              <i class="fi-user pr-1"></i>
+              <span class="text-uper">{{user?.name}} (<span id="user-balance" class="">${{user?.user_balance?.totalBalance}}</span>)</span>
+            </button>
+            <div class="dropdown-menu w-100 shadow" aria-labelledby="usermenu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+              <a class="dropdown-item pt-3 pb-3" routerLink="add-f">Balance: ${{user?.user_balance?.totalBalance}} </a>
+              <!-- <a class="dropdown-item pt-3 pb-3" href="payments.php">Payment History</a> -->
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item pt-3 pb-3" routerLink="payment">Payments</a>
+             
+              <a class="dropdown-item pt-3 pb-3" routerLink="update-profile">{{ 'Edit profile' | translate }}</a>
+               
+              <a class="dropdown-item pt-3 pb-3" (click)="logout()">{{ 'log out' | translate }}</a>
+            </div>
           </div>
-           -->
+          <div *ngIf="!isLoggedIn" class="dropdown mb-2 drdown">
+            <button routerLink="log-in" class="btn btn-outline-info " type="button" >
+              <a style="color :white;" routerLink="log-in">{{ 'LOG IN' | translate }}</a>
+            
+       
+            </button>
+            <button *ngIf="!isLoggedIn" routerLink="sign-up" class="btn btn-outline-info " type="button" style="color :white;">
+              <a style="color :white;"  routerLink="sign-up">{{ 'sign up' | translate }}</a>
+      
+            </button>
+
+
+          <button class="btn btn-outline-info" *ngIf="currentLanguage == 'ar'" (click)="Translate('en')" style="color :white;" >
+            English
+                    </button>
+
+          <button class="btn btn-outline-info" *ngIf="currentLanguage == 'en'" (click)="Translate('ar')" style="color :white;" >
+            عربي
+         </button>
+
+          </div>
+
+        </div>
       </div>
     </div>
   </nav>

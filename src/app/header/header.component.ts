@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../apiServices/api.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   currentLanguage;
-  isLoggedIn
-  constructor(public translate:  TranslateService , private route : Router) { 
+  isLoggedIn;
+  user;
+  constructor(public translate:  TranslateService , private route : Router , private apiService : ApiService) { 
     this.currentLanguage  =  localStorage.getItem('lng') || 'en'
     this.changeLng(this.currentLanguage)
     this.route.events.subscribe(e=>{
@@ -18,7 +20,8 @@ export class HeaderComponent implements OnInit {
     })
   }
   
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.user = (await this.apiService.getUser()).user
   }
   Translate(type: string){
     window.location.reload()

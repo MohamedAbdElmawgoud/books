@@ -62,3 +62,7 @@ ul{
     margin-top: 16px !important;
   }
   
+
+  button {
+    border : 0px;
+  }

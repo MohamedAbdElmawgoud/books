@@ -226,7 +226,7 @@ export class ApiService {
     return data    ;
   }
   async getUser() {
-    let data = (<any>await this.httpClient.get(`${this.url}users/get`, {
+    let data = (<any>await this.httpClient.get(`${this.url}users/user`, {
       headers: {
         Authorization: localStorage.getItem('token')
       }
