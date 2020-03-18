@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  dir = 'ltr';  
   contactForm = new FormGroup({
     'name': new FormControl('', [Validators.required]),
     'phone': new FormControl('', [Validators.required]),
@@ -20,7 +21,11 @@ export class ContactComponent implements OnInit {
   });
   constructor(public translate:  TranslateService, private apiService: ApiService) { 
     const  currentLanguage  =  localStorage.getItem('lng') || 'en'
-    this.Translate(currentLanguage) }
+    this.Translate(currentLanguage)
+    this.dir = localStorage.getItem('lng') == 'ar' ? 'rtl' : "ltr"
+    
+  }
+    
 
   ngOnInit(): void {
   }
