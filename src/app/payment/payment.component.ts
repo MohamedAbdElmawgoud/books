@@ -7,11 +7,14 @@ import { ApiService } from '../apiServices/api.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+  user: any;
+  isLoggedIn;
 
   constructor(private apiService : ApiService) { }
 
  async ngOnInit() {
-  
+  this.isLoggedIn = localStorage.getItem('token');
+  this.user = (await this.apiService.getUser()).user
   }
 
 }

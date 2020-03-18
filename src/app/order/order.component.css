@@ -72,7 +72,7 @@ section{
     .alert-primary,
     .btn-primary,
     .badge-primary {
-      background-color: #fd5f00 !important;
+      background-color: #2386c9 !important;
       color: white;
     }
     
@@ -86,5 +86,5 @@ section{
     }
 
     label {
-        color: #fd5f00;
+        color: #236AC9;
     }

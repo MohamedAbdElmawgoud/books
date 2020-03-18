@@ -145,8 +145,9 @@
 				<h3 class="b-8">{{'Available' | translate }} {{'Balance' | translate }}</h3>
 				
 							<div class="pt-3 f-125">
-					<a class="btn btn-outline-primary" routerLink="../purchase">{{'LOG IN' | translate }}{{'to access' | translate }}</a>
-				</div>
+					<a class="btn btn-outline-primary" routerLink="../purchase" *ngIf="!isLoggedIn">{{'LOG IN' | translate }}{{'to access' | translate }}</a>
+                    <!-- <a class="btn btn-outline-primary" routerLink="../purchase" *ngIf="isLoggedIn">${{user?.user_balance?.totalBalance}}</a> -->
+                </div>
 			
 				<div class="pt-3">
 					<a href="./payments.php" target="_blank"><i>{{'Payment History' | translate }}</i></a>

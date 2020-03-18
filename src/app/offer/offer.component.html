@@ -10,12 +10,12 @@
                             <div class="plan  ">
                                 <div class="f-150 text-aqua">{{offer.bounce}}% Bonus</div>
                 <div class="f-200 b-6 text-yellow">${{offer.amount}}</div>
-                <div class="text-black">Pay ONLY <b class="bold">${{offer.amount}}</b></div>
+                <div class="text-black">{{'Pay ONLY'| translate}} <b class="bold">${{offer.amount}}</b></div>
                 <hr>
                 <div class="text-gray-30">
-                    <small class="">Pay Only ${{offer.amount}}<br>Get ${{offer.amount  + (offer.amount * offer.bounce * 0.01)}} in Your Balance</small>
+                    <small class="">{{'Pay ONLY'| translate}} ${{offer.amount}}<br>Get ${{offer.amount  + (offer.amount * offer.bounce * 0.01)}} in Your Balance</small>
                 </div>
-                            <a (click)="pay(offer)" class="btn btn-block btn-warning mt-3">Pay ONLY <b>${{offer.amount}}</b></a>
+                            <a (click)="pay(offer)" class="btn btn-block btn-warning mt-3">{{'Pay ONLY'| translate}} <b>${{offer.amount}}</b></a>
                         </div>
                 </div>
 
@@ -23,12 +23,12 @@
                             <div class="plan  plan-highlight">
                 <div class="plan-recommended bg-aqua">Most Popular</div>                <div class="f-150 text-aqua">200% Bonus</div>
                 <div class="f-200 b-6 text-yellow">$3,000</div>
-                <div class="text-black">Pay ONLY <b class="bold">$1000</b></div>
+                <div class="text-black">{{'Pay ONLY'| translate}} <b class="bold">$1000</b></div>
                 <hr>
                 <div class="text-gray-30">
-                    <small class="">Pay Only $1,000<br>Get $3,000 in Your Balance</small>
+                    <small class="">{{'Pay ONLY'| translate}} $1,000<br>Get $3,000 in Your Balance</small>
                 </div>
-                            <a href="./login.php" class="btn btn-block btn-info mt-3">Pay ONLY <b>$1000</b></a>
+                            <a href="./login.php" class="btn btn-block btn-info mt-3">{{'Pay ONLY'| translate}} <b>$1000</b></a>
                         </div>
                 </div> -->
         </div>
