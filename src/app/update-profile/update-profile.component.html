@@ -14,7 +14,7 @@
 
    <div class="form-group">
    <label for="email">{{ 'Email' | translate }}</label>
-   <input type="email" class="form-control"  formControlName="email"
+   <input type="mail" class="form-control"  formControlName="email"
    [ngClass]="{'is-invalid':updateForm.get('email').touched && updateForm.get('email').invalid}" />
    <div *ngIf="updateForm.get('email').touched && updateForm.get('email').invalid"  class="invalid-feedback">
      <div *ngIf="updateForm.get('email').errors.required">{{ 'Email' | translate }} {{ 'is required' | translate }}</div>

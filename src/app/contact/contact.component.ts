@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../apiServices/api.service';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'contact',
@@ -34,7 +34,7 @@ export class ContactComponent implements OnInit {
 
     async  submit(){
       if(this.contactForm.valid){
-        await this.apiService.contact(this.contactForm.value);
+      try{  await this.apiService.contact(this.contactForm.value);
         this.contactForm.patchValue({})
   
         Swal.fire({
@@ -42,7 +42,24 @@ export class ContactComponent implements OnInit {
     showConfirmButton: false,
     timer: 1500
         })
-  
+        }
+        
+        catch (e) {
+          Swal.fire({
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 1500,
+            title: "please enter valid data"
+          })
+        }
+      }
+      else{
+        Swal.fire({
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 1500,
+          title: "please enter valid data"
+        })
       }
     }
 

@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../apiServices/api.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'log-in',
@@ -51,15 +51,36 @@ export class LogInComponent implements OnInit {
 
 
 
-  async login() {
-    if (this.logInForm.valid) {
-      await this.apiService.login(this.logInForm.value);
+  async login() 
+{
+     
+     if (this.logInForm.valid) {
+        
+    try{      await this.apiService.login({email:this.logInForm.value.email,password :this.logInForm.value.password});
       Swal.fire({
-              icon: 'success',
+        icon: 'success',
         showConfirmButton: false,
         timer: 1500
-            })
+      }) 
       this.router.navigate(['profile'])
+    }
+     
+ 
+      catch(e){
+        Swal.fire({
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 1500
+        })  
+      }
+    }
+    else{
+      Swal.fire({
+        icon: 'error',
+        showConfirmButton: false,
+        timer: 1500,
+        title: "please enter valid data"
+      })
     }
   }
 }

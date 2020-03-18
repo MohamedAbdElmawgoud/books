@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { FormGroup, FormControl, Validators, FormBuilder, } from '@angular/forms';
 import { ApiService } from '../apiServices/api.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'sign-up',
@@ -82,6 +82,15 @@ export class SignUpComponent implements OnInit {
         })
       }
 
+    }
+
+    else{
+      Swal.fire({
+        icon: 'error',
+        showConfirmButton: false,
+        timer: 1500,
+        title: "please enter valid data"
+      })
     }
   }
 }

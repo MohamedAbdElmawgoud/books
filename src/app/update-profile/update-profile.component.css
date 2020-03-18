@@ -242,5 +242,7 @@ button:hover {
 	padding:1em 0;
 	}
 }
-
+button{
+	margin-bottom: 3%;
+}
 /*----//end-responsive design-----*/

@@ -34,7 +34,9 @@ export class HeaderComponent implements OnInit {
     localStorage.setItem('lng' ,type)
   }
   logout(){
+    this.route.navigate([''])
     localStorage.clear()
-    window.location.reload()
+    // window.location.reload()
+    
   }
 }
