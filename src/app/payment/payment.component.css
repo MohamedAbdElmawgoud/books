@@ -1995,10 +1995,14 @@ img.vert-move {
 /*/////////////////////////// End move-up&down-heart ///////////////////////////*/
 section{
  
-  margin-left: 10%
+  /* margin-left: 10% */
 }
 .container{
+  margin: auto;
   margin-top: 10%;
-  margin-left: 14%
+  /* margin-left: 14% */
 }
 
+.cont[dir='rtl'] .offer , .cont[dir='rtl'] .row  {
+text-align: right;
+}

@@ -9,8 +9,10 @@ import { ApiService } from '../apiServices/api.service';
 export class PaymentComponent implements OnInit {
   user: any;
   isLoggedIn;
-
-  constructor(private apiService : ApiService) { }
+  dir = 'ltr'
+  constructor(private apiService : ApiService) { 
+    this.dir = localStorage.getItem('lng') == 'ar' ? 'rtl' : "ltr"
+  }
 
  async ngOnInit() {
   this.isLoggedIn = localStorage.getItem('token');
