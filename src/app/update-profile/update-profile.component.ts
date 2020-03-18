@@ -9,25 +9,26 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
   styleUrls: ['./update-profile.component.css']
 })
 export class UpdateProfileComponent implements OnInit {
-  updateValue;
-  updateForm = new FormGroup({
-    name: new FormControl('', [
-      Validators.required,
-    ]),
-    email: new FormControl('', [
-      Validators.required,
-      Validators.email
-    ])
-    
-   });
+  user;
+  updateForm ;
   constructor(private apiService:ApiService ) { }
 
-  ngOnInit(): void {
+ async  ngOnInit() {
+this.user = (await this.apiService.getUser()).user;
+this.updateForm = new FormGroup({
+  name: new FormControl(this.user.name, [
+    Validators.required,
+  ]),
+  email: new FormControl(this.user.email, [
+    Validators.required,
+    Validators.email
+  ])
+  
+ })
+
   }
   async update(){
-await this.apiService.editUser({name:this.updateForm.value.name, email:this.updateForm.value.email});
-this.updateValue = await this.apiService.getUser();
-console.log(this.updateValue);
+await this.apiService.editUser({name:this.updateForm.value.name, email:this.updateForm.value.email , id : this.user.id});
 
   }
 }
