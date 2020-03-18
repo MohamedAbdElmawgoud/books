@@ -91,9 +91,13 @@
 				<th scope="col">{{ 'item name' | translate }}</th>
 
 				<th scope="col">{{ 'price' | translate }}</th>
-				<th scope="col">{{ 'date' | translate }}</th>
 				<th scope="col">{{ 'status' | translate }}</th>
+				<th scope="col">{{ 'quantity' | translate }}</th>
+
+				<th scope="col">{{ 'Details' | translate }}</th>
 				<th scope="col">{{ 'download' | translate }}</th>
+				<th scope="col">{{ 'date' | translate }}</th>
+
 			  </tr>
 			</thead>
 			<tbody>
@@ -101,34 +105,82 @@
 				<th scope="row">{{item.id}}</th>
 				<td>{{item.item?.name}}</td>
 				<td>{{item.totalAmount}}$</td>
-                <td>{{item.created_at | date}}</td>
 				<td>{{item.status }}</td>
+				<td>{{item.quantity }}</td>
+				<td data-toggle="modal" data-target="#exampleModal" (click)="view(item)" >
+					<i class="fa fa-eye" aria-hidden="true"></i>
+				</td>
 				<td  >
 					<a *ngIf="item.response[0]">
 						<i class="fa fa-cloud-download" aria-hidden="true"></i>
 
 					</a>
 				</td>
+                <td>{{item.created_at | date}}</td>
+
 			  </tr>
 			 
 			</tbody>
 		  </table>
 	
-		  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 			  <div class="modal-content">
 				<div class="modal-header">
-				  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				  <h5 class="modal-title" id="exampleModalLabel">{{'Details' | translate}}</h5>
 				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				  </button>
 				</div>
 				<div class="modal-body">
-				  ...
+
+
+					  <div class="card">
+						<div class="card-header">
+							{{ 'Links' | translate }}
+						</div>
+						<div class="card-body">
+						  <blockquote class="blockquote mb-0">
+							<p>{{selectedItem.links}}</p>
+						  </blockquote>
+						</div>
+					  </div>
+					  <div class="card">
+						<div class="card-header">
+							{{ 'keywords' | translate }}
+						</div>
+						<div class="card-body">
+						  <blockquote class="blockquote mb-0">
+							<p>{{selectedItem.keywords}}</p>
+						  </blockquote>
+						</div>
+					  </div>
+
+					  <div class="card">
+						<div class="card-header">
+							{{ 'article' | translate }}
+						</div>
+						<div class="card-body">
+						  <blockquote class="blockquote mb-0">
+							<p>{{selectedItem.article}}</p>
+						  </blockquote>
+						</div>
+					  </div>
+					  <div class="card">
+						<div class="card-header">
+							{{ 'Extras' | translate }}
+						</div>
+						<div class="card-body">
+						  <blockquote class="blockquote mb-0">
+							<p>
+								<span *ngFor="let item of selectedItem.addons" data-toggle="tooltip" data-placement="top" data-original-title="Price per 1"
+								class="badge bg-yellow">{{item.name}}  </span>
+							</p>
+						  </blockquote>
+						</div>
+					  </div>
 				</div>
-				<div class="modal-footer">
-				  <button type="button" class="btn btn-success">Sav</button>
-				</div>
+
 			  </div>
 			</div>
-		  </div> -->
+		  </div>

@@ -28,7 +28,7 @@ export class OrderComponent implements OnInit , OnDestroy {
   }
 
   orderForm  = new FormGroup({
-    quantity: new FormControl('', [Validators.required]),
+    quantity: new FormControl('', [Validators.required , Validators.min(12)]),
     links: new FormControl('', [Validators.required]),
     keywords: new FormControl('', [Validators.required]),
     article : new FormControl('', [Validators.required]),
@@ -101,6 +101,8 @@ export class OrderComponent implements OnInit , OnDestroy {
   "extras": this.selectedExtras.map(ele=>ele.id),
       ...this.orderForm.value,
     }
+    // console.log(params);
+    
   await this.apiService.order(params);
   // document.getElementById('close').click()
   this.router.navigate(['store'])

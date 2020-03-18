@@ -11,6 +11,7 @@ export class ReportComponent implements OnInit {
   pendingOrders ;
   completedOrders;
   AllOrders;
+  selectedItem : any = {};
   constructor(private apiService : ApiService) { }
 
   async ngOnInit() {
@@ -18,9 +19,10 @@ export class ReportComponent implements OnInit {
     this.pendingOrders = this.orders.filter(ele=>ele.status== 'pending').length
     this.completedOrders = this.orders.filter(ele=>ele.response[0]).length
     this.AllOrders =  this.pendingOrders + this.completedOrders;
-    console.log(this.orders);
-    console.log(this.pendingOrders);
-    console.log(this.completedOrders);
+    
+  }
+  view(item){
+    this.selectedItem = item;
     
   }
 

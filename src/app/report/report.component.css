@@ -2594,4 +2594,11 @@ a.bg-clone:visited {
   height: 100px;
   overflow: hidden;
 }
- 
+ .card {
+   margin-bottom: 15px;;
+ }
+
+ .bg-yellow {
+  background-color: #2386c9 !important;
+
+ }
