@@ -245,6 +245,14 @@ export class ApiService {
 
     return data    ;
   }
+  async resetPassword(email) {
+    let data = (<any>await this.httpClient.post(`${this.url}users/restorePassword`, {
+      email
+    }, {
+    }).toPromise());
+
+    return data    ;
+  }
   async getSocial() {
     let data = (<any>await this.httpClient.get(`${this.url}social/get`).toPromise());
 
