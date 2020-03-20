@@ -24,8 +24,7 @@ export class HeaderComponent implements OnInit {
   
   async ngOnInit() {
     this.user = (await this.apiService.getUser()).user
-    this.balance=this.user.user_balance.totalBalance.toFixed(2);
-    console.log(this.balance);
+    this.balance=Number(this.user.user_balance.totalBalance).toFixed(2);
     
   }
   Translate(type: string){
