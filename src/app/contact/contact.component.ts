@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  social: any;
   dir = 'ltr';  
   contactForm = new FormGroup({
     'name': new FormControl('', [Validators.required]),
@@ -27,7 +28,9 @@ export class ContactComponent implements OnInit {
   }
     
 
-  ngOnInit(): void {
+ async ngOnInit(){
+    this.social = await this.apiService.getSocial();
+    
   }
   Translate(type: string){
     

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import { ApiService } from '../apiServices/api.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,13 +8,16 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  social: any;
 
-  constructor(public translate:  TranslateService) { 
+  constructor(public translate:  TranslateService,private apiService: ApiService) {
     const  currentLanguage  =  localStorage.getItem('lng') || 'en'
     this.Translate(currentLanguage)
   }
   
-  ngOnInit(): void {
+ async ngOnInit(){
+    this.social = await this.apiService.getSocial();
+    console.log(this.social);
   }
   Translate(type: string){
   
