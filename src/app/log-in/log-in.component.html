@@ -25,12 +25,14 @@
 					  <div *ngIf="logInForm.get('password').errors.minlength">{{ 'Password' | translate }}  {{ 'must be' | translate }}{{ ' a letaset 6 charector' | translate }}</div>
 					</div>
 				</div>
-		
+				<label for="forgetPassword" (click)=" forgetPassword()" style="text-align: left">{{ 'forget Password ?' | translate }}</label>
  			 </div>
  	 
 			  <div class="p-container" style="text-align: center;" >
-			    <button type="submit" (click)="login()">{{ 'Login' | translate }}</button>
-			  </div>
+					<button type="submit" (click)="login()">{{ 'Login' | translate }}</button>
+				
+				</div>
+				
 		</form>
 	</div>  
 

@@ -18,6 +18,7 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { UpdateProfileComponent } from "src/app/update-profile/update-profile.component";
 import { PurchaseComponent } from "src/app/purchase/purchase.component";
 import { PaymentsComponent } from "src/app/payments/payments.component";
+import { ForgetPasswordComponent } from "src/app/forget-password/forget-password.component";
 
 const routes: Routes = [
 
@@ -39,6 +40,7 @@ const routes: Routes = [
  {path:'update-profile',component:UpdateProfileComponent},
  {path:'purchase',component:PurchaseComponent},
  {path:'payments',component:PaymentsComponent},
+ {path:'forget-password',component:ForgetPasswordComponent},
  
  
  
