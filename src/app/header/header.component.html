@@ -21,7 +21,7 @@
             <a class="nav-link" routerLink="services">{{ 'SERVICES' | translate }}</a>
           </li>
           <li class="nav-item" *ngIf="!isLoggedIn" >
-            <a class="nav-link" routerLink="contact" style=" ">{{ 'CONTACT' | translate }}</a>
+            <a class="nav-link" routerLink="contact" >{{ 'CONTACT' | translate }}</a>
           </li>
 
           
@@ -99,13 +99,13 @@
           <div *ngIf="isLoggedIn" class="dropdown mb-2 drdown">
             <button class="btn btn-outline-info dropdown-toggle w-100" type="button" id="usermenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color :white;">
               <i class="fi-user pr-1"></i>
-              <img src="/assets/img/person_pin-24px.svg" style="color: white">
-              <span class="text-uper">{{user?.name}} (<span id="user-balance" class="">${{user?.user_balance?.totalBalance}}</span>)</span>
+         <span class="fa fa-user" ></span>
+              <span class="text-uper"  style="margin: 5px;">{{user?.name}} (<span id="user-balance" style="color: green">${{user?.user_balance?.totalBalance}}</span>)</span>
             
             </button>
             
             <div class="dropdown-menu w-100 shadow" aria-labelledby="usermenu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-              <a class="dropdown-item pt-3 pb-3" routerLink="add-f">{{ 'Balance' | translate }} ${{user?.user_balance?.totalBalance}} </a>
+              <a class="dropdown-item pt-3 pb-3" routerLink="add-f" >{{ 'Balance' | translate }} ${{user?.user_balance?.totalBalance}} </a>
               <!-- <a class="dropdown-item pt-3 pb-3" href="payments.php">Payment History</a> -->
               <div class="dropdown-divider"></div>
               <a class="dropdown-item pt-3 pb-3" routerLink="payments">{{ 'Payments' | translate }}</a>
