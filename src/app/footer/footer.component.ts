@@ -8,7 +8,7 @@ import { ApiService } from '../apiServices/api.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  social: any;
+  social: any = {};
 
   constructor(public translate:  TranslateService,private apiService: ApiService) {
     const  currentLanguage  =  localStorage.getItem('lng') || 'en'
@@ -17,7 +17,6 @@ export class FooterComponent implements OnInit {
   
  async ngOnInit(){
     this.social = await this.apiService.getSocial();
-    console.log(this.social);
   }
   Translate(type: string){
   

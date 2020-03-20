@@ -36,7 +36,7 @@
 
 	
 	<div class="container">
-			<div class="row">
+			<div class="row" style="justify-content: center;">
 					<!-- <div class="col-md-3 col-sm-6 col-xs-12">
 							<a href="?active=1" class="info-box no-active">
 								<span class="info-box-icon bg-blue"><i class="fa fa-flag"></i></span>
@@ -111,7 +111,7 @@
 					<i class="fa fa-eye" aria-hidden="true"></i>
 				</td>
 				<td  >
-					<a *ngIf="item.response[0]">
+					<a *ngIf="item.report" href="{{item.report}}" >
 						<i class="fa fa-cloud-download" aria-hidden="true"></i>
 
 					</a>
