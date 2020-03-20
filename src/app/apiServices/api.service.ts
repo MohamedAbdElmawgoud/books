@@ -245,6 +245,11 @@ export class ApiService {
 
     return data    ;
   }
+  async getSocial() {
+    let data = (<any>await this.httpClient.get(`${this.url}social/get`).toPromise());
+
+    return data    ;
+  }
 
 
 }
