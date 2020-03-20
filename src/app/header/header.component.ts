@@ -9,9 +9,11 @@ import { ApiService } from '../apiServices/api.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  balance: any;
   currentLanguage;
   isLoggedIn;
   user;
+  number;
   constructor(public translate:  TranslateService , private route : Router , private apiService : ApiService) { 
     this.currentLanguage  =  localStorage.getItem('lng') || 'en'
     this.changeLng(this.currentLanguage)
@@ -22,6 +24,9 @@ export class HeaderComponent implements OnInit {
   
   async ngOnInit() {
     this.user = (await this.apiService.getUser()).user
+    this.balance=this.user.user_balance.totalBalance.toFixed(2);
+    console.log(this.balance);
+    
   }
   Translate(type: string){
     window.location.reload()
