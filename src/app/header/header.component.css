@@ -67,5 +67,9 @@ ul{
     border : 0px;
   }
   .collapse{
-    margin-left:-0.9%;
+    /* margin-left:-0.9%; */
   }
+  .nav-link{
+    font-size: 15px !important;
+    text-align: center !important;
+}

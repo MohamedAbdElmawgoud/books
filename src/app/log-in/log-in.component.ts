@@ -83,4 +83,8 @@ export class LogInComponent implements OnInit {
       })
     }
   }
+  forgetPassword(){
+    this.router.navigate(['forget-password'])
+    
+  }
 }

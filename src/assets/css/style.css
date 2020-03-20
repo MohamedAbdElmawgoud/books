@@ -8287,3 +8287,7 @@ header , app-header{
   background: #2386c9 !important;
 
 }
+.nav-link{
+  font-size: 15px !important;
+  text-align: center !important;
+}

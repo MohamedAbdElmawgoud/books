@@ -108,7 +108,10 @@
        "Status":"Status",
        "Last update":"Last update",
        "Amount":"Amount",
-       "created_at":"created_at"
+       "created_at":"created_at",
+       "Enter Your mail":"Enter Your mail",
+       "submit":"submit",
+       "forget Password ?":"forget Password ?"
       
 
       

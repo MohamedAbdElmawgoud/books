@@ -7,5 +7,5 @@ div[dir='rtl'] {
 }
 
 header .navbar .nav-link {
-    letter-spacing: 0em !important;
+    /* letter-spacing: 0em !important; */
 }

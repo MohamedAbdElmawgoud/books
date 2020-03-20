@@ -106,7 +106,10 @@
   "Status":"الحاله",
   "Last update":"التحديث الأخير",
   "Amount":"المبلغ",
-  "created_at":"تم إنشاؤه"
+  "created_at":"تم إنشاؤه",
+  "Enter Your mail":"ادخل بريدك الالكتروني",
+  "submit":"إرسال",
+  "forget Password ?":"نسيت كلمه السر ؟"
 
  
  
