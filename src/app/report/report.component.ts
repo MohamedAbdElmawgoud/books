@@ -16,8 +16,8 @@ export class ReportComponent implements OnInit {
 
   async ngOnInit() {
     this.orders = await this.apiService.getOrders();
-    this.pendingOrders = this.orders.filter(ele=>ele.status== 'pending').length
-    this.completedOrders = this.orders.filter(ele=>ele.response[0]).length
+    this.pendingOrders = this.orders.filter(ele=>!ele.report).length
+    this.completedOrders = this.orders.filter(ele=>ele.report).length
     this.AllOrders =  this.pendingOrders + this.completedOrders;
     
   }

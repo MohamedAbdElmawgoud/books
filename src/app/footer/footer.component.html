@@ -1,15 +1,15 @@
 <body>
-<footer class="site-footer" role="contentinfo">
+<footer class="site-footer" style="padding-bottom: 0;" role="contentinfo">
     <div class="container">
-      <div class="row mb-5">
+      <div class="row ">
         <div class="col-md-4 mb-5">
           <h3>{{ 'title' | translate }}</h3>
           <p class="mb-5">{{ 'description' | translate }}</p>
           <ul class="list-unstyled footer-link d-flex footer-social">
-            <li><a routerLink="#{{social.twitter}}" class="p-2"><span class="fa fa-twitter"></span></a></li>
-            <li><a routerLink="#{{social.faceBook}}" class="p-2"><span class="fa fa-facebook"></span></a></li>
-            <li><a routerLink="#{{social.linkedIn}}" class="p-2"><span class="fa fa-linkedin"></span></a></li>
-            <li><a routerLink="#{{social.instagram}}" class="p-2"><span class="fa fa-instagram"></span></a></li>
+            <li><a href="{{social.twitter}}" class="p-2"><span class="fa fa-twitter"></span></a></li>
+            <li><a href="{{social.faceBook}}" class="p-2"><span class="fa fa-facebook"></span></a></li>
+            <li><a href="{{social.linkedIn}}" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+            <li><a href="{{social.instagram}}" class="p-2"><span class="fa fa-instagram"></span></a></li>
           </ul>
          
         </div>

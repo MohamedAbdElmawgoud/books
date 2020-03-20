@@ -5,7 +5,7 @@
           
 </div>
 
-<section dir="ltr" class="home-slider owl-carousel"  >
+<section dir="ltr" *ngIf="slider" class="home-slider owl-carousel"  >
   <div class="slider-item" *ngFor="let item of slider" style="background-image: url({{item.image}});">
     <div class="container">
       <div class="row slider-text align-items-center justify-content-center">

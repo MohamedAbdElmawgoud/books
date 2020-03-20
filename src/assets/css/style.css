@@ -8280,7 +8280,7 @@ header {
     transform: scale(1.2); }
 @media(min-width : 770px){
   .owl-item{
-    height: 700px;
+    height: 550px;
   }
 }
 header , app-header{
