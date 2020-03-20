@@ -29,53 +29,22 @@
             by creating and following progress and download reports. 
             </div>
       <div class="row mt-7">
-          <div class="col-lg-6 col-sm-12 mb-6">
+          <div *ngFor="let service of services" class="col-lg-6 col-sm-12 mb-6">
               <div class="row">
                   <div class="col-3">
-                      <span class="img-box img-box-8 bg-gray-05 rounded-circle"><img src="https://panel.seoestore.net/assets/img/8.png" alt="Affordable pricing"></span>
+                      <span class="img-box img-box-8 bg-gray-05 rounded-circle"><img src="{{service.image}}" alt="Affordable pricing"></span>
                   </div>
                   <div class="col-9">
-                      <h4 class="text-gray-70 b-6">Affordable pricing</h4>
-                      <div class="text-gray-70">Quality Service at Affordable Prices as low as $0.0003/backlink &amp; Very low minimum quantity. Your order can be for only $0.03 without ever cutting down on the quality.</div>
+                      <h4 class="text-gray-70 b-6">{{service.name}}</h4>
+                      <div class="text-gray-70">
+                        {{service.caption}}
+                      </div>
                   </div>
               </div>
           </div>
-          <div class="col-lg-6 col-sm-12 mb-6">
-              <div class="row">
-                  <div class="col-3">
-                      <span class="img-box img-box-8 bg-gray-05 rounded-circle"><img src="https://panel.seoestore.net/assets/img/15.png" alt="Incredabley fast delivery"></span>
-                  </div>
-                  <div class="col-9">
-                      <h4 class="text-gray-70 b-6">Incredibly fast delivery</h4>
-                      <div class="text-gray-70">We consider a quick provision of new Service one of the most important aspects to start or keep respectively a good and reliable partnership. That is why we always do our utmost to ensure order processing within 0-24 hrs.</div>
-                  </div>
-              </div>
-          </div>
+
       </div>
-      <div class="row">
-          <div class="col-lg-6 col-sm-12 mb-6">
-              <div class="row">
-                  <div class="col-3">
-                      <span class="img-box img-box-8 bg-gray-05 rounded-circle"><img src="https://panel.seoestore.net/assets/img/9.png" alt="Easy to make/manage orders"></span>
-                  </div>
-                  <div class="col-9">
-                      <h4 class="text-gray-70 b-6">Easy to make/manage orders</h4>
-                      <div class="text-gray-70">Choose one from 3 methods of making orders Single order, SEO Campaigns, and Drip Feed &amp; check order status all with one click.</div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-6 col-sm-12 mb-6">
-              <div class="row">
-                  <div class="col-3">
-                      <span class="img-box img-box-8 bg-gray-05 rounded-circle"><img src="https://panel.seoestore.net/assets/img/12.png" alt="Wide base of services"></span>
-                  </div>
-                  <div class="col-9">
-                      <h4 class="text-gray-70 b-6">Wide base of services</h4>
-                      <div class="text-gray-70">We've got a wide base of services all in one place, offering a wide range of services for you to build high-quality Backlink.</div>
-                  </div>
-              </div>
-          </div>
-      </div>
+
   </div>
 </section>
 
