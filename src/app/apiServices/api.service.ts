@@ -77,7 +77,9 @@ export class ApiService {
         description: this.defaultLng == LNGS.en ? ele.description : ele.descriptionAr,
         price: ele.price,
         id: ele.id,
-        image : ele.image
+        image : ele.image,
+        selectedExtras : ele.selectedExtras ? ele.selectedExtras.split(',') : [],
+        minimum : ele.minimum
       }
     });
   }

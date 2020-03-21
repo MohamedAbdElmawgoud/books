@@ -21,17 +21,14 @@
 
             </div>
             <div class="form-group">
-              <label for="quantity">{{ 'Quantity' | translate }}</label>
-              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="Order quantity (minimum 10)">
+              <label for="quantity">{{ 'Quantity' | translate }} {{'minimum is ' | translate}} {{selectedItem.minimum}} </label>
 
-              </a>
-              <input formControlName="quantity" min="10" type="number" class="form-control" name="qty" id="quantity"
-                placeholder="min is 12 " required=""
+              <input formControlName="quantity" min="{{selectedItem.minimum}}" type="number" class="form-control" name="qty" id="quantity"
+        required=""
                 [ngClass]="{'is-invalid':orderForm.get('quantity').touched && orderForm.get('quantity').invalid}"
                 required />
               <div class="invalid-feedback">
-                <div>{{ 'Quantity' | translate }} {{ 'is required' | translate }}</div>
+                <div>{{ 'Quantity' | translate }} {{ 'is required and minimum is ' | translate }} {{selectedItem.minimum}} </div>
               </div>
 
             </div>
@@ -97,7 +94,7 @@
               <button class="btn bg-blue" (click)="submit()" name="submit">
                 <span class="fi-checkmark"></span> {{ 'Make Order' | translate }}</button>
               <div class="btn bg-gray-10 shadow-none">{{ 'Total price' | translate }} <b>$<span
-                    id="usd-price">{{total}}</span></b>
+                    id="usd-price">{{getTotal()}}</span></b>
               </div>
 
             </div>

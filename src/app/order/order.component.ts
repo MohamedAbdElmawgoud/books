@@ -8,14 +8,14 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
-export class OrderComponent implements OnInit , OnDestroy {
+export class OrderComponent implements OnInit, OnDestroy {
 
   shop;
   Categories;
   extras;
   selectedItem;
   selectedExtras = [];
-  total ;
+  total;
   faqs;
   dropdownSettings = {
     singleSelection: false,
@@ -27,59 +27,64 @@ export class OrderComponent implements OnInit , OnDestroy {
     allowSearchFilter: true
   }
 
-  orderForm  = new FormGroup({
-    quantity: new FormControl('', [Validators.required , Validators.min(12)]),
-    links: new FormControl('', [Validators.required]),
-    keywords: new FormControl('', [Validators.required]),
-    article : new FormControl('', [Validators.required]),
-    // comment : new FormControl('', [Validators.required]),
-
-
-  });
+  orderForm;
   constructor(private apiService: ApiService, private router: Router) {
     let item = JSON.parse(localStorage.getItem('order'));
-    if(!item){
+    if (!item) {
       this.router.navigate(['store'])
     }
-      this.selectedItem = item;
+    this.selectedItem = item;
     this.total = item.price;
-   }
+
+    this.orderForm = new FormGroup({
+      quantity: new FormControl(0, [Validators.required, Validators.min(item.minimum)]),
+      links: new FormControl('', [Validators.required]),
+      keywords: new FormControl('', [Validators.required]),
+      article: new FormControl('')
+    })
+  }
+
 
   async ngOnInit() {
     this.shop = await this.apiService.getShop();
-  this.faqs = (<[]>await this.apiService.getFaqs()).splice(0 , 8);
+    this.faqs = (<[]>await this.apiService.getFaqs()).splice(0, 8);
 
-    this.extras = (await this.apiService.getExtras()).map(ele=>{
-      return { 
+    this.extras = (await this.apiService.getExtras()).map(ele => {
+      return {
         ...ele,
-        displayName : ele.name + ' ' + ele?.price + '$',
-        price : ele.price
+        displayName: ele.name + ' ' + ele?.price + '$',
+        price: ele.price
       }
-    });
-    
-    this.Categories = await this.apiService.getCategories();
-    
+    }).filter(ele=>this.selectedItem.selectedExtras.indexOf(ele.id) > -1)
 
+    this.Categories = await this.apiService.getCategories();
   };
+
+  get quantity(){
+    return this.orderForm?.controls['quantity'].value || 0
+  }
+  getTotal(){
+    return +Number(this.total * this.quantity).toFixed(2)
+  }
   getOrder(item) {
     this.selectedItem = item;
     this.total = item.price;
   }
 
-  onItemSelect(item: any , e ) {
-    
-    if(!e.target.checked){
+  onItemSelect(item: any, e) {
+
+    if (!e.target.checked) {
       this.onDeSelect(item);
       return
     }
-    let selectedItem=  this.extras.filter(ele=>ele.id == item.id)[0]
+    let selectedItem = this.extras.filter(ele => ele.id == item.id)[0]
     this.selectedExtras.push(selectedItem)
     this.total = this.total + selectedItem.price;
   }
-  onDeSelect(item: any ) {
+  onDeSelect(item: any) {
 
     let selectedItem;
-    this.selectedExtras =  this.selectedExtras.filter(ele=>{
+    this.selectedExtras = this.selectedExtras.filter(ele => {
       selectedItem = ele;
       return ele.id != item.id
     });
@@ -90,35 +95,45 @@ export class OrderComponent implements OnInit , OnDestroy {
   ngOnDestroy(): void {
     localStorage.removeItem('order')
   }
-  async submit(){
-    if(this.orderForm.invalid){
+  async submit() {
+    let user = await this.apiService.getUser();
+    
+    if (this.orderForm.invalid) {
       this.orderForm.markAllAsTouched();
       return;
     }
+    if(user.user.user_balance.totalBalance < this.getTotal()){
+      Swal.fire({
+        icon: 'error',
+        showConfirmButton: false,
+        text : "your balance is not enough",
+        timer: 1500
+      })
+    }
     let params = {
-  "itemId": this.selectedItem.id,
-  "totalAmount": this.total,
-  "extras": this.selectedExtras.map(ele=>ele.id),
+      "itemId": this.selectedItem.id,
+      "totalAmount": this.total * this.quantity,
+      "extras": this.selectedExtras.map(ele => ele.id),
       ...this.orderForm.value,
     }
     // console.log(params);
-    
-  await this.apiService.order(params);
-  // document.getElementById('close').click()
-  this.router.navigate(['store'])
 
-  Swal.fire({
-    icon: 'success',
-    showConfirmButton: false,
-    timer: 1500
-  })
+    await this.apiService.order(params);
+    // document.getElementById('close').click()
+    this.router.navigate(['store'])
+
+    Swal.fire({
+      icon: 'success',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
-  viewFaq(item){
+  viewFaq(item) {
     this.router.navigate(['faq'])
   }
 }
 
-  
+
 
 
 
