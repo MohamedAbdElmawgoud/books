@@ -53,7 +53,7 @@ export class OrderComponent implements OnInit, OnDestroy {
       return {
         ...ele,
         displayName: ele.name + ' ' + ele?.price + '$',
-        price: ele.price
+        price: this.selectedItem.selectedPrice[this.selectedItem.selectedExtras.indexOf(ele.id)]
       }
     }).filter(ele=>this.selectedItem.selectedExtras.indexOf(ele.id) > -1)
 

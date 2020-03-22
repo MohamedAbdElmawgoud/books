@@ -79,6 +79,8 @@ export class ApiService {
         id: ele.id,
         image : ele.image,
         selectedExtras : ele.selectedExtras ? ele.selectedExtras.split(',') : [],
+        selectedPrice : ele.selectedPrice ? ele.selectedPrice.split(',') : [],
+
         minimum : ele.minimum
       }
     });
