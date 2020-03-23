@@ -70,8 +70,12 @@ export class OrderComponent implements OnInit, OnDestroy {
     this.selectedItem = item;
     this.total = item.price;
   }
-
+  viewOrder() {
+    localStorage.setItem('order' , JSON.stringify(this.selectedItem))
+    this.router.navigate(['order'])
+  }
   onItemSelect(item: any, e) {
+  
 
     if (!e.target.checked) {
       this.onDeSelect(item);

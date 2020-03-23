@@ -10,10 +10,11 @@
                             <div class="plan  ">
                                 <div class="f-150 text-aqua">{{offer.bounce}}% Bonus</div>
                 <div class="f-200 b-6 text-yellow">${{offer.amount}}</div>
-                <div class="text-black">{{'Pay ONLY'| translate}} <b class="bold">${{offer.amount}}</b></div>
+                <img src="{{offer.image}}" alt="">
+                <!-- <div class="text-black">{{'Pay ONLY'| translate}} <b class="bold">${{offer.amount}}</b></div> -->
                 <hr>
                 <div class="text-gray-30">
-                    <small class="">{{'Pay ONLY'| translate}} ${{offer.amount}}<br>Get ${{offer.amount  + (offer.amount * offer.bounce * 0.01)}} in Your Balance</small>
+                    <!-- <small class="">{{'Pay ONLY'| translate}} ${{offer.amount}}<br>Get ${{offer.amount  + (offer.amount * offer.bounce * 0.01)}} in Your Balance</small> -->
                 </div>
                             <a (click)="pay(offer)" class="btn btn-block btn-warning mt-3">{{'Pay ONLY'| translate}} <b>${{offer.amount}}</b></a>
                         </div>

@@ -7,156 +7,67 @@
     </div>
     <div class="row">
 
-        <div *ngFor="let item of shop" style="cursor: pointer;" class=" popout col-lg-6 col-md-12 pb-5 item">
-          <div class="border rounded-xs shadow bg-white">
-            <div class="row p-2">
-              <div class="col-10"  >
-                <div>
-                  <div class="mb-1 head ">
-                    <span>
-                        {{item.name}}
-                    </span>
-               
-                 </div>
-                 <p>
+      <div *ngFor="let item of shop" style="cursor: pointer;" class=" popout col-lg-6 col-md-12 pb-5 item">
+        <div class="border rounded-xs shadow bg-white">
+          <div class="row p-2">
+            <div class="col-10">
+              <div>
+                <div class="mb-1 head ">
+                  <span>
+                    {{item.name}}
+                  </span>
+
+                </div>
+                <p>
                   <span data-toggle="tooltip" data-placement="top" data-original-title="Price per 1"
-                  class="badge bg-yellow">{{item.price}} $ </span>
-                                 </p>
-              
-                
-                </div>
-              </div>
-              <div class="col-2">
-                <div>
-                  <a >
-                    <span data-toggle="tooltip" data-placement="top" data-original-title="Submit WEB2 order"
-                      class="float-right p-3 bg-aqua rounded-xs ">
+                    class="badge bg-yellow"> {{'price' | translate}} : {{item.price}} $ </span>
 
-                      <i style="font-size: 25px;" class="fa fa-file-text" aria-hidden="true"></i>
+                  <span data-toggle="tooltip" data-placement="top" data-original-title="Price per 1" style="
+                  margin: 5px;
+                  background-color: #2386c9 !important;
+              " class="badge bg-yellow"> {{'minimum quantity' | translate }} : {{item.minimum}} </span>
+                </p>
 
-                    </span>
 
-                  </a>
-                </div>
               </div>
             </div>
-            <div class="collapse-buttons" >
-              <button class="btn" style="background-color: #2386c9; color: #fff;" (click)="getOrder(item)" >
-                {{'Make Order' | translate }}
-              </button>
-              <button class="btn" (click)="viewDetails(item)" >
-                {{'view  details' | translate }}
-              </button>
+            <div class="col-2">
+              <div>
+                <a>
+                  <span data-toggle="tooltip" data-placement="top" data-original-title="Submit WEB2 order"
+                    class="float-right p-3 bg-aqua rounded-xs ">
+
+                    <i style="font-size: 25px;" class="fa fa-file-text" aria-hidden="true"></i>
+
+                  </span>
+
+                </a>
+              </div>
             </div>
-            <div class="row mt-2 collapse actions" style="display: none;">
-              <div class="col">
-                <div class="text-center bg-gray-05 m-0 pt-3">
-                  <a class="btn bg-blue text-white mb-3" href="order.php?id=22">
-                    {{ 'Make Order' | translate }}
-                  </a>
-                  
-                </div>
+          </div>
+          <div class="collapse-buttons">
+            <button class="btn" style="background-color: #2386c9; color: #fff;" (click)="getOrder(item)">
+              {{'Make Order' | translate }}
+            </button>
+            <button class="btn" (click)="viewDetails(item)">
+              {{'view  details' | translate }}
+            </button>
+          </div>
+          <div class="row mt-2 collapse actions" style="display: none;">
+            <div class="col">
+              <div class="text-center bg-gray-05 m-0 pt-3">
+                <a class="btn bg-blue text-white mb-3" href="order.php?id=22">
+                  {{ 'Make Order' | translate }}
+                </a>
+
               </div>
             </div>
           </div>
         </div>
+      </div>
 
     </div>
   </div>
 
 
 </section>
-<!-- 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ 'Make Order' | translate }}</h5>
-        <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <section class="pt-4 pb-4">
-          <form [formGroup]="orderForm" >
-
-            <div id="extras" class="form-group">
-              <div>{{ 'Available Extras' | translate }}
-
-              </div>
-              <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [data]="extras" 
-                [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="onDeSelect($event)">
-              </ng-multiselect-dropdown>
-
-            </div>
-            <div class="form-group">
-              <label for="quantity">{{ 'Quantity' | translate }}</label>
-              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="Order quantity (minimum 10)">
-                <span class="fi-question-circle text-yellow">
-                </span>
-              </a>
-              <input  formControlName="quantity" min="10" type="number" class="form-control" name="qty" id="quantity" placeholder="Quantity" required="">
-
-            </div>
-
-
-
-            <div class="form-group">
-
-              <label for="links">{{ 'Links' | translate }}</label>
-              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="One link/URL per line.">
-                <span class="fi-question-circle text-yellow">
-                </span>
-              </a>
-
-              <textarea   formControlName="links" name="links" class="form-control" id="links" cols="30" rows="4" placeholder="http://example.com/page-one.html
-               " required=""></textarea>
-
-            </div>
-
-            <div id="keywords-block" class="form-group">
-              <label for="keywords">{{ 'comment' | translate }}</label>
-              <a id="links-tooltip" data-toggle="tooltip" data-placement="top" title=""
-                data-original-title="One keyword per line or comma separated.">
-                <span class="fi-question-circle text-yellow">
-                </span>
-              </a>
-              <textarea formControlName="keywords" class="form-control" name="kws" id="keywords" cols="30" rows="4" placeholder="Keyword Example One
-                " required=""></textarea>
-
-            </div>
-           
-
-
-            <div  class="form-group" style="width: 100%;" >  
-              <label>{{ 'Categories' | translate }}
-
-              </label>
-                <select  formControlName="article" class="form-control" >
-                    <option *ngFor="let item of Categories" value="{{item.data}}">
-                        {{item.name}}
-                    </option>
-                </select>
-            </div>
-
-
-
-            <div class=" buttons form-group mt-4">
-              <button class="btn bg-blue" (click)="submit()" name="submit">
-                <span class="fi-checkmark"></span> {{ 'Make Order' | translate }}</button>
-              <div class="btn bg-gray-10 shadow-none">{{ 'Total price' | translate }} <b>$<span id="usd-price">{{total}}</span></b>
-              </div>
-
-            </div>
-
-          </form>
-
-        </section>
-      </div>
-
-    </div>
-  </div>
-</div> -->

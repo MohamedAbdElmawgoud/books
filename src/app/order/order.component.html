@@ -1,10 +1,14 @@
 <section class="pt-4 pb-4">
+
   <h3>
     {{selectedItem.name}}
   </h3>
+  <h4 style="color: #f78900;" >
+    * {{'Order will be in English' | translate}} *
+  </h4>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-8 pb-4">
+      <div class="col-lg-7 pb-4">
 
         <form [formGroup]="orderForm">
 
@@ -16,19 +20,21 @@
               <div *ngFor="let item of extras">
                 <input type="checkbox" (change)="onItemSelect(item, $event)">
                 {{item.name}}
-                <span class="badge badge-secondary">{{item.price}} $</span>
+                <span class="badge badge-secondary"> {{'price' | translate}} : {{item.price}} $</span>
               </div>
 
             </div>
             <div class="form-group">
-              <label for="quantity">{{ 'Quantity' | translate }} {{'minimum is ' | translate}} {{selectedItem.minimum}} </label>
+              <label for="quantity">{{ 'Quantity' | translate }} {{'minimum is ' | translate}} {{selectedItem.minimum}}
+              </label>
 
-              <input formControlName="quantity" min="{{selectedItem.minimum}}" type="number" class="form-control" name="qty" id="quantity"
-        required=""
+              <input formControlName="quantity" min="{{selectedItem.minimum}}" type="number" class="form-control"
+                name="qty" id="quantity" required=""
                 [ngClass]="{'is-invalid':orderForm.get('quantity').touched && orderForm.get('quantity').invalid}"
                 required />
               <div class="invalid-feedback">
-                <div>{{ 'Quantity' | translate }} {{ 'is required and minimum is ' | translate }} {{selectedItem.minimum}} </div>
+                <div>{{ 'Quantity' | translate }} {{ 'is required and minimum is ' | translate }}
+                  {{selectedItem.minimum}} </div>
               </div>
 
             </div>
@@ -105,9 +111,17 @@
 
 
       </div>
+      <div class="col-lg-1"></div>
 
-      <div class="col-md-4">
-        <div class="card" style="width: 100%;box-shadow: 1px 1px 10px #0000003b;">
+      <div class="col-md-3">
+        <div class="card" style="width: 100%;box-shadow: 1px 1px 10px #0000003b; ">
+          <h5 style="
+          background-color: rgba(0, 0, 0, 0.03);
+          margin: 0;
+          padding: 5px 20px;
+      " >
+            {{'Services Details' | translate}} 
+          </h5>
           <div class="card-header">
             {{'Id' | translate }} : {{selectedItem.id}}
           </div>
@@ -115,32 +129,36 @@
           <div class="card-header">
             {{'Price' | translate}} : {{selectedItem.price}} $
           </div>
-
           <div class="card-header">
-            {{'Description' | translate}} : {{selectedItem.description}}
+            {{'minimum quantity' | translate}} : {{selectedItem.minimum}}
           </div>
+          <a style="    text-align: right;
+          background-color: rgba(0, 0, 0, 0.03);
+        padding: 10px;
+        color: #2386c9;" (click)="viewOrder()">
+            {{'View  details' | translate }}
+          </a>
 
           <div class="card-header">
             <h5>
-              {{'FAQs' | translate}} ?
+              {{'Related FAQs' | translate}} ?
             </h5>
 
-            <ul class="list-group list-group-flush">
-              <li *ngFor="let item of faqs" (click)="viewFaq(item)" style="font-size: 18px; cursor: pointer;"
-                class="list-group-item">
-                <i class="fa fa-question-circle" aria-hidden="true"></i>
+              <p *ngFor="let item of faqs" (click)="viewFaq(item)" style="font-size: 18px; cursor: pointer;  ">
+                <i style="color: #2386c9;" class="fa fa-question-circle" aria-hidden="true"></i>
 
                 {{
               item.header    
-              }}</li>
+              }}
+          </p>
 
-            </ul>
           </div>
 
 
 
         </div>
       </div>
+      <div class="col-lg-1"></div>
 
     </div>
 
