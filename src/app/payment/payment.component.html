@@ -1,11 +1,10 @@
 <div class="cont" dir="{{dir}}" >
 
-	<div class="container">
-        <div id="offer-ad-container" class="">
+	<div class="">
+        <!-- <div id="offer-ad-container" class="">
     <div class="pt-4 pb-2">
         <div class="bg-white shadow-sm border text-lg-left text-center">
             <a routerLink="../offer" class="row p-3 text-gray-90"> 
-             <!--<a href="#" id="offer-ad" class="row p-3 text-gray-90"> -->
                 <div class="col-lg-2 col-md-4 col-sm-12">
                     <img id="offer-gif" src="https://panel.seoestore.net/assets/img/gift-icon.png" width="100">
                 </div>
@@ -19,28 +18,31 @@
             </a>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
 <section class="pt-3 bg-gray-05">
 <div class="container text-lg-left text-center">
 <div class="row">
-    <div class="mt-5 col-lg-4 col-md-6 col-sm-12 border border-top-0 border-bottom-0 border-left-0">
-        <h3 class="b-8">  {{'Balance' | translate }} {{'Available' | translate }}</h3>
+    <div class="mt-5 col-lg-6 col-md-6 col-sm-12 border border-top-0 border-bottom-0 border-left-0">
+        <h5 class="b-8">  {{'Balance' | translate }} {{'Available' | translate }} : {{user.user_balance.totalBalance}} $ </h5>
+        <h5 class="b-8">  {{'will pay' | translate }} : {{willPay}} $ </h5>
+        <h5 class="b-8">  {{'will get' | translate }} : {{willGet}} $ </h5>
+
         
                     <div class="pt-3 f-125">
             <a class="btn btn-outline-primary" routerLink="../purchase" *ngIf="!isLoggedIn">{{'LOG IN' | translate }}{{'to access' | translate }}</a>
             <!-- <a class="btn btn-outline-primary" routerLink="../purchase" *ngIf="isLoggedIn">${{user?.user_balance?.totalBalance}}</a> -->
         </div>
     
-        <div class="pt-3">
-            <a routerLink="payments" target="_blank"><i>{{'Payment History' | translate }}</i></a>
+        <div class="pt-3 " style="margin: 10px;">
+            <a routerLink="payments" target="_blank"><i>{{'Your' | translate}} {{'Payment History' | translate }}</i></a>
         </div>
 
     </div>
-    <div class="mt-5 col-lg-8 col-md-6 col-sm-12 pb-5">
-        <h3 class="b-8 mb-5">{{'Payment Options' | translate }}</h3>
+    <div class="mt-5 col-lg-6 col-md-6 col-sm-12 pb-5">
+        <h3 class="b-8 mb-5" style="margin: 10px;" >{{'Payment Options' | translate }}</h3>
         <div class="row">
               
 <a routerLink="../purchase" class=" col-12 mb-4">

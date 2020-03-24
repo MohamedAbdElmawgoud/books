@@ -18,13 +18,50 @@ export class PurchaseComponent implements OnInit {
    
     
    });
+   user 
+offer;
+isAgree;
   constructor(private apiService :ApiService) { }
 
-   ngOnInit() {
-    
-  }
+
+  async ngOnInit() {
+    this.user = (await this.apiService.getUser()).user;
+    this.offer = JSON.parse(localStorage.getItem('offer'))
+    }
+  
+    get willPay(){
+      return this.offer.amount
+    }
+  
+    get willGet(){
+      return this.offer.amount  + (this.offer.amount * this.offer.bounce * 0.01)
+    }
   async submit(){
-    this.purchase = await this.apiService.Purchase({amount:this.purchaseForm.value.Amount});
-    console.log(this.purchase);
+    if(this.isAgree){
+    try {
+      await this.apiService.Purchase({amount : 
+      this.offer.amount + (this.offer.amount * 0.001 * this.offer.bounce)
+      })
+      Swal.fire({
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 1500
+      })  
+      }catch(e){
+        Swal.fire({
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 1500
+        })  
+    }
+    }else{
+      Swal.fire({
+        icon: 'error',
+        showConfirmButton: false,
+        timer: 1500,
+        text : "you must agree for terms and polices"
+      })  
+    }
+
   }
 }

@@ -1,24 +1,30 @@
 <div class="main">
-    <form action="submit"[formGroup]="purchaseForm" (ngSubmit)="purchaseForm.valid && submit()" >
+    <form   >
         <!-- <h3 style="text-align: center;padding: 10px;" >
             {{ 'LOG IN' | translate }}
         </h3> -->
-          <div class="inset">
-                <div class="form-group">
-             <label for="userName">{{ 'Amount' | translate }}</label>
-                 <input type="number" class="form-control" formControlName="Amount"
-                  [ngClass]="{'is-invalid':purchaseForm.get('Amount').touched && purchaseForm.get('Amount').invalid}"   />
-                <div *ngIf="purchaseForm.get('Amount').touched && purchaseForm.get('Amount').invalid"  class="invalid-feedback"
-                >
-                  <div *ngIf="purchaseForm.get('Amount').errors.required">{{ 'Amount' | translate }} {{ 'is required' | translate }}</div>
-                  <div *ngIf="purchaseForm.get('Amount').errors.Amount">{{ 'Amount' | translate }} {{ 'must be' | translate }}  {{ 'a valid' | translate }} </div>
-                </div>
-            </div>
+        <h5 class="b-8">  
+          <span>
+            {{'Balance' | translate }} {{'Available' | translate }}
+          </span>
+          <span>
+            {{user.user_balance.totalBalance}} $
+          </span>
+            </h5>
+        <h5 class="b-8"> <span> {{'will pay' | translate }} </span> <span>{{willPay}} $</span> </h5>
+        <h5 class="b-8">  <span>{{'will get' | translate }}</span>  <span>{{willGet}} $</span> </h5>
+              <div>
+                <input type="checkbox" name="checkbox" value="check" [(ngModel)]="isAgree" id="agree" /> {{'I have read and agree to the ' | translate}} <a [routerLink]="'terms'">
+                  {{'Terms & Conditions' | translate}} 
+                </a>
+                ,
+                <a [routerLink]="'Policies'">
+                  {{'Policies &  Money Returns' | translate}}
+                </a>
             
-          </div>
-  
-          <div class="p-container" style="text-align: center;" >
-            <button type="submit" >{{ 'add balance' | translate }}</button>
+              </div>
+          <div class="p-container" style="text-align: center; margin-top: 15px;" >
+            <button  (click)="submit()" >{{ 'Pay' | translate }}</button>
           </div>
     </form>
 </div>  

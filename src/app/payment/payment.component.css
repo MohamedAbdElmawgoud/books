@@ -2000,9 +2000,12 @@ section{
 .container{
   margin: auto;
   margin-top: 10%;
-  /* margin-left: 14% */
+  margin-bottom: 5%;;
 }
 
 .cont[dir='rtl'] .offer , .cont[dir='rtl'] .row  {
 text-align: right;
+}
+h5{
+  padding: 10px;
 }

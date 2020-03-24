@@ -6,12 +6,13 @@ body {
 }
 .main{
 	margin:13em auto 0;
-	width: 25%;
+	width: 30%;
 	margin-bottom: 10%;
 }
 form {
 	/* background:#0A192A; */
 	border-radius:0.4em;
+	padding: 15px;
   	/* border:1px solid #0A192A; */
   	overflow:hidden;
   	position:relative;
@@ -245,3 +246,11 @@ button:hover {
 }
 
 /*----//end-responsive design-----*/
+h5 {
+	border-bottom: 1px solid #ddd;
+	margin: 10px;
+	padding-bottom: 10px;
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
