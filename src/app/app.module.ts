@@ -31,6 +31,8 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { PurchaseComponent } from './purchase/purchase.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { TermsComponent } from './terms/terms.component';
+import { PolicyComponent } from './policy/policy.component';
 export  function  HttpLoaderFactory(http:  HttpClient) {
   return  new  TranslateHttpLoader(http, './assets/translate/', '.json');
 }
@@ -59,6 +61,8 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     PurchaseComponent,
     PaymentsComponent,
     ForgetPasswordComponent,
+    TermsComponent,
+    PolicyComponent,
     
     
     

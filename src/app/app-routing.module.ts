@@ -19,6 +19,8 @@ import { UpdateProfileComponent } from "src/app/update-profile/update-profile.co
 import { PurchaseComponent } from "src/app/purchase/purchase.component";
 import { PaymentsComponent } from "src/app/payments/payments.component";
 import { ForgetPasswordComponent } from "src/app/forget-password/forget-password.component";
+import { PolicyComponent } from './policy/policy.component';
+import { TermsComponent } from './terms/terms.component';
 
 const routes: Routes = [
 
@@ -41,6 +43,9 @@ const routes: Routes = [
  {path:'purchase',component:PurchaseComponent},
  {path:'payments',component:PaymentsComponent},
  {path:'forget-password',component:ForgetPasswordComponent},
+ {path:'policy',component:PolicyComponent},
+ {path:'terms',component:TermsComponent},
+
  
  
  

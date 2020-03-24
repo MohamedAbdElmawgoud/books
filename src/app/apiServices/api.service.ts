@@ -263,5 +263,18 @@ export class ApiService {
     return data    ;
   }
 
+  async getTerms() {
+    let data = (<any>await this.httpClient.get(`${this.url}terms/get`).toPromise());
+
+    return  this.defaultLng == 'ar' ?  data.Arabic : data.English    ;
+  }
+
+
+  async getPolicy() {
+    let data = (<any>await this.httpClient.get(`${this.url}policy/get`).toPromise());
+
+    return this.defaultLng == 'ar' ?  data.Arabic : data.English    ;
+  }
+
 
 }
