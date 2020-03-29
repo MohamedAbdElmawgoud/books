@@ -21,6 +21,8 @@ import { PaymentsComponent } from "src/app/payments/payments.component";
 import { ForgetPasswordComponent } from "src/app/forget-password/forget-password.component";
 import { PolicyComponent } from './policy/policy.component';
 import { TermsComponent } from './terms/terms.component';
+import { TalkAboutUsComponent } from './talk-about-us/talk-about-us.component';
+import { TalkAboutComponent } from './talk-about/talk-about.component';
 
 const routes: Routes = [
 
@@ -45,6 +47,10 @@ const routes: Routes = [
  {path:'forget-password',component:ForgetPasswordComponent},
  {path:'policy',component:PolicyComponent},
  {path:'terms',component:TermsComponent},
+ {path:'talk-about-us',component:TalkAboutUsComponent},
+ {path:'talk-about',component:TalkAboutComponent},
+
+
 
  
  

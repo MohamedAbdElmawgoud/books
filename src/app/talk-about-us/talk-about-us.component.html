@@ -1,0 +1,21 @@
+
+
+<div class="container" style="margin-top: 7%;">
+
+    <h1 style="text-align: center; margin-bottom: 30px;" >
+        {{'Talk about us and win' | translate}}
+    </h1>
+
+    <div *ngFor="let rule of rules" class="coupon" (click)="view()" >
+
+        <div  style="background-color:white">
+          <h5><b>{{'Get' | translate}} {{rule.count}} {{'view and win' | translate}} {{rule.gift}} $ </b></h5>
+          <p [innerHTML]="rule.description" >
+            
+          </p>
+        </div>
+
+      </div>
+
+
+</div>

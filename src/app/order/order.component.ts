@@ -70,10 +70,11 @@ export class OrderComponent implements OnInit, OnDestroy {
     this.selectedItem = item;
     this.total = item.price;
   }
-  viewOrder() {
+  viewDetails(){
     localStorage.setItem('order' , JSON.stringify(this.selectedItem))
-    this.router.navigate(['order'])
+    this.router.navigate(['details'])
   }
+
   onItemSelect(item: any, e) {
   
 
@@ -97,7 +98,7 @@ export class OrderComponent implements OnInit, OnDestroy {
 
   }
   ngOnDestroy(): void {
-    localStorage.removeItem('order')
+    // localStorage.removeItem('order')
   }
   async submit() {
     let user = await this.apiService.getUser();

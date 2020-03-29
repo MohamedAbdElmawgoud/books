@@ -161,6 +161,17 @@ export class ApiService {
       return ele
     })
   }
+  async talkRules() {
+    let data = (<any>await this.httpClient.get(`${this.url}talkRules/getAll?all=yes`).toPromise());
+
+    return data.data.map(ele=>{
+      return {
+count: ele.count,
+gift: ele.gift,
+description: this.defaultLng == LNGS.en ? ele.description : ele.descriptionAR
+      }
+    })
+  }
   async order(params: {
     "comment": string,
     "itemId": number,
@@ -274,6 +285,22 @@ export class ApiService {
     let data = (<any>await this.httpClient.get(`${this.url}policy/get`).toPromise());
 
     return this.defaultLng == 'ar' ?  data.Arabic : data.English    ;
+  }
+  async getTalkRetests() {
+    let data = (<any>await this.httpClient.get(`${this.url}talkRequests/getForUser` , {
+      headers : {
+      Authorization: localStorage.getItem('token')
+      }
+    }).toPromise());
+
+    return data.data
+  }
+  async sendTalkRequest(params){
+    return (<any>await this.httpClient.post(`${this.url}talkRequests/create`, params, {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    }).toPromise());
   }
 
 

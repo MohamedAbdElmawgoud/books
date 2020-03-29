@@ -3,9 +3,7 @@
   <h3>
     {{selectedItem.name}}
   </h3>
-  <h4 style="color: #f78900;" >
-    * {{'Order will be in English' | translate}} *
-  </h4>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-7 pb-4">
@@ -94,7 +92,9 @@
                 <div>{{ 'Categories' | translate }} {{ 'is required' | translate }}</div>
               </div>
             </div>
-
+            <h6 style="color: #236AC9;" >
+              * {{'Order will be in English' | translate}} *
+            </h6>
 
             <div class=" buttons form-group mt-4">
               <button class="btn bg-blue" (click)="submit()" name="submit">
@@ -135,7 +135,8 @@
           <a style="    text-align: right;
           background-color: rgba(0, 0, 0, 0.03);
         padding: 10px;
-        color: #2386c9;" (click)="viewOrder()">
+        cursor: pointer;
+        color: #2386c9;" (click)="viewDetails()">
             {{'View  details' | translate }}
           </a>
 

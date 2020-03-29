@@ -1,0 +1,80 @@
+<div class="container" style="margin-top: 7%;">
+  <h2 style="text-align: center;margin: 10px;" >
+    {{'Old  requests' | translate}}
+  </h2>
+  <table class="table table-hover table-responsive-sm " style="width: 100%; margin-left: 1%;">
+    <thead>
+      <tr>
+        <th scope="col">{{ 'comment' | translate }}</th>
+
+        <th scope="col">{{ 'url' | translate }}</th>
+        <th scope="col">{{ 'count' | translate }}</th>
+
+        <th scope="col">{{ 'status' | translate }}</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reqs">
+        <td>{{item.comment}}</td>
+        <td>{{item.url}}</td>
+        <td>{{item.count }}</td>
+        <td>{{(item.status || 'pending') | translate }}</td>
+
+
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div>
+    <h2 style="text-align: center; margin: 10px; " >{{'Submit a new request' | translate}}</h2>
+    <form [formGroup]="form">
+            
+      <div class="row">
+        <div class="col-md-6 form-group" >
+          <label for="name">{{ 'Url' | translate }}</label>
+          <input formControlName="url" type="text" id="url" class="form-control "
+          [ngClass]="{'is-invalid':form.get('url').touched && form.get('url').invalid}"
+          >
+          <div class="invalid-feedback">
+            <div>{{ 'Url' | translate }} {{ 'is required' | translate }}</div>
+          </div>            
+        </div>
+        <div class="col-md-6 form-group">
+          <label for="phone">{{ 'Count' | translate }}</label>
+          <input formControlName="count" type="number" id="count" class="form-control "
+          [ngClass]="{'is-invalid':form.get('count').touched && form.get('count').invalid}" 
+          >
+          <div class="invalid-feedback">
+            <div>{{ 'Count' | translate }} {{ 'is required' | translate }}</div>
+          </div>            
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <label for="message">{{ 'Comment' | translate }}</label>
+          <textarea formControlName="comment" name="comment" id="comment" class="form-control " cols="30" rows="8"
+          [ngClass]="{'is-invalid':form.get('comment').touched && form.get('comment').invalid}"
+          >
+        </textarea>
+        <div class="invalid-feedback">
+          <div>{{ 'Comment' | translate }} {{ 'is required' | translate }}</div>
+        </div>   
+        </div>
+      </div>
+        <div class="" style="text-align: center;margin-bottom: 20px;" >
+          <button (click)="submit()"  class="btn btn-primary px-3 py-3">
+            {{ 'Send Request' | translate }}
+          </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -33,6 +33,8 @@ import { PaymentsComponent } from './payments/payments.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { TermsComponent } from './terms/terms.component';
 import { PolicyComponent } from './policy/policy.component';
+import { TalkAboutUsComponent } from './talk-about-us/talk-about-us.component';
+import { TalkAboutComponent } from './talk-about/talk-about.component';
 export  function  HttpLoaderFactory(http:  HttpClient) {
   return  new  TranslateHttpLoader(http, './assets/translate/', '.json');
 }
@@ -63,6 +65,8 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     ForgetPasswordComponent,
     TermsComponent,
     PolicyComponent,
+    TalkAboutUsComponent,
+    TalkAboutComponent,
     
     
     
