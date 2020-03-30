@@ -23,7 +23,7 @@
 
             </div>
             <div class="form-group">
-              <label for="quantity">{{ 'Quantity' | translate }} {{'minimum is ' | translate}} {{selectedItem.minimum}}
+              <label for="quantity">{{ 'Quantity' | translate }} {{'minimum is' | translate}} {{selectedItem.minimum}}
               </label>
 
               <input formControlName="quantity" min="{{selectedItem.minimum}}" type="number" class="form-control"
@@ -120,7 +120,7 @@
           margin: 0;
           padding: 5px 20px;
       " >
-            {{'Services Details' | translate}} 
+            {{'Service Details' | translate}} 
           </h5>
           <div class="card-header">
             {{'Id' | translate }} : {{selectedItem.id}}
@@ -137,7 +137,7 @@
         padding: 10px;
         cursor: pointer;
         color: #2386c9;" (click)="viewDetails()">
-            {{'View  details' | translate }}
+            {{'more' | translate }}
           </a>
 
           <div class="card-header">

@@ -56,35 +56,35 @@
             <span aria-hidden="true">×</span>
           </button>
           <div class="modal-body p-3">
-            <h4>Submit new ticket</h4>
+            <h4>{{'Submit new ticket' | translate}}</h4>
             <div class="line-shape bg-blue mb-4"></div>
             <form [formGroup]="ticketForm">
               <input type="hidden" name="action" value="ticket_submit">
               <div class="form-group">
-                <label>Category:<span class="text-red">*</span></label>
-                <select formControlName="category" class="custom-select" name="cat" placeholder="Select Category..." required="">
-                  <option value="">Select Category ...</option>
-                  <option value="Support">Support</option>
-                  <option value="Sales">Sales</option>
-                  <option value="General">General</option>
+                <label>{{'Category' | translate}}:<span class="text-red">*</span></label>
+                <select formControlName="category" class="custom-select" name="cat"  required="">
+                  <option value="">{{"Select Category ..." | translate}}</option>
+                  <option value="Support">{{"Support" | translate }}</option>
+                  <option value="Sales">{{"Sales" | translate}}</option>
+                  <option value="General">{{"General" | translate}}</option>
                 </select>
               </div>
               <div class="form-group">
-                <label>Subject:<span class="text-red">*</span></label>
-                <input  formControlName="subject" type="text" class="form-control" name="subject" placeholder="Subject..." required="">
+                <label>{{"Subject" | translate}}:<span class="text-red">*</span></label>
+                <input  formControlName="subject" type="text" class="form-control" name="subject"  required="">
               </div>
               <div class="form-group">
-                <label>Order ID:</label>
-                <input  formControlName="orderId" type="text" class="form-control" name="oid" placeholder="Order ID...">
+                <label>{{"Order ID" |  translate}}:</label>
+                <input  formControlName="orderId" type="text" class="form-control" name="oid">
               </div>
               <div class="form-group">
-                <label>Message:<span class="text-red">*</span></label>
-                <textarea  formControlName="message" class="form-control" name="msg" rows="4" placeholder="Message..." required=""></textarea>
+                <label>{{'Message' | translate}}:<span class="text-red">*</span></label>
+                <textarea  formControlName="message" class="form-control" name="msg" rows="4"  required=""></textarea>
               </div>
               <div class="text-right my-2">
-                <button type="button" (click)="addTicket()" name="submit" class="btn btn-primary">Submit New Ticket</button>
+                <button type="button" (click)="addTicket()" name="submit" class="btn btn-primary">{{"Submit New Ticket" | translate}}</button>
               </div>
-              <p class="f-80 mt-3">Note: all fields with <span class="text-red">*</span> are required!</p>
+              <p class="f-80 mt-3">{{"Note: all fields are required" | translate}}</p>
             </form>
           </div>
         </div>

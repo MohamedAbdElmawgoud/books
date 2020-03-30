@@ -2,13 +2,13 @@
     <div  class="cont" style="padding: 0 8%;"  >
         <div class="row text-center">
             <div class="col-12 pt-8">
-                <h3 class="mb-1"><img src="https://panel.seoestore.net/assets/img/ribbons.png" width="70px"> TOP-UP OFFERS</h3>
+                <h3 class="mb-1"><img src="https://panel.seoestore.net/assets/img/ribbons.png" width="70px"> {{'TOP-UP OFFERS' | translate}}</h3>
             </div>
         </div>
         <div class="row mt-4">
             <div *ngFor="let offer of offers" class="col-lg-3 col-md-6 col-sm-12" >
                             <div class="plan  ">
-                                <div class="f-150 text-aqua">{{offer.bounce}}% Bonus</div>
+                                <div class="f-150 text-aqua">{{offer.bounce}}% {{'Bonus' | translate}}</div>
                 <div class="f-200 b-6 text-yellow">${{offer.amount}}</div>
                 <img src="{{offer.image}}" alt="">
                 <!-- <div class="text-black">{{'Pay ONLY'| translate}} <b class="bold">${{offer.amount}}</b></div> -->
