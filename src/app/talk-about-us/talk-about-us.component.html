@@ -9,7 +9,7 @@
     <div *ngFor="let rule of rules" class="coupon" (click)="view()" >
 
         <div  style="background-color:white">
-          <h5><b>{{'Get' | translate}} {{rule.count}} {{'view and win' | translate}} {{rule.gift}} $ </b></h5>
+          <h5><b>{{'Get' | translate}} {{rule.count}} {{'views and win' | translate}} {{rule.gift}} $ </b></h5>
           <p [innerHTML]="rule.description" >
             
           </p>

@@ -14,8 +14,10 @@ export class HeaderComponent implements OnInit {
   isLoggedIn;
   user;
   number;
+  dir = "ltr";
   constructor(public translate:  TranslateService , private route : Router , private apiService : ApiService) { 
     this.currentLanguage  =  localStorage.getItem('lng') || 'en'
+    // this.dir = this.currentLanguage == 'ar' ?  "rtl" : "ltr"
     this.changeLng(this.currentLanguage)
     this.route.events.subscribe(e=>{
       this.isLoggedIn = localStorage.getItem('token');

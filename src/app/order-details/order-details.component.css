@@ -1,0 +1,5 @@
+.row[dir="rtl"]{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+}

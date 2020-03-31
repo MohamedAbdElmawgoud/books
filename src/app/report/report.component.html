@@ -33,154 +33,157 @@
 	</div>
 	
 
+<div dir="{{dir}}" >
 
-	
 	<div class="container">
-			<div class="row" style="justify-content: center;">
-					<!-- <div class="col-md-3 col-sm-6 col-xs-12">
-							<a href="?active=1" class="info-box no-active">
-								<span class="info-box-icon bg-blue"><i class="fa fa-flag"></i></span>
-								<div class="info-box-content">
-									<span class="info-box-text">{{ 'Active orders' | translate }}</span>
-									<span class="info-box-number">88</span>
-								</div>
-							</a>
-					</div> -->
-	
-					<div class="col-md-3 col-sm-6 col-xs-12">
-							<a href="?status=1" class="info-box no-active">
-								<span class="info-box-icon bg-light-gray"><i class="fa fa-circle-o-notch"></i></span>
-								<div class="info-box-content">
-									<span class="info-box-text">{{ 'Pending' | translate }} </span>
-									<span class="info-box-number">{{pendingOrders}}</span>
-								</div><!-- /.info-box-content -->
-							</a><!-- /.info-box -->
-					</div>
-	
-	
-					<div class="col-md-3 col-sm-6 col-xs-12">
-							<a href="?status=3" class="info-box no-active">
-								<span class="info-box-icon bg-green"><i class="fa fa-check"></i></span>
-								<div class="info-box-content">
-									<span class="info-box-text"> {{ 'Completed' | translate }} {{ 'orders' | translate }}</span>
-									<span class="info-box-number">{{completedOrders}}</span>
-								</div><!-- /.info-box-content -->
-							</a><!-- /.info-box -->
-					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<a href="?all=1" class="info-box no-active">
-							<span class="info-box-icon bg-black"><i class="fa fa-bars"></i></span>
+		<div class="row" style="justify-content: center;">
+				<!-- <div class="col-md-3 col-sm-6 col-xs-12">
+						<a href="?active=1" class="info-box no-active">
+							<span class="info-box-icon bg-blue"><i class="fa fa-flag"></i></span>
 							<div class="info-box-content">
-								<span class="info-box-text">{{ 'All' | translate }} {{ 'orders' | translate }}</span>
-								<span class="info-box-number">{{AllOrders}}</span>
+								<span class="info-box-text">{{ 'Active orders' | translate }}</span>
+								<span class="info-box-number">88</span>
+							</div>
+						</a>
+				</div> -->
+
+				<div class="col-md-3 col-sm-6 col-xs-12">
+						<a href="?status=1" class="info-box no-active">
+							<span class="info-box-icon bg-light-gray"><i class="fa fa-circle-o-notch"></i></span>
+							<div class="info-box-content">
+								<span class="info-box-text">{{ 'Pending' | translate }} </span>
+								<span class="info-box-number">{{pendingOrders}}</span>
 							</div><!-- /.info-box-content -->
 						</a><!-- /.info-box -->
 				</div>
-			</div>
-	
 
-	
-	</div>
-	
-	
+
+				<div class="col-md-3 col-sm-6 col-xs-12">
+						<a href="?status=3" class="info-box no-active">
+							<span class="info-box-icon bg-green"><i class="fa fa-check"></i></span>
+							<div class="info-box-content">
+								<span class="info-box-text"> {{ 'Completed' | translate }} {{ 'orders' | translate }}</span>
+								<span class="info-box-number">{{completedOrders}}</span>
+							</div><!-- /.info-box-content -->
+						</a><!-- /.info-box -->
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<a href="?all=1" class="info-box no-active">
+						<span class="info-box-icon bg-black"><i class="fa fa-bars"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-text">{{ 'All' | translate }} {{ 'orders' | translate }}</span>
+							<span class="info-box-number">{{AllOrders}}</span>
+						</div><!-- /.info-box-content -->
+					</a><!-- /.info-box -->
+			</div>
+		</div>
+
+
+
+</div>
+
+
 <div class="container" >
-	<table class="table table-hover table-responsive-sm " style="width: 100%; margin-left: 1%;">
-			<thead>
-			  <tr>
-				<th scope="col">{{ 'Order id' | translate }}</th>
-				<th scope="col">{{ 'item name' | translate }}</th>
+<table class="table table-hover table-responsive-sm " style="width: 100%; margin-left: 1%;">
+		<thead>
+		  <tr>
+			<th scope="col">{{ 'Order id' | translate }}</th>
+			<th scope="col">{{ 'item name' | translate }}</th>
 
-				<th scope="col">{{ 'price' | translate }}</th>
-				<th scope="col">{{ 'status' | translate }}</th>
-				<th scope="col">{{ 'quantity' | translate }}</th>
+			<th scope="col">{{ 'price' | translate }}</th>
+			<th scope="col">{{ 'status' | translate }}</th>
+			<th scope="col">{{ 'quantity' | translate }}</th>
 
-				<th scope="col">{{ 'Details' | translate }}</th>
-				<th scope="col">{{ 'download' | translate }}</th>
-				<th scope="col">{{ 'date' | translate }}</th>
+			<th scope="col">{{ 'Details' | translate }}</th>
+			<th scope="col">{{ 'download' | translate }}</th>
+			<th scope="col">{{ 'date' | translate }}</th>
 
-			  </tr>
-			</thead>
-			<tbody>
-			  <tr *ngFor="let item of orders" >
-				<th scope="row">{{item.id}}</th>
-				<td>{{item.item?.name}}</td>
-				<td>{{item.totalAmount}}$</td>
-				<td>{{item.status | translate }}</td>
-				<td>{{item.quantity }}</td>
-				<td data-toggle="modal" data-target="#exampleModal" (click)="view(item)" >
-					<i class="fa fa-eye" aria-hidden="true"></i>
-				</td>
-				<td  >
-					<a *ngIf="item.report" href="{{item.report}}" >
-						<i class="fa fa-cloud-download" aria-hidden="true"></i>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr *ngFor="let item of orders" >
+			<th scope="row">{{item.id}}</th>
+			<td>{{item.item?.name}}</td>
+			<td>{{item.totalAmount}}$</td>
+			<td>{{item.status | translate }}</td>
+			<td>{{item.quantity }}</td>
+			<td data-toggle="modal" data-target="#exampleModal" (click)="view(item)" >
+				<i class="fa fa-eye" aria-hidden="true"></i>
+			</td>
+			<td  >
+				<a *ngIf="item.report" href="{{item.report}}" >
+					<i class="fa fa-cloud-download" aria-hidden="true"></i>
 
-					</a>
-				</td>
-                <td>{{item.created_at | date}}</td>
+				</a>
+			</td>
+			<td>{{item.created_at | date}}</td>
 
-			  </tr>
-			 
-			</tbody>
-		  </table>
-	
-		  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <h5 class="modal-title" id="exampleModalLabel">{{'Details' | translate}}</h5>
-				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-				<div class="modal-body">
+		  </tr>
+		 
+		</tbody>
+	  </table>
 
-
-					  <div class="card">
-						<div class="card-header">
-							{{ 'Links' | translate }}
-						</div>
-						<div class="card-body">
-						  <blockquote class="blockquote mb-0">
-							<p>{{selectedItem.links}}</p>
-						  </blockquote>
-						</div>
-					  </div>
-					  <div class="card">
-						<div class="card-header">
-							{{ 'keywords' | translate }}
-						</div>
-						<div class="card-body">
-						  <blockquote class="blockquote mb-0">
-							<p>{{selectedItem.keywords}}</p>
-						  </blockquote>
-						</div>
-					  </div>
-
-					  <div class="card">
-						<div class="card-header">
-							{{ 'article' | translate }}
-						</div>
-						<div class="card-body">
-						  <blockquote class="blockquote mb-0">
-							<p>{{selectedItem.article}}</p>
-						  </blockquote>
-						</div>
-					  </div>
-					  <div class="card">
-						<div class="card-header">
-							{{ 'Extras' | translate }}
-						</div>
-						<div class="card-body">
-						  <blockquote class="blockquote mb-0">
-							<p>
-								<span *ngFor="let item of selectedItem.addons" data-toggle="tooltip" data-placement="top" data-original-title="Price per 1"
-								class="badge bg-yellow">{{item.name}}  </span>
-							</p>
-						  </blockquote>
-						</div>
-					  </div>
-				</div>
-
-			  </div>
+	  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalLabel">{{'Details' | translate}}</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
 			</div>
+			<div class="modal-body">
+
+
+				  <div class="card">
+					<div class="card-header">
+						{{ 'Links' | translate }}
+					</div>
+					<div class="card-body">
+					  <blockquote class="blockquote mb-0">
+						<p>{{selectedItem.links}}</p>
+					  </blockquote>
+					</div>
+				  </div>
+				  <div class="card">
+					<div class="card-header">
+						{{ 'keywords' | translate }}
+					</div>
+					<div class="card-body">
+					  <blockquote class="blockquote mb-0">
+						<p>{{selectedItem.keywords}}</p>
+					  </blockquote>
+					</div>
+				  </div>
+
+				  <div class="card">
+					<div class="card-header">
+						{{ 'article' | translate }}
+					</div>
+					<div class="card-body">
+					  <blockquote class="blockquote mb-0">
+						<p>{{selectedItem.article}}</p>
+					  </blockquote>
+					</div>
+				  </div>
+				  <div class="card">
+					<div class="card-header">
+						{{ 'Extras' | translate }}
+					</div>
+					<div class="card-body">
+					  <blockquote class="blockquote mb-0">
+						<p>
+							<span *ngFor="let item of selectedItem.addons" data-toggle="tooltip" data-placement="top" data-original-title="Price per 1"
+							class="badge bg-yellow">{{item.name}}  </span>
+						</p>
+					  </blockquote>
+					</div>
+				  </div>
+			</div>
+
 		  </div>
+		</div>
+	  </div>
+
+</div>
+	

@@ -155,7 +155,14 @@
   "Url" : "عنوان",
   "Count" : "العد",
     "Comment" : "تعليق",
-    "Send Request" : "ارسل طلب"
-  
+    "Send Request" : "ارسل طلب",
+    "Make order" : "إصدار أمر",
+    "Policies & Money Returns" : "السياسات واسترجاع الأموال",
+    "I have read and agree to the" : "لقد قرات ووافقت على ",
+    "This ticket is closed start new one if you want" : "هذه التذكرة مغلقة ، ابدأ تذكرة جديدة إذا كنت تريد",
+    "Add reply" : "إضافة الرد",
+    "Talk about us and win" : "تحدث عنا واربح",
+    "views and win" : " من المشاهدات واربح    ",
+  "url" : "عنوان"
  
 }

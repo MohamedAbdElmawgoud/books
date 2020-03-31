@@ -16,6 +16,10 @@ section{
        border: 0px; 
        opacity: 0;
 }
+
+.row[dir="rtl"]{
+    flex-direction: row-reverse;
+}
 /* iCheck plugin Minimal skin, blue
 ----------------------------------- */
 .icheckbox_minimal-blue,

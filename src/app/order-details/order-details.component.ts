@@ -11,12 +11,16 @@ export class OrderDetailsComponent implements OnInit {
   services;
   faqs;
   selectedItem;
+  currentLanguage;
+  dir;
   constructor(private apiService: ApiService , private router : Router) { 
     let item = JSON.parse(localStorage.getItem('order'));
     if(!item){
       this.router.navigate(['store'])
     }
       this.selectedItem = item;
+      this.currentLanguage  =  localStorage.getItem('lng') || 'en'
+      this.dir = this.currentLanguage == 'ar' ?  "rtl" : "ltr"
   }
 
   async ngOnInit() {

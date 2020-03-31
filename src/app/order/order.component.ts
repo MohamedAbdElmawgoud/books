@@ -26,8 +26,9 @@ export class OrderComponent implements OnInit, OnDestroy {
     itemsShowLimit: 3,
     allowSearchFilter: true
   }
-
+  currentLanguage
   orderForm;
+  dir
   constructor(private apiService: ApiService, private router: Router) {
     let item = JSON.parse(localStorage.getItem('order'));
     if (!item) {
@@ -35,7 +36,8 @@ export class OrderComponent implements OnInit, OnDestroy {
     }
     this.selectedItem = item;
     this.total = item.price;
-
+    this.currentLanguage  =  localStorage.getItem('lng') || 'en'
+    this.dir = this.currentLanguage == 'ar' ?  "rtl" : "ltr"
     this.orderForm = new FormGroup({
       quantity: new FormControl(0, [Validators.required, Validators.min(item.minimum)]),
       links: new FormControl('', [Validators.required]),

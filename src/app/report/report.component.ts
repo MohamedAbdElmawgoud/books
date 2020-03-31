@@ -12,7 +12,14 @@ export class ReportComponent implements OnInit {
   completedOrders;
   AllOrders;
   selectedItem : any = {};
-  constructor(private apiService : ApiService) { }
+  currentLanguage;
+dir;
+  constructor(private apiService : ApiService) 
+  {
+    this.currentLanguage  =  localStorage.getItem('lng') || 'en'
+    this.dir = this.currentLanguage == 'ar' ?  "rtl" : "ltr"
+
+   }
 
   async ngOnInit() {
     this.orders = await this.apiService.getOrders();
