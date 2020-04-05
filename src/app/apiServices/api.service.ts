@@ -168,7 +168,8 @@ export class ApiService {
       return {
 count: ele.count,
 gift: ele.gift,
-description: this.defaultLng == LNGS.en ? ele.description : ele.descriptionAR
+description: this.defaultLng == LNGS.en ? ele.description : ele.descriptionAR,
+image : ele.image
       }
     })
   }
@@ -301,6 +302,12 @@ description: this.defaultLng == LNGS.en ? ele.description : ele.descriptionAR
         Authorization: localStorage.getItem('token')
       }
     }).toPromise());
+  }
+
+  async rules(){
+    let data = (<any>await this.httpClient.get(`${this.url}rules/get`).toPromise());
+
+    return  this.defaultLng == 'ar' ?  data.Arabic : data.English    ;
   }
 
 

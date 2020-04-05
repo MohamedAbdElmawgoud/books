@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../apiServices/api.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'update-profile',
@@ -13,7 +14,7 @@ export class UpdateProfileComponent implements OnInit {
   updateForm;
   currentLanguage
   dir
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService , private router : Router) {
     this.currentLanguage  =  localStorage.getItem('lng') || 'en'
     this.dir = this.currentLanguage == 'ar' ?  "rtl" : "ltr"
   }
@@ -24,16 +25,18 @@ export class UpdateProfileComponent implements OnInit {
       name: new FormControl(this.user.name, [
         Validators.required,
       ]),
-      email: new FormControl(this.user.email, [
+      password: new FormControl(this.user.password, [
         Validators.required,
-        Validators.email
+        Validators.minLength(8)
       ])
 
     })
 
   }
   async update() {
-    await this.apiService.editUser({ name: this.updateForm.value.name, email: this.updateForm.value.email, id: this.user.id });
-
+    await this.apiService.editUser({ name: this.updateForm.value.name, password: this.updateForm.value.password, id: this.user.id });
+    // localStorage.clear();
+    // this.router.navigate(['/login']);
+    // window.location.reload()
   }
 }

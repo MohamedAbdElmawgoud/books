@@ -16,6 +16,19 @@
      </div>
    </div>
 
+   <div dir="{{dir}}" class="form-group">
+    
+    <label for="name">{{ 'Password' | translate }}</label>
+    <input type="password"  class="form-control" formControlName="password" 
+    [ngClass]="{'is-invalid':updateForm.get('password').touched && updateForm.get('password').invalid}" required />
+    <div class="invalid-feedback">
+
+      <div *ngIf="updateForm.get('password').errors.required">{{ 'Password' | translate }} {{ 'is required' | translate }}</div>
+      <div *ngIf="updateForm.get('password').errors.minlength">{{ 'Password' | translate }}  {{ 'must be' | translate }}{{ ' a letaset 6 charector' | translate }}</div>    
+
+    </div>
+  </div>
+
    <!-- <div class="form-group">
    <label for="email">{{ 'Email' | translate }}</label>
    <input type="mail" class="form-control"  formControlName="email"

@@ -24,33 +24,13 @@ export class ForgetPasswordComponent implements OnInit {
     
   }
   async submit(){
-    if (this.forGetPassword.valid) {
-      
-   try {
-     this.forget = await this.apiService.resetPassword(this.forGetPassword.value.email);
+    this.forget = await this.apiService.resetPassword(this.forGetPassword.value.email);
     Swal.fire({
       icon: 'success',
       showConfirmButton: false,
       timer: 1500,
       title: "check your mail"
     }) 
-    console.log(this.forget);
-  } catch(e){
-    Swal.fire({
-      icon: 'error',
-      showConfirmButton: false,
-      timer: 1500
-    })  
-  }
-}
-else{
-  Swal.fire({
-    icon: 'error',
-    showConfirmButton: false,
-    timer: 1500,
-    title: "please enter valid mail"
-  })
-}
 
   }
 }

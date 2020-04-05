@@ -20,7 +20,7 @@ export class TalkAboutComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   async ngOnInit() {
-    this.reqs = await this.apiService.getTalkRetests()
+  this.reqs = await this.apiService.getTalkRetests();
   }
   async  submit() {
     if (this.form.valid) {

@@ -9,10 +9,13 @@ import { Router } from '@angular/router';
 })
 export class TalkAboutUsComponent implements OnInit {
   rules ;
+  rulesDec;
   constructor(private apiService : ApiService , private router : Router) { }
 
   async ngOnInit() {
     this.rules = await this.apiService.talkRules();
+    this.rulesDec = await this.apiService.rules();
+
     
   }
   view(){

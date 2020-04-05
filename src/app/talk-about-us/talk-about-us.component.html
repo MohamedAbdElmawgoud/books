@@ -6,6 +6,7 @@
         {{'Talk about us and win' | translate}}
     </h1>
 
+    <p style="margin-top: 15px; margin-bottom: 40px; text-align: center;" [innerHtml]="rulesDec"></p>
     <div *ngFor="let rule of rules" class="coupon" (click)="view()" >
 
         <div  style="background-color:white">
@@ -13,6 +14,7 @@
           <p [innerHTML]="rule.description" >
             
           </p>
+          <img src="{{rule.image}}" alt="">
         </div>
 
       </div>
