@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>Show Result Demo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <link rel="shortcut icon" href="https://goSellJSLib.b-cdn.net/v1.4.1/imgs/tap-favicon.ico" />
+  <link href="https://goSellJSLib.b-cdn.net/v1.4.1/css/gosell.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <script type="text/javascript" src="https://goSellJSLib.b-cdn.net/v1.4.1/js/gosell.js"></script>
+
+  <div id="root"></div>
+  <script>
+    let hash = window.location.hash;
+    let token = hash.split('*')[0].split('=')[1]
+    let amount = hash.split('*')[1].split('=')[1]
+
+    goSell.showResult({
+      callback: response => {
+        if (response.callback.status == "CAPTURED") {
+          axios.post('https://backend.q3seo.com/books/public/api/users/purchase', {
+            amount: amount
+          }, {
+            headers: {
+              Authorization: token
+
+            }
+          }).then(()=>{
+              window.location.replace('https://q3seo.com/')
+          })
+
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>

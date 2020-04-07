@@ -8297,3 +8297,19 @@ header , app-header{
   font-size: 20px !important;
   text-align: center !important;
 }
+.swal2-popup{
+  background: #fff0 !important;
+  width: 100%;
+}
+.swal2-actions{
+  display: none !important;
+}
+body > div.swal2-container.swal2-center.swal2-backdrop-show > div > div.swal2-header > button{
+  margin-top: 0.5rem;
+  position: absolute;
+  background: #FFF;
+  top: 1rem;
+  left: 48.8%;
+  border: 3px;
+  border-radius: 50%
+}
